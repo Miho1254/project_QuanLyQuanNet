@@ -35,5 +35,5 @@ Hướng dẫn chi tiết về cách sử dụng dự án. Bao gồm các bướ
 | Trần Tuấn Kiệt  | Unknown  | 0%               | Unknown  |
 | Nguyễn Quốc Bảo  | Unknown  | 0%               | Unknown  |
 
-## Liên hệ
-Thông tin liên hệ với nhóm dự án hoặc các thành viên.
+## Phân công
+- [Quản lý phân công](https://github.com/Miho1254/project_QuanLyQuanNet/blob/master/Task.md)
