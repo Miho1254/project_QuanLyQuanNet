@@ -1,6 +1,6 @@
 ﻿namespace project_QuanLyQuanNet
 {
-    partial class Form1
+    partial class FormMenu
     {
         /// <summary>
         /// Required designer variable.
@@ -37,7 +37,6 @@
             this.ClientSize = new System.Drawing.Size(725, 448);
             this.Name = "Form1";
             this.Text = "Form1";
-            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
 
         }
