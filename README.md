@@ -27,12 +27,13 @@ Hướng dẫn chi tiết về cách sử dụng dự án. Bao gồm các bướ
 
 ## Thành viên
 
-| Tên Thành Viên | Phần Trăm Tham Gia | Công Việc Đóng Góp |
-|--------------|-----------------|------------------|
-| Thành viên 1  | 30%             | Phần công việc 1 |
-| Thành viên 2  | 50%             | Phần công việc 2 |
-| Thành viên 3  | 20%             | Phần công việc 3 |
+| Tên Thành Viên | Tên Github    | Phần Trăm Tham Gia | Công Việc Đóng Góp |
+|---------------|---------------|-------------------|-------------------|
+| Đặng Quang Hiển  | Miho1254  | 0%               | Phần công việc 1  |
+| Lê Đình Hiếu  | meotrang3051  | 0%               | Phần công việc 2  |
+| Trần Thị Hồng Ngọc  | vmxam  | 0%               | Phần công việc 3  |
+| Trần Tuấn Kiệt  | Unknown  | 0%               | Phần công việc 1  |
+| Nguyễn Quốc Bảo  | Unknown  | 0%               | Phần công việc 2  |
 
 ## Liên hệ
-
 Thông tin liên hệ với nhóm dự án hoặc các thành viên.
