@@ -15,9 +15,9 @@ Hướng dẫn chi tiết về cách sử dụng dự án. Bao gồm các bướ
 
 ## Công nghệ sử dụng
 
-- Công nghệ 1
-- Công nghệ 2
-- Công nghệ 3
+- .Net Framework 4.8
+- SQL Server (LocalDB)
+- Công nghệ lập trình chạy bằng cơm và nước tương
 
 ## Tính năng
 
