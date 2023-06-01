@@ -1,6 +1,4 @@
-# project_QuanLyQuanNet
-# Tên Dự Án
-
+# DỰ ÁN QUẢN LÝ QUÁN NET
 Mô tả ngắn về dự án của bạn.
 
 ## Cài đặt và Yêu cầu
