@@ -1,6 +1,5 @@
 # DỰ ÁN QUẢN LÝ QUÁN NET
-Mô tả ngắn về dự án của bạn.
-
+Dự án làm Winform để tốt nghiệp môn Lập trình Winform, thế thôi!
 ## Cài đặt và Yêu cầu
 
 Hướng dẫn cài đặt và yêu cầu cần thiết để chạy dự án trên máy tính của bạn.
