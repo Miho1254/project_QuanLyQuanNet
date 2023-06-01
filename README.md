@@ -29,11 +29,11 @@ Hướng dẫn chi tiết về cách sử dụng dự án. Bao gồm các bướ
 
 | Tên Thành Viên | Tên Github    | Phần Trăm Tham Gia | Công Việc Đóng Góp |
 |---------------|---------------|-------------------|-------------------|
-| Đặng Quang Hiển  | Miho1254  | 0%               | Phần công việc 1  |
-| Lê Đình Hiếu  | meotrang3051  | 0%               | Phần công việc 2  |
-| Trần Thị Hồng Ngọc  | vmxam  | 0%               | Phần công việc 3  |
-| Trần Tuấn Kiệt  | Unknown  | 0%               | Phần công việc 1  |
-| Nguyễn Quốc Bảo  | Unknown  | 0%               | Phần công việc 2  |
+| Đặng Quang Hiển  | Miho1254  | 0%               | Quản lý source code, giao Task và Design Source code  |
+| Lê Đình Hiếu  | meotrang3051  | 0%               | Quản lý Frontend  |
+| Trần Thị Hồng Ngọc  | vmxam  | 0%               | Quản lý Backend  |
+| Trần Tuấn Kiệt  | Unknown  | 0%               | Unknown  |
+| Nguyễn Quốc Bảo  | Unknown  | 0%               | Unknown  |
 
 ## Liên hệ
 Thông tin liên hệ với nhóm dự án hoặc các thành viên.
