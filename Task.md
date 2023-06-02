@@ -25,7 +25,7 @@
 - Thời gian hoàn thành: 00:00 AM XX/XX/2023
 
 ## Trần Tuấn Kiệt (sauring123)
-- Tên Github: Unknown
+- Tên Github: sauring123
 - Phần Trăm Tham Gia: 20%
 - Công Việc Đóng Góp:
   - [ ] Phát triển chức năng đăng nhập và đăng ký tài khoản
