@@ -24,7 +24,7 @@
   - [ ] Tạo giao diện trang quản lý máy tính
 - Thời gian hoàn thành: 00:00 AM XX/XX/2023
 
-## Trần Tuấn Kiệt (Unknown)
+## Trần Tuấn Kiệt (sauring123)
 - Tên Github: Unknown
 - Phần Trăm Tham Gia: 20%
 - Công Việc Đóng Góp:
