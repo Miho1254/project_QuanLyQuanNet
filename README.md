@@ -31,7 +31,7 @@ Hướng dẫn chi tiết về cách sử dụng dự án. Bao gồm các bướ
 | Đặng Quang Hiển  | Miho1254  | 0%               | Quản lý source code, giao Task và Design Source code  |
 | Lê Đình Hiếu  | meotrang3051  | 0%               | Quản lý Frontend  |
 | Trần Thị Hồng Ngọc  | vmxam  | 0%               | Quản lý Backend  |
-| Trần Tuấn Kiệt  | Unknown  | 0%               | Unknown  |
+| Trần Tuấn Kiệt  | sauring123  | 0%               | Hỗ trợ phần Backend với Trần Thị Hồng Ngọc |
 | Nguyễn Quốc Bảo  | Unknown  | 0%               | Unknown  |
 
 ## Phân công
