@@ -17,6 +17,6 @@ namespace project_QuanLyQuanNet
             InitializeComponent();
         }
 
-        //test git add
+      
     }
 }
