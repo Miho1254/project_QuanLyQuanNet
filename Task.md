@@ -43,10 +43,10 @@
  
 # Phân Công Dự Án Quản Lý Quán Net
 
-| Tên Thành Viên | Tên Github    | Phần Trăm Tham Gia | Công Việc Đóng Góp | Thời gian hoàn thành |
-|---------------|---------------|-------------------|-------------------|-----------------------|
-| Đặng Quang Hiển  | Miho1254  | 20%               | Quản lý source code, giao Task và Design Source code  | XX ngày/tuần |
-| Lê Đình Hiếu  | meotrang3051  | 20%               | Quản lý Frontend  | XX ngày/tuần |
-| Trần Thị Hồng Ngọc  | vmxam  | 20%               | Quản lý Backend  | XX ngày/tuần |
-| Trần Tuấn Kiệt  | Unknown  | 20%               | Unknown  | XX ngày/tuần |
-| Nguyễn Quốc Bảo  | Unknown  | 20%               | Unknown  | XX ngày/tuần |
+| Tên Thành Viên      | Tên Github       | Phần Trăm Tham Gia | Công Việc Đóng Góp                              | Phần Trăm Dự Án | Phần Trăm Hoàn Thành | Thời gian hoàn thành |
+|---------------------|------------------|-------------------|------------------------------------------------|-----------------|---------------------|-----------------------|
+| Đặng Quang Hiển     | Miho1254         | 20%               | Quản lý source code, giao Task và Design Source code  | XX%             | XX%                 | XX ngày/tuần         |
+| Lê Đình Hiếu        | meotrang3051     | 20%               | Quản lý Frontend                               | XX%             | XX%                 | XX ngày/tuần         |
+| Trần Thị Hồng Ngọc  | vmxam            | 20%               | Quản lý Backend                                | XX%             | XX%                 | XX ngày/tuần         |
+| Trần Tuấn Kiệt      | Unknown          | 20%               | Unknown                                        | XX%             | XX%                 | XX ngày/tuần         |
+| Nguyễn Quốc Bảo     | Unknown          | 20%               | Unknown                                        | XX%             | XX%                 | XX ngày/tuần         |
