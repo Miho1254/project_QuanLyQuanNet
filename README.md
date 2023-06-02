@@ -32,7 +32,7 @@ Hướng dẫn chi tiết về cách sử dụng dự án. Bao gồm các bướ
 | Lê Đình Hiếu  | meotrang3051  | 0%               | Quản lý Frontend  |
 | Trần Thị Hồng Ngọc  | vmxam  | 0%               | Quản lý Backend  |
 | Trần Tuấn Kiệt  | sauring123  | 0%               | Hỗ trợ phần Backend với Trần Thị Hồng Ngọc |
-| Nguyễn Quốc Bảo  | Unknown  | 0%               | Unknown  |
+| Nguyễn Quốc Bảo  | Unknown  | 0%               | Hỗ trợ phần Frontend với Lê Đình Hiếu  |
 
-## Phân công
+## Đường dẫn
 - [Quản lý phân công](https://github.com/Miho1254/project_QuanLyQuanNet/blob/master/Task.md)
