@@ -26,13 +26,13 @@ Hướng dẫn chi tiết về cách sử dụng dự án. Bao gồm các bướ
 
 ## Thành viên
 
-| Tên Thành Viên | Tên Github    | Phần Trăm Tham Gia | Công Việc Đóng Góp |
-|---------------|---------------|-------------------|-------------------|
-| Đặng Quang Hiển  | Miho1254  | 0%               | Quản lý source code, giao Task và Design Source code  |
-| Lê Đình Hiếu  | meotrang3051  | 0%               | Quản lý Frontend  |
-| Trần Thị Hồng Ngọc  | vmxam  | 0%               | Quản lý Backend  |
-| Trần Tuấn Kiệt  | sauring123  | 0%               | Hỗ trợ phần Backend với Trần Thị Hồng Ngọc |
-| Nguyễn Quốc Bảo  | Unknown  | 0%               | Hỗ trợ phần Frontend với Lê Đình Hiếu  |
+| Tên Thành Viên        | Tên Github      | Phần Trăm Tham Gia | Công Việc Đóng Góp                            | Phần Trăm Dự Án | Phần Trăm Hoàn Thành |
+|----------------------|-----------------|-------------------|----------------------------------------------|-----------------|---------------------|
+| Đặng Quang Hiển      | Miho1254        | 0%                | Quản lý source code, giao Task và Design Source code | 0%              | 0%                  |
+| Lê Đình Hiếu         | meotrang3051    | 0%                | Quản lý Frontend                             | 0%              | 0%                  |
+| Trần Thị Hồng Ngọc   | vmxam           | 0%                | Quản lý Backend                              | 0%              | 0%                  |
+| Trần Tuấn Kiệt       | sauring123      | 0%                | Hỗ trợ phần Backend với Trần Thị Hồng Ngọc    | 0%              | 0%                  |
+| Nguyễn Quốc Bảo      | Unknown         | 0%                | Hỗ trợ phần Frontend với Lê Đình Hiếu         | 0%              | 0%                  |
 
 ## Đường dẫn
 - [Quản lý phân công](https://github.com/Miho1254/project_QuanLyQuanNet/blob/master/Task.md)
