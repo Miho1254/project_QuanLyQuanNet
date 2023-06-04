@@ -209,7 +209,7 @@ Người dùng đã đăng xuất thành công.
 ### Luồng sự kiện phụ
 - Người dùng có thể tiếp tục đăng nhập lại sau khi đăng xuất.
 
-# Server Management
+# Client Management
 
 ## Đăng ký tài khoản người dùng
 
@@ -236,6 +236,69 @@ Người quản lý hoặc Thu ngân đã đăng ký tài khoản người dùng
 1. Người quản lý hoặc Thu ngân truy cập vào giao diện đăng ký tài khoản người dùng.
 2. Người quản lý hoặc Thu ngân nhập thông tin người dùng.
 3. Người quản lý hoặc Thu ngân tạo tài khoản người dùng và cung cấp thông tin đăng nhập cho khách hàng.
+
+## Quản lý tài khoản người dùng
+
+### Tên use case
+Quản lý khách hàng trong quán net
+
+### Mô tả
+Người quản lý và thu ngân có thể thêm, xóa và chỉnh sửa thông tin về khách hàng trong quán net.
+
+### Actor
+Người quản lý, Thu ngân
+
+### ĐK Kích hoạt
+Người quản lý hoặc thu ngân truy cập vào hệ thống Quản Lý Phòng Net.
+
+### Tiền điều kiện
+Người quản lý hoặc thu ngân đã đăng nhập vào hệ thống Quản Lý Phòng Net.
+
+### Hậu điều kiện
+Người quản lý hoặc thu ngân đã thực hiện các hoạt động quản lý khách hàng thành công.
+
+### Luồng sự kiện chính
+1. Người quản lý hoặc thu ngân truy cập vào giao diện quản lý khách hàng.
+2. Người quản lý hoặc thu ngân có thể thêm khách hàng mới, xóa khách hàng và chỉnh sửa thông tin khách hàng.
+
+### Luồng sự kiện phụ
+- Nếu người quản lý hoặc thu ngân chọn thêm khách hàng mới:
+  - Người quản lý hoặc thu ngân nhập thông tin khách hàng mới.
+  - Người quản lý hoặc thu ngân lưu thông tin khách hàng mới vào hệ thống.
+- Nếu người quản lý hoặc thu ngân chọn xóa khách hàng:
+  - Người quản lý hoặc thu ngân chọn khách hàng cần xóa.
+  - Hệ thống xác nhận việc xóa khách hàng và xóa khách hàng khỏi hệ thống.
+- Nếu người quản lý hoặc thu ngân chọn chỉnh sửa thông tin khách hàng:
+  - Người quản lý hoặc thu ngân chọn khách hàng cần chỉnh sửa.
+  - Người quản lý hoặc thu ngân cập nhật thông tin mới cho khách hàng.
+  - Hệ thống lưu thông tin khách hàng đã được chỉnh sửa.
+
+## Xuất hóa đơn
+
+### Tên use case
+Xuất hóa đơn cho việc sử dụng dịch vụ và mua các món kèm
+
+### Mô tả
+Người quản lý và thu ngân có thể xuất hóa đơn cho việc sử dụng dịch vụ và mua các món kèm trong quán net.
+
+### Actor
+Người quản lý, Thu ngân
+
+### ĐK Kích hoạt
+Người quản lý hoặc thu ngân truy cập vào hệ thống Quản Lý Phòng Net.
+
+### Tiền điều kiện
+Người quản lý hoặc thu ngân đã đăng nhập vào hệ thống Quản Lý Phòng Net và đã có thông tin về việc sử dụng dịch vụ và mua các món kèm của khách hàng.
+
+### Hậu điều kiện
+Người quản lý hoặc thu ngân đã xuất hóa đơn thành công cho việc sử dụng dịch vụ và mua các món kèm.
+
+### Luồng sự kiện chính
+1. Người quản lý hoặc thu ngân truy cập vào giao diện quản lý hóa đơn.
+2. Người quản lý hoặc thu ngân chọn khách hàng cần xuất hóa đơn.
+3. Người quản lý hoặc thu ngân chọn các dịch vụ và món kèm đã được sử dụng hoặc mua bởi khách hàng.
+4. Người quản lý hoặc thu ngân xuất hóa đơn chứa thông tin chi tiết về các dịch vụ và món kèm đã sử dụng hoặc mua của khách hàng.
+
 
 ## General Management
 
