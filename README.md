@@ -18,11 +18,11 @@ Hướng dẫn chi tiết về cách sử dụng dự án. Bao gồm các bướ
 - SQL Server (LocalDB)
 - Công nghệ lập trình chạy bằng cơm và nước tương
 
-## Tính năng
+## Tính năng quan trọng
 
-- Tính năng 1
-- Tính năng 2
-- Tính năng 3
+- Quản lý hệ thống Client-Server side trực quan
+- Kết nối giữa Server-Client thông qua SocketIO
+- Giao diện tường minh, thân thiện với design các quán net
 
 ## Thành viên
 
