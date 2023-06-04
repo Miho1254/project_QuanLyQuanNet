@@ -35,6 +35,6 @@ Hướng dẫn chi tiết về cách sử dụng dự án. Bao gồm các bướ
 | Nguyễn Quốc Bảo      | Unknown         | 0%                | Hỗ trợ phần Frontend với Lê Đình Hiếu         | 0%              | 0%                  |
 
 ## Đường dẫn
-- [Quản lý phân công](https://github.com/Miho1254/project_QuanLyQuanNet/blob/master/Task.md)
-- [Sơ đồ Use Case](https://github.com/Miho1254/project_QuanLyQuanNet/blob/master/UseCase.md)
-- [Cấu trúc CSDL](https://github.com/Miho1254/project_QuanLyQuanNet/blob/master/CSDL.jpg)
+- [Quản lý phân công](https://github.com/Miho1254/project_QuanLyQuanNet/blob/master/Documentation/Task.md)
+- [Sơ đồ Use Case](https://github.com/Miho1254/project_QuanLyQuanNet/blob/master/Documentation/UseCase.md)
+- [Cấu trúc CSDL](https://github.com/Miho1254/project_QuanLyQuanNet/blob/master/Documentation/CSDL.jpg)
