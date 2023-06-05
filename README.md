@@ -38,3 +38,4 @@ Hướng dẫn chi tiết về cách sử dụng dự án. Bao gồm các bướ
 - [Quản lý phân công](https://github.com/Miho1254/project_QuanLyQuanNet/blob/master/Documentation/Task.md)
 - [Sơ đồ Use Case](https://github.com/Miho1254/project_QuanLyQuanNet/blob/master/Documentation/UseCase.md)
 - [Cấu trúc CSDL](https://github.com/Miho1254/project_QuanLyQuanNet/blob/master/Documentation/CSDL.jpg)
+- [Bản thiết kế Form](https://github.com/Miho1254/project_QuanLyQuanNet/blob/master/Documentation/Form_Design_Blueprint.md)
