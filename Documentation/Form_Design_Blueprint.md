@@ -137,7 +137,6 @@ Form bao gồm các phần tử sau:
 ```
 
 ## Form Login box (Client)
-Đây là Phần hiển thị đầu tiên khi máy khởi động lên (Điều kiện là máy đã được inject script để auto start)
 
 ### Đặc điểm
 
@@ -184,4 +183,127 @@ Form bao gồm các phần tử sau:
         //Nếu như mà ko phải thì trả về là false.
         //sau này mình sẽ kết nối với database sau.
     }
+```
+
+## Form Thao tác người dùng (Client)
+
+### Đặc điểm
+
+- Tên Form: `UserServiceMenu`
+- Kích thước Form: `189 x 585`
+- Tiêu đề Form: Không có
+- Icon (trong thanh taskbar): tính sau 
+- Không cho người dùng kéo, co giãn
+- Không cho người dùng di chuyển vị trí
+- Ẩn vào thanh taskbar (sẽ xử lý sau) [Backend]
+
+### Các phần tử giao diện
+
+Form bao gồm các phần tử sau:
+
+1. `cbx_NgonNgu` = 1 cái combobox set cứng ở phần tiếng Việt và Read-Only = true
+2. `lbl_NgonNgu` =  Hiển thị là `ngôn ngữ: `
+3. `tbx_TongThanhToan` = 1 cái textbox set thành readonly và set dữ liệu bên trong là `0`
+4. `lbl_TongThanhToan` = Hiển thị là `Tổng thanh toán: `
+5. `lbl_ConLai` = Hiển thị là `Còn lại: `
+6. `tbx_GioChoiConLai` = Hiển thị giờ chơi còn lại (Công thức: Tiền chơi còn lại / Số tiền 1 giờ)
+7. `tbx_TienChoiConLai` = Hiển thị tiền còn lại
+8. `lbl_PhiDichVu` = Hiển thị `Phí dịch vụ(VNĐ): `
+9. `tbx_PhiDichVu` = Hiển thị cứng là `0`
+10. `btn_DangXuat` = Button này dùng để Đăng xuất 
+11. `btn_DatDoAn` = Button này hiện ra 1 Form mới để Đặt đồ ăn
+12. `btn_DoiMatKhau` = Button này hiện ra 1 Form mới để Đổi mật khẩu
+13. `btn_GiaoTiep` = Button này hiện ra 1 Form mới để nói chuyện với Server
+
+### Các hành động
+- Khi người dùng nhấn vào nút "Đăng xuất", sẽ chạy sự kiện đăng xuất.
+- Khi người dùng nhấn vào nút "Đặt đồ ăn", sẽ mở một Form mới để cho phép đặt đồ ăn.
+- Khi người dùng nhấn vào nút "Đổi mật khẩu", sẽ mở một Form mới để cho phép đổi mật khẩu.
+- Khi người dùng nhấn vào nút "Giao tiếp", sẽ mở một Form mới để cho phép nói chuyện với Server.
+
+### Code mẫu
+```csharp
+        public UserServiceMenu()
+        {
+            InitializeComponent();
+            cbx_NgonNgu.SelectedIndex = 0; // Chọn tiếng Việt mặc định
+            tbx_TongThanhToan.Text = "0";
+            tbx_PhiDichVu.Text = "0";
+        }
+
+        private void btn_DangXuat_Click(object sender, EventArgs e)
+        {
+            // Xử lý sự kiện đăng xuất
+            MessageBox.Show("Đăng xuất thành công!");
+            Application.Exit();
+        }
+
+        private void btn_DatDoAn_Click(object sender, EventArgs e)
+        {
+            // Mở Form mới để đặt đồ ăn
+            var orderFoodForm = new OrderFoodForm();
+            //chưa code
+            orderFoodForm.ShowDialog();
+        }
+
+        private void btn_DoiMatKhau_Click(object sender, EventArgs e)
+        {
+            // Mở Form mới để đổi mật khẩu
+            var changePasswordForm = new ChangePasswordForm();
+            changePasswordForm.ShowDialog();
+        }
+
+        private void btn_GiaoTiep_Click(object sender, EventArgs e)
+        {
+            // Mở Form mới để nói chuyện với Server
+            var communicationForm = new CommunicationForm();
+            //chưa code
+            communicationForm.ShowDialog();
+        }
+```
+
+## Form Đổi password của người dùng (Client)
+
+### Đặc điểm
+
+- Tên Form: `changePasswordForm`
+- Kích thước Form: `425 x 203`
+- Tiêu đề Form: `Đổi password`
+- Icon: Để đại 
+- Không cho người dùng kéo, co giãn
+- Cho phép người dùng di chuyển vị trí
+
+### Các phần tử giao diện
+
+Form bao gồm các phần tử sau:
+1. `btn_DoiMatkhau` = Button này dùng để đăng nhập 
+2. `lbl_Username` = Hiển thị là `Username: `
+3. `lbl_Password` = Hiển thị là `Password: `
+4. `tbx_Username` = Text box hiển thị tên đăng nhập của người dùng và set thành Read-Only trong Property.
+5. `tbx_Password` = Text box chứa mật khẩu.
+
+### Các hành động
+- Khi người dùng nhấn vào nút Đổi mật khẩu thị lấy dữ liệu từ 2 tbx và sau đó thay đổi pass trong sql
+
+### Code mẫu
+```csharp
+        public ChangePasswordForm(string username)
+        {
+            InitializeComponent();
+            //Lấy dữ liệu Username của người dùng từ SQL
+            //Gán dữ liệu vào tbx_Username
+            tbx_Username.Text = username;
+        }
+
+        private void btn_DoiMatkhau_Click(object sender, EventArgs e)
+        {
+            // Lấy dữ liệu từ textbox
+            string newPassword = tbx_Password.Text;
+
+            // Thực hiện việc thay đổi mật khẩu trong SQL
+            // ... Code xử lý thay đổi mật khẩu trong SQL ...
+
+            MessageBox.Show("Đổi mật khẩu thành công!");
+            this.Close();
+        }
 ```
