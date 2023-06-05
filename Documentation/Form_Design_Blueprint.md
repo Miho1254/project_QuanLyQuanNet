@@ -19,9 +19,12 @@ Form bao gồm các phần tử sau:
 ### Các hành động
 
 - Khi người dùng ấn vào 1 nút bất kỳ hoặc là 1 click chuột thì nó sẽ hiện Form `LoginBox` lên.
+- Khi người dùng ấn vào nút exit Demo thì ẩn LoginBox và Client_Login_Form
 
 ### Mã ví dụ
 ```csharp
+    //Chứa form LoginBox
+    private LoginBox _loginBox;
 
     public Client_Login_Form()
     {
@@ -43,7 +46,8 @@ Form bao gồm các phần tử sau:
         if (e.KeyCode == Keys.Space) // Kiểm tra phím bấm, ví dụ nhấn phím Space
         {
             LoginBox loginBox = new LoginBox(this); // Tạo một instance của Form đăng nhập sau đó truyền tham số là chính cái class này
-            loginBox.ShowDialog(); // Hiển thị Form đăng nhập dưới dạng dialog
+            _loginBox = loginBox; 
+            _loginBox.ShowDialog(); // Hiển thị Form đăng nhập dưới dạng dialog
         }
     }
 
@@ -51,9 +55,13 @@ Form bao gồm các phần tử sau:
     private void Client_Login_Form_MouseClick(object sender, MouseEventArgs e)
     {
         LoginBox loginBox = new LoginBox(this); // Tạo một instance của Form đăng nhập sau đó truyền tham số là chính cái class này
-        loginBox.ShowDialog(); // Hiển thị Form đăng nhập dưới dạng dialog
+        _loginBox = loginBox; 
+        _loginBox.ShowDialog(); // Hiển thị Form đăng nhập dưới dạng dialog
     }
-
+    
+    //Sự kiện khi nút Exit_Demo được bấm: Thì this.Hide() để ẩn Form lớn và kiểm tra nếu _loginBox có giá trị là null thì khỏi cần ẩn form nhỏ
+    //Nhưng nếu _loginBox ko phải null (Nghĩa là đã được khởi động) thì bằng cách: _loginBox.Hide();
+    
     //
     //--
     //Phần này dùng để tránh việc người dùng glitch và thoát khỏi Form đăng nhập truy cập vào windows
@@ -150,7 +158,7 @@ Form bao gồm các phần tử sau:
 
 ### Các hành động
 
-- Khi người dùng ấn vào 1 nút bất kỳ hoặc là 1 click chuột thì nó sẽ hiện Form `LoginBox` lên.
+- Khi người dùng ấn vào nút Đăng nhập thì chạy sự kiện kiểm tra tài khoản và mật khẩu
 
 ### Mã ví dụ
 ```csharp
