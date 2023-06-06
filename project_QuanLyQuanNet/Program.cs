@@ -16,7 +16,7 @@ namespace project_QuanLyQuanNet
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new LoginBox());
+            Application.Run(new Client_Login_Form());
         }
     }
 }
