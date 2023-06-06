@@ -62,5 +62,10 @@ namespace Client
         {
             //Chưa code vì chưa có form
         }
+
+        private void tbx_GioChoiConLai_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
