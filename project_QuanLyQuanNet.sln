@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.33424.131
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Client", "project_QuanLyQuanNet\Client.csproj", "{F9292619-A2E9-4978-A933-DA221FC61B5C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Server", "Server\Server.csproj", "{89A00BBB-B9C4-4AF6-B382-35D95E0FF1BC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Client", "Client\Client.csproj", "{F9292619-A2E9-4978-A933-DA221FC61B5C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,6 +13,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{89A00BBB-B9C4-4AF6-B382-35D95E0FF1BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{89A00BBB-B9C4-4AF6-B382-35D95E0FF1BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{89A00BBB-B9C4-4AF6-B382-35D95E0FF1BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{89A00BBB-B9C4-4AF6-B382-35D95E0FF1BC}.Release|Any CPU.Build.0 = Release|Any CPU
 		{F9292619-A2E9-4978-A933-DA221FC61B5C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{F9292619-A2E9-4978-A933-DA221FC61B5C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F9292619-A2E9-4978-A933-DA221FC61B5C}.Release|Any CPU.ActiveCfg = Release|Any CPU
