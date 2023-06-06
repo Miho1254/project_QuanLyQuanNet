@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ClientGlobal.Properties {
+namespace Client.Properties {
     using System;
     
     
@@ -57,6 +57,26 @@ namespace ClientGlobal.Properties {
             }
             set {
                 resourceCulture = value;
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _322856792_1069156854478203_1972115631161678075_n {
+            get {
+                object obj = ResourceManager.GetObject("322856792_1069156854478203_1972115631161678075_n", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _5315c19930291e66acb796fe84edc5d8 {
+            get {
+                object obj = ResourceManager.GetObject("5315c19930291e66acb796fe84edc5d8", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         

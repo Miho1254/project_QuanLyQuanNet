@@ -58,7 +58,7 @@
     <GenerateManifests>true</GenerateManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <SignManifests>true</SignManifests>
+    <SignManifests>false</SignManifests>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
@@ -92,6 +92,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserServiceMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserServiceMenu.Designer.cs">
+      <DependentUpon>UserServiceMenu.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Client_Login_Form.resx">
       <DependentUpon>Client_Login_Form.cs</DependentUpon>
     </EmbeddedResource>
@@ -108,6 +114,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="UserServiceMenu.resx">
+      <DependentUpon>UserServiceMenu.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="project_QuanLyQuanNet_TemporaryKey.pfx" />
     <None Include="Properties\Settings.settings">
@@ -151,6 +160,12 @@
       <Project>{89a00bbb-b9c4-4af6-b382-35d95e0ff1bc}</Project>
       <Name>Server</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\322856792_1069156854478203_1972115631161678075_n.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\5315c19930291e66acb796fe84edc5d8.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
