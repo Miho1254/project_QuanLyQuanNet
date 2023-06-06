@@ -24,7 +24,7 @@ namespace Client
             {
                 try
                 {
-                    client.Connect("192.168.1.5", 8080);
+                    client.Connect("192.168.1.7", 8080);
                 }
                 catch (Exception)
                 {
@@ -68,6 +68,9 @@ namespace Client
             {
                 this.Hide();
                 _mainForm.Hide();
+
+                UserServiceMenu userServiceMenu = new UserServiceMenu(tbx_Username.Text);
+                userServiceMenu.Show();
             }
             else
             {

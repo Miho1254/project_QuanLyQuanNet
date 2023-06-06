@@ -16,7 +16,7 @@ namespace Client
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new changePasswordForm());
+            Application.Run(new Client_Login_Form());
 
         }
     }

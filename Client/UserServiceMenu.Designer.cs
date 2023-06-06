@@ -51,41 +51,47 @@
             this.lbl_NgonNgu.AutoSize = true;
             this.lbl_NgonNgu.Font = new System.Drawing.Font("Century", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_NgonNgu.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lbl_NgonNgu.Location = new System.Drawing.Point(2, 42);
+            this.lbl_NgonNgu.Location = new System.Drawing.Point(3, 52);
+            this.lbl_NgonNgu.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_NgonNgu.Name = "lbl_NgonNgu";
-            this.lbl_NgonNgu.Size = new System.Drawing.Size(68, 16);
+            this.lbl_NgonNgu.Size = new System.Drawing.Size(89, 21);
             this.lbl_NgonNgu.TabIndex = 0;
             this.lbl_NgonNgu.Text = "Ngôn Ngữ";
             // 
             // cbx_NgonNgu
             // 
+            this.cbx_NgonNgu.Enabled = false;
             this.cbx_NgonNgu.FormattingEnabled = true;
-            this.cbx_NgonNgu.Location = new System.Drawing.Point(89, 37);
+            this.cbx_NgonNgu.Location = new System.Drawing.Point(119, 46);
+            this.cbx_NgonNgu.Margin = new System.Windows.Forms.Padding(4);
             this.cbx_NgonNgu.Name = "cbx_NgonNgu";
-            this.cbx_NgonNgu.Size = new System.Drawing.Size(82, 21);
+            this.cbx_NgonNgu.Size = new System.Drawing.Size(108, 24);
             this.cbx_NgonNgu.TabIndex = 1;
             this.cbx_NgonNgu.Text = "Tiếng Việt";
             // 
             // tbx_TongThanhToan
             // 
-            this.tbx_TongThanhToan.Location = new System.Drawing.Point(89, 79);
+            this.tbx_TongThanhToan.Location = new System.Drawing.Point(119, 97);
+            this.tbx_TongThanhToan.Margin = new System.Windows.Forms.Padding(4);
             this.tbx_TongThanhToan.Name = "tbx_TongThanhToan";
-            this.tbx_TongThanhToan.Size = new System.Drawing.Size(82, 20);
+            this.tbx_TongThanhToan.Size = new System.Drawing.Size(108, 22);
             this.tbx_TongThanhToan.TabIndex = 2;
             this.tbx_TongThanhToan.Text = "0";
             // 
             // tbx_GioChoiConLai
             // 
-            this.tbx_GioChoiConLai.Location = new System.Drawing.Point(89, 119);
+            this.tbx_GioChoiConLai.Location = new System.Drawing.Point(119, 146);
+            this.tbx_GioChoiConLai.Margin = new System.Windows.Forms.Padding(4);
             this.tbx_GioChoiConLai.Name = "tbx_GioChoiConLai";
-            this.tbx_GioChoiConLai.Size = new System.Drawing.Size(82, 20);
+            this.tbx_GioChoiConLai.Size = new System.Drawing.Size(108, 22);
             this.tbx_GioChoiConLai.TabIndex = 2;
             // 
             // tbx_TienChoiConLai
             // 
-            this.tbx_TienChoiConLai.Location = new System.Drawing.Point(89, 154);
+            this.tbx_TienChoiConLai.Location = new System.Drawing.Point(119, 190);
+            this.tbx_TienChoiConLai.Margin = new System.Windows.Forms.Padding(4);
             this.tbx_TienChoiConLai.Name = "tbx_TienChoiConLai";
-            this.tbx_TienChoiConLai.Size = new System.Drawing.Size(82, 20);
+            this.tbx_TienChoiConLai.Size = new System.Drawing.Size(108, 22);
             this.tbx_TienChoiConLai.TabIndex = 2;
             // 
             // lbl_TongThanhToan
@@ -93,9 +99,10 @@
             this.lbl_TongThanhToan.AutoSize = true;
             this.lbl_TongThanhToan.Font = new System.Drawing.Font("Century", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_TongThanhToan.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lbl_TongThanhToan.Location = new System.Drawing.Point(2, 85);
+            this.lbl_TongThanhToan.Location = new System.Drawing.Point(3, 105);
+            this.lbl_TongThanhToan.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_TongThanhToan.Name = "lbl_TongThanhToan";
-            this.lbl_TongThanhToan.Size = new System.Drawing.Size(81, 14);
+            this.lbl_TongThanhToan.Size = new System.Drawing.Size(105, 16);
             this.lbl_TongThanhToan.TabIndex = 0;
             this.lbl_TongThanhToan.Text = "Tổng Thanh Toán";
             // 
@@ -104,9 +111,10 @@
             this.lbl_TienConLai.AutoSize = true;
             this.lbl_TienConLai.Font = new System.Drawing.Font("Century", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_TienConLai.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lbl_TienConLai.Location = new System.Drawing.Point(-2, 158);
+            this.lbl_TienConLai.Location = new System.Drawing.Point(-3, 194);
+            this.lbl_TienConLai.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_TienConLai.Name = "lbl_TienConLai";
-            this.lbl_TienConLai.Size = new System.Drawing.Size(88, 16);
+            this.lbl_TienConLai.Size = new System.Drawing.Size(111, 21);
             this.lbl_TienConLai.TabIndex = 0;
             this.lbl_TienConLai.Text = "Tiền Còn Lại";
             // 
@@ -115,9 +123,10 @@
             this.lbl_ConLai.AutoSize = true;
             this.lbl_ConLai.Font = new System.Drawing.Font("Century", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_ConLai.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lbl_ConLai.Location = new System.Drawing.Point(2, 123);
+            this.lbl_ConLai.Location = new System.Drawing.Point(3, 151);
+            this.lbl_ConLai.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_ConLai.Name = "lbl_ConLai";
-            this.lbl_ConLai.Size = new System.Drawing.Size(81, 16);
+            this.lbl_ConLai.Size = new System.Drawing.Size(103, 21);
             this.lbl_ConLai.TabIndex = 0;
             this.lbl_ConLai.Text = "Giờ Còn Lại";
             // 
@@ -126,17 +135,19 @@
             this.lbl_PhiDichVu.AutoSize = true;
             this.lbl_PhiDichVu.Font = new System.Drawing.Font("Century", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_PhiDichVu.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lbl_PhiDichVu.Location = new System.Drawing.Point(-2, 201);
+            this.lbl_PhiDichVu.Location = new System.Drawing.Point(-3, 247);
+            this.lbl_PhiDichVu.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_PhiDichVu.Name = "lbl_PhiDichVu";
-            this.lbl_PhiDichVu.Size = new System.Drawing.Size(95, 15);
+            this.lbl_PhiDichVu.Size = new System.Drawing.Size(122, 17);
             this.lbl_PhiDichVu.TabIndex = 0;
             this.lbl_PhiDichVu.Text = "Phí dịch vụ(VNĐ)";
             // 
             // tbx_PhiDichVu
             // 
-            this.tbx_PhiDichVu.Location = new System.Drawing.Point(89, 196);
+            this.tbx_PhiDichVu.Location = new System.Drawing.Point(119, 241);
+            this.tbx_PhiDichVu.Margin = new System.Windows.Forms.Padding(4);
             this.tbx_PhiDichVu.Name = "tbx_PhiDichVu";
-            this.tbx_PhiDichVu.Size = new System.Drawing.Size(82, 20);
+            this.tbx_PhiDichVu.Size = new System.Drawing.Size(108, 22);
             this.tbx_PhiDichVu.TabIndex = 2;
             this.tbx_PhiDichVu.Text = "0";
             // 
@@ -149,12 +160,14 @@
             this.btn_DangXuat.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.btn_DangXuat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_DangXuat.ForeColor = System.Drawing.Color.Black;
-            this.btn_DangXuat.Location = new System.Drawing.Point(5, 235);
+            this.btn_DangXuat.Location = new System.Drawing.Point(7, 289);
+            this.btn_DangXuat.Margin = new System.Windows.Forms.Padding(4);
             this.btn_DangXuat.Name = "btn_DangXuat";
-            this.btn_DangXuat.Size = new System.Drawing.Size(75, 23);
+            this.btn_DangXuat.Size = new System.Drawing.Size(100, 28);
             this.btn_DangXuat.TabIndex = 4;
             this.btn_DangXuat.Text = "Đăng Xuất ";
             this.btn_DangXuat.UseVisualStyleBackColor = false;
+            this.btn_DangXuat.Click += new System.EventHandler(this.btn_DangXuat_Click);
             // 
             // btn_DoiMatKhau
             // 
@@ -165,12 +178,14 @@
             this.btn_DoiMatKhau.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.btn_DoiMatKhau.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_DoiMatKhau.ForeColor = System.Drawing.Color.Black;
-            this.btn_DoiMatKhau.Location = new System.Drawing.Point(5, 274);
+            this.btn_DoiMatKhau.Location = new System.Drawing.Point(7, 337);
+            this.btn_DoiMatKhau.Margin = new System.Windows.Forms.Padding(4);
             this.btn_DoiMatKhau.Name = "btn_DoiMatKhau";
-            this.btn_DoiMatKhau.Size = new System.Drawing.Size(81, 23);
+            this.btn_DoiMatKhau.Size = new System.Drawing.Size(108, 28);
             this.btn_DoiMatKhau.TabIndex = 4;
             this.btn_DoiMatKhau.Text = "Đổi mật khẩu";
             this.btn_DoiMatKhau.UseVisualStyleBackColor = false;
+            this.btn_DoiMatKhau.Click += new System.EventHandler(this.btn_DoiMatKhau_Click);
             // 
             // btn_DatDoAn
             // 
@@ -181,12 +196,14 @@
             this.btn_DatDoAn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.btn_DatDoAn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_DatDoAn.ForeColor = System.Drawing.Color.Black;
-            this.btn_DatDoAn.Location = new System.Drawing.Point(96, 235);
+            this.btn_DatDoAn.Location = new System.Drawing.Point(128, 289);
+            this.btn_DatDoAn.Margin = new System.Windows.Forms.Padding(4);
             this.btn_DatDoAn.Name = "btn_DatDoAn";
-            this.btn_DatDoAn.Size = new System.Drawing.Size(75, 23);
+            this.btn_DatDoAn.Size = new System.Drawing.Size(100, 28);
             this.btn_DatDoAn.TabIndex = 4;
             this.btn_DatDoAn.Text = "Đặt đồ ăn";
             this.btn_DatDoAn.UseVisualStyleBackColor = false;
+            this.btn_DatDoAn.Click += new System.EventHandler(this.btn_DatDoAn_Click);
             // 
             // btn_GiaoTiep
             // 
@@ -197,29 +214,32 @@
             this.btn_GiaoTiep.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.btn_GiaoTiep.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_GiaoTiep.ForeColor = System.Drawing.Color.Black;
-            this.btn_GiaoTiep.Location = new System.Drawing.Point(96, 274);
+            this.btn_GiaoTiep.Location = new System.Drawing.Point(128, 337);
+            this.btn_GiaoTiep.Margin = new System.Windows.Forms.Padding(4);
             this.btn_GiaoTiep.Name = "btn_GiaoTiep";
-            this.btn_GiaoTiep.Size = new System.Drawing.Size(75, 23);
+            this.btn_GiaoTiep.Size = new System.Drawing.Size(100, 28);
             this.btn_GiaoTiep.TabIndex = 4;
             this.btn_GiaoTiep.Text = "Giao Tiếp";
             this.btn_GiaoTiep.UseVisualStyleBackColor = false;
+            this.btn_GiaoTiep.Click += new System.EventHandler(this.btn_GiaoTiep_Click);
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::Client.Properties.Resources._5315c19930291e66acb796fe84edc5d8;
-            this.pictureBox1.Location = new System.Drawing.Point(1, 303);
+            this.pictureBox1.Location = new System.Drawing.Point(1, 373);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(178, 165);
+            this.pictureBox1.Size = new System.Drawing.Size(237, 203);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 5;
             this.pictureBox1.TabStop = false;
             // 
             // UserServiceMenu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(233)))), ((int)(((byte)(233)))));
-            this.ClientSize = new System.Drawing.Size(179, 461);
+            this.ClientSize = new System.Drawing.Size(239, 567);
             this.ControlBox = false;
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btn_GiaoTiep);
@@ -238,7 +258,7 @@
             this.Controls.Add(this.lbl_NgonNgu);
             this.ForeColor = System.Drawing.Color.White;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Location = new System.Drawing.Point(1179, 0);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "UserServiceMenu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "UserServiceMenu";
