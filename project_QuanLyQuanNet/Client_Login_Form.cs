@@ -3,7 +3,7 @@ using System.Diagnostics;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
 
-namespace project_QuanLyQuanNet
+namespace Client
 {
     public partial class Client_Login_Form : Form
     {

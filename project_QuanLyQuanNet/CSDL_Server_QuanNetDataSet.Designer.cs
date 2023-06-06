@@ -10,7 +10,7 @@
 
 #pragma warning disable 1591
 
-namespace project_QuanLyQuanNet {
+namespace Client {
     
     
     /// <summary>
@@ -3929,7 +3929,7 @@ namespace project_QuanLyQuanNet {
         }
     }
 }
-namespace project_QuanLyQuanNet.CSDL_Server_QuanNetDataSetTableAdapters {
+namespace Client.CSDL_Server_QuanNetDataSetTableAdapters {
     
     
     /// <summary>
@@ -4076,7 +4076,7 @@ namespace project_QuanLyQuanNet.CSDL_Server_QuanNetDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::project_QuanLyQuanNet.Properties.Settings.Default.CSDL_Server_QuanNetConnectionString;
+            this._connection.ConnectionString = global::Client.Properties.Settings.Default.CSDL_Server_QuanNetConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4357,7 +4357,7 @@ SELECT MaDonHang, MaKhachHang, TongTien FROM DonHang WHERE (MaDonHang = @MaDonHa
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::project_QuanLyQuanNet.Properties.Settings.Default.CSDL_Server_QuanNetConnectionString;
+            this._connection.ConnectionString = global::Client.Properties.Settings.Default.CSDL_Server_QuanNetConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4732,7 +4732,7 @@ SELECT MaDonHang, MaNhanVien FROM HoaDon WHERE (MaDonHang = @MaDonHang)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::project_QuanLyQuanNet.Properties.Settings.Default.CSDL_Server_QuanNetConnectionString;
+            this._connection.ConnectionString = global::Client.Properties.Settings.Default.CSDL_Server_QuanNetConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5125,7 +5125,7 @@ SELECT MaKhachHang, HoTen, Username, Password, GioChoi, IsActive, CanCuocCongDan
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::project_QuanLyQuanNet.Properties.Settings.Default.CSDL_Server_QuanNetConnectionString;
+            this._connection.ConnectionString = global::Client.Properties.Settings.Default.CSDL_Server_QuanNetConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5703,7 +5703,7 @@ SELECT MaKhachHang, HoTen, Username, Password, GioChoi, IsActive, CanCuocCongDan
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::project_QuanLyQuanNet.Properties.Settings.Default.CSDL_Server_QuanNetConnectionString;
+            this._connection.ConnectionString = global::Client.Properties.Settings.Default.CSDL_Server_QuanNetConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6062,7 +6062,7 @@ SELECT MaNhanVien, HoTen, SDT, ChucVu FROM NhanVien WHERE (MaNhanVien = @MaNhanV
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::project_QuanLyQuanNet.Properties.Settings.Default.CSDL_Server_QuanNetConnectionString;
+            this._connection.ConnectionString = global::Client.Properties.Settings.Default.CSDL_Server_QuanNetConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6484,7 +6484,7 @@ SELECT MaThucAn, TenThucAn, MoTa, ImagePath, GiaTien FROM ThucAn WHERE (MaThucAn
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::project_QuanLyQuanNet.Properties.Settings.Default.CSDL_Server_QuanNetConnectionString;
+            this._connection.ConnectionString = global::Client.Properties.Settings.Default.CSDL_Server_QuanNetConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]

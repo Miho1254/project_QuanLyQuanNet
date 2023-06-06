@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Configuration;
 
-namespace project_QuanLyQuanNet
+namespace Client
 {
     public partial class LoginBox : Form
     {

@@ -1,4 +1,4 @@
-﻿namespace project_QuanLyQuanNet
+﻿namespace Client
 {
     partial class Client_Login_Form
     {

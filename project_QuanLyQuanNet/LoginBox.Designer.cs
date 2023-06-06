@@ -1,4 +1,4 @@
-﻿namespace project_QuanLyQuanNet
+﻿namespace Client
 {
     partial class LoginBox
     {
@@ -41,7 +41,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pictureBox1.Image = global::project_QuanLyQuanNet.Properties.Resources.f40034382f5325739c15a68ebd13bde0a7fd7224_s2_n2_y1;
+            this.pictureBox1.Image = global::Client.Properties.Resources.f40034382f5325739c15a68ebd13bde0a7fd7224_s2_n2_y1;
             this.pictureBox1.Location = new System.Drawing.Point(248, 0);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(161, 164);
