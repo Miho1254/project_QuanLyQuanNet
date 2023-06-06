@@ -78,6 +78,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="changePasswordForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="changePasswordForm.Designer.cs">
+      <DependentUpon>changePasswordForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Client_Login_Form.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -98,6 +104,9 @@
     <Compile Include="UserServiceMenu.Designer.cs">
       <DependentUpon>UserServiceMenu.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="changePasswordForm.resx">
+      <DependentUpon>changePasswordForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Client_Login_Form.resx">
       <DependentUpon>Client_Login_Form.cs</DependentUpon>
     </EmbeddedResource>
@@ -166,6 +175,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\5315c19930291e66acb796fe84edc5d8.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\z4410082612436_c5e67da4b2ac44cf9b67b1c4d132593b.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\z4410122769542_e928356a59bf8e85729f7cf4c1994293.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

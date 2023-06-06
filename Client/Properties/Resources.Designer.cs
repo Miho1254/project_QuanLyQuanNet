@@ -99,5 +99,25 @@ namespace Client.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap z4410082612436_c5e67da4b2ac44cf9b67b1c4d132593b {
+            get {
+                object obj = ResourceManager.GetObject("z4410082612436_c5e67da4b2ac44cf9b67b1c4d132593b", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap z4410122769542_e928356a59bf8e85729f7cf4c1994293 {
+            get {
+                object obj = ResourceManager.GetObject("z4410122769542_e928356a59bf8e85729f7cf4c1994293", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }
