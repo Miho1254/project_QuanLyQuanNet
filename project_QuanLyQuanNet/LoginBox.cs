@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
+using System.Configuration;
 
 namespace project_QuanLyQuanNet
 {
@@ -23,23 +25,33 @@ namespace project_QuanLyQuanNet
 
         }
 
-        private bool checkLogin(string username, string password)
+        private bool CheckLogin(string username, string password)
         {
-            //Hiện tại thì nếu username là admin và password là admin thì cho vào (return true)
-            if (username == "admin" && password == "admin")  //Nếu như mà ko phải thì trả về là false.
+            string connectionString = ConfigurationManager.ConnectionStrings["MyConnectionString"].ConnectionString;
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                return true;
-            }
-            else
-            {
-                return false;
+                connection.Open();
+                string query = "SELECT Username, Password FROM KhachHang WHERE Username = @Username AND Password = @Password";
+
+                SqlCommand command = new SqlCommand(query, connection);
+                command.Parameters.AddWithValue("@Username", username);
+                command.Parameters.AddWithValue("@Password", password);
+
+                SqlDataReader reader = command.ExecuteReader();
+
+                bool loginSuccessful = reader.HasRows;
+
+                reader.Close();
+
+                return loginSuccessful;
             }
         }
 
         private void btn_Login_Click(object sender, EventArgs e)
         {
             // Chạy hàm checkLogin() và kiểm tra kết quả
-            if (checkLogin(tbx_Username.Text,tbx_Password.Text))
+            if (CheckLogin(tbx_Username.Text,tbx_Password.Text))
             {
                 // Nếu checkLogin() trả về true, ẩn Form hiện tại và Form cha
                 this.Hide();
