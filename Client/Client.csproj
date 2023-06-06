@@ -61,6 +61,9 @@
     <SignManifests>true</SignManifests>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
@@ -80,11 +83,6 @@
     </Compile>
     <Compile Include="Client_Login_Form.Designer.cs">
       <DependentUpon>Client_Login_Form.cs</DependentUpon>
-    </Compile>
-    <Compile Include="CSDL_Server_QuanNetDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>CSDL_Server_QuanNetDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="LoginBox.cs">
       <SubType>Form</SubType>
@@ -110,17 +108,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <None Include="CSDL_Server_QuanNetDataSet.xsc">
-      <DependentUpon>CSDL_Server_QuanNetDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="CSDL_Server_QuanNetDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>CSDL_Server_QuanNetDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="CSDL_Server_QuanNetDataSet.xss">
-      <DependentUpon>CSDL_Server_QuanNetDataSet.xsd</DependentUpon>
-    </None>
+    <None Include="packages.config" />
     <None Include="project_QuanLyQuanNet_TemporaryKey.pfx" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -159,13 +147,10 @@
     <None Include="Resources\f40034382f5325739c15a68ebd13bde0a7fd7224_s2_n2_y1.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="CSDL_Server_QuanNet.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="CSDL_Server_QuanNet_log.ldf">
-      <DependentUpon>CSDL_Server_QuanNet.mdf</DependentUpon>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
+    <ProjectReference Include="..\Server\Server.csproj">
+      <Project>{89a00bbb-b9c4-4af6-b382-35d95e0ff1bc}</Project>
+      <Name>Server</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

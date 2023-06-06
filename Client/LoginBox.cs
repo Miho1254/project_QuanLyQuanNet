@@ -1,14 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
+using System.Net.Sockets;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.SqlClient;
-using System.Configuration;
+using Newtonsoft.Json;
+using Server;
 
 namespace Client
 {
@@ -19,50 +14,64 @@ namespace Client
         public LoginBox(Client_Login_Form mainForm)
         {
             InitializeComponent();
-            _mainForm = mainForm; // Lưu tham chiếu của Form lớn
-            //tắt chức năng co giãn của Form
+            _mainForm = mainForm;
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
-
         }
 
         private bool CheckLogin(string username, string password)
         {
-            string connectionString = ConfigurationManager.ConnectionStrings["project_QuanLyQuanNet.Properties.Settings.CSDL_Server_QuanNetConnectionString"].ConnectionString;
-
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            using (TcpClient client = new TcpClient())
             {
-                connection.Open();
-                string query = "SELECT Username, Password FROM KhachHang WHERE Username = @Username AND Password = @Password";
+                try
+                {
+                    client.Connect("192.168.1.7", 8080);
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Error!");
+                    return false;
+                }
 
-                SqlCommand command = new SqlCommand(query, connection);
-                command.Parameters.AddWithValue("@Username", username);
-                command.Parameters.AddWithValue("@Password", password);
+                Console.WriteLine("Kết nối thành công tới máy trạm!");
 
-                SqlDataReader reader = command.ExecuteReader();
+                EventData eventData = new EventData { Type = EventType.Login };
+                eventData.Data["Username"] = username;
+                eventData.Data["Password"] = password;
 
-                bool loginSuccessful = reader.HasRows;
+                string jsonData = JsonConvert.SerializeObject(eventData);
 
-                reader.Close();
+                //Gửi data sang Server
+                byte[] data = Encoding.ASCII.GetBytes(jsonData);
+                NetworkStream stream = client.GetStream();
+                stream.Write(data, 0, data.Length);
 
-                return loginSuccessful;
+                //Nhận data lại từ Server
+                byte[] buffer = new byte[1024];
+                int bytesRead = stream.Read(buffer, 0, buffer.Length);
+                string responseJsonData = Encoding.ASCII.GetString(buffer, 0, bytesRead);
+                MessageBox.Show("Đã nhận data");
+
+                //Giải mã dữ liệu
+                EventData responseEventData = JsonConvert.DeserializeObject<EventData>(responseJsonData);
+                bool isAuthenticated = (bool)responseEventData.Data["IsAuthenticated"];
+
+                //Đóng kết nối và trả về true / false
+                client.Close();
+
+                return isAuthenticated;
             }
         }
 
         private void btn_Login_Click(object sender, EventArgs e)
         {
-            // Chạy hàm checkLogin() và kiểm tra kết quả
-            if (CheckLogin(tbx_Username.Text,tbx_Password.Text))
+            if (CheckLogin(tbx_Username.Text, tbx_Password.Text))
             {
-                // Nếu checkLogin() trả về true, ẩn Form hiện tại và Form cha
                 this.Hide();
                 _mainForm.Hide();
             }
             else
             {
-                // Nếu checkLogin() trả về false, hiển thị MessageBox thông báo sai tài khoản hoặc mật khẩu
                 MessageBox.Show("Tên đăng nhập hoặc mật khẩu không đúng");
-
-                // Đặt giá trị của tbx_Password thành chuỗi rỗng
                 tbx_Password.Text = "";
             }
         }
