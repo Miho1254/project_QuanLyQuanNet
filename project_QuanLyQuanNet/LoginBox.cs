@@ -27,7 +27,7 @@ namespace project_QuanLyQuanNet
 
         private bool CheckLogin(string username, string password)
         {
-            string connectionString = ConfigurationManager.ConnectionStrings["MyConnectionString"].ConnectionString;
+            string connectionString = ConfigurationManager.ConnectionStrings["project_QuanLyQuanNet.Properties.Settings.CSDL_Server_QuanNetConnectionString"].ConnectionString;
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
