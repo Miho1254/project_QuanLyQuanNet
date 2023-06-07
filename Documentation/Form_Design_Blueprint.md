@@ -307,3 +307,110 @@ Form bao gồm các phần tử sau:
             this.Close();
         }
 ```
+
+## Form Liên hệ Admin (Client)
+
+### Đặc điểm
+
+- Tên Form: `AdminContact_Client`
+- Kích thước Form: `730 x 614`
+- Tiêu đề Form: `Liên hệ Admin`
+- Icon: Để đại 
+- Không cho người dùng kéo, co giãn
+- Cho phép người dùng di chuyển vị trí
+
+### Các phần tử giao diện
+
+Form bao gồm các phần tử sau:
+1. `tbx_Main_Conversation` = Multi Line kéo dài đến gần hết form 
+4. `tbx_User_Message` = Text box để người dùng ghi dữ liệu
+5. `btn_Send` = Button để gửi văn bản trong `tbx_User_Message`
+
+### Các hành động
+- Khi người dùng nhấn vào nút Gửi thì sẽ chạy script để gửi tin nhắn đến máy chủ và hiện tin nhắn lên `tbx_Main_Conversation`.
+
+### Code mẫu
+```csharp
+    public partial class AdminContact_Client : Form
+    {
+        private TcpClient client;
+        private NetworkStream stream;
+        private byte[] buffer = new byte[1024];
+
+        public AdminContact_Client()
+        {
+            InitializeComponent();
+        }
+
+        private void btn_Send_Click(object sender, EventArgs e)
+        {
+            // Gửi tin nhắn đến máy chủ
+            string message = tbx_User_Message.Text;
+            SendMessage(message);
+
+            // Hiển thị tin nhắn trong khung conversation
+
+            // Xóa nội dung trong textbox
+            tbx_User_Message.Clear();
+        }
+
+        private void SendMessage(string message)
+        {
+            // TODO: Gửi tin nhắn đến máy chủ
+        }
+    }
+```
+
+## Form Liên hệ Người dùng (Server)
+
+### Đặc điểm
+
+- Tên Form: `AdminContact_Server`
+- Kích thước Form: `730 x 614`
+- Tiêu đề Form: `Liên hệ Người dùng`
+- Icon: Để đại 
+- Không cho người dùng kéo, co giãn
+- Cho phép người dùng di chuyển vị trí
+
+### Các phần tử giao diện
+
+Form bao gồm các phần tử sau:
+1. `tbx_Main_Conversation` = Multi Line kéo dài đến gần hết form 
+4. `tbx_User_Message` = Text box để người dùng ghi dữ liệu
+5. `btn_Send` = Button để gửi văn bản trong `tbx_User_Message`
+
+### Các hành động
+- Khi người dùng nhấn vào nút Gửi thì sẽ chạy script để gửi tin nhắn đến máy chủ và hiện tin nhắn lên `tbx_Main_Conversation`.
+
+### Code mẫu
+```csharp
+        public partial class AdminContact_Server : Form
+    {
+        private TcpListener server;
+        private TcpClient client;
+        private NetworkStream stream;
+        private byte[] buffer = new byte[1024];
+
+        public AdminContact_Server()
+        {
+            InitializeComponent();
+        }
+
+        private void btn_Send_Click(object sender, EventArgs e)
+        {
+            // Gửi tin nhắn đến người dùng
+            string message = tbx_User_Message.Text;
+            SendMessage(message);
+
+            // Hiển thị tin nhắn trong khung conversation
+
+            // Xóa nội dung trong textbox
+            tbx_User_Message.Clear();
+        }
+
+        private void SendMessage(string message)
+        {
+            // TODO: Gửi tin nhắn đến người dùng
+        }
+    }
+```
