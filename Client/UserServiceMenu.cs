@@ -52,7 +52,7 @@ namespace Client
         private void btn_DoiMatKhau_Click(object sender, EventArgs e)
         {
             // Mở Form mới để đổi mật khẩu
-            changePasswordForm form = new changePasswordForm(SessionUserName);
+            ChangePasswordForm form = new ChangePasswordForm(SessionUserName);
 
             // Hiển thị form đổi mật khẩu
             form.ShowDialog();
@@ -61,11 +61,6 @@ namespace Client
         private void btn_GiaoTiep_Click(object sender, EventArgs e)
         {
             //Chưa code vì chưa có form
-        }
-
-        private void tbx_GioChoiConLai_TextChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace Client
 {
-    partial class changePasswordForm
+    partial class ChangePasswordForm
     {
         /// <summary>
         /// Required designer variable.
@@ -45,7 +45,6 @@
             this.tbx_Username.Name = "tbx_Username";
             this.tbx_Username.Size = new System.Drawing.Size(192, 22);
             this.tbx_Username.TabIndex = 3;
-            this.tbx_Username.TextChanged += new System.EventHandler(this.tbx_Username_TextChanged);
             // 
             // tbx_Password
             // 
@@ -54,7 +53,6 @@
             this.tbx_Password.Name = "tbx_Password";
             this.tbx_Password.Size = new System.Drawing.Size(192, 22);
             this.tbx_Password.TabIndex = 3;
-            this.tbx_Password.TextChanged += new System.EventHandler(this.tbx_Password_TextChanged);
             // 
             // label1
             // 
@@ -137,7 +135,6 @@
             this.Name = "changePasswordForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "changePasswordForm";
-            this.Load += new System.EventHandler(this.changePasswordForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

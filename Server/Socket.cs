@@ -12,7 +12,9 @@ namespace Server
         Login,          // Sự kiện đăng nhập
         Message,        // Sự kiện tin nhắn
         Order,          // Sự kiện đơn đặt hàng
-        LoginResponse   // Sự kiện phản hồi đăng nhập
+        LoginResponse,  // Sự kiện phản hồi đăng nhập
+        PasswordChange, // Sự kiện đổi password từ Client
+        PasswordChangeResponse, // Sự kiện phản hồi đổi mật khẩu
         // Thêm các loại sự kiện khác nếu cần
     }
 
@@ -25,9 +27,18 @@ namespace Server
 
         }
 
-        public void Start(string ipAddress, int port)
+        public void Start(string ipAddress, int port, bool autocheckIP = false)
         {
+            // Nếu autocheckIP = true, lấy địa chỉ IP tự động
+            if (autocheckIP)
+            {
+                ipAddress = GetLocalIPAddress();
+            }
+
             listener = new TcpListener(IPAddress.Parse(ipAddress), port);
+            Console.WriteLine("Socket đã được khởi tạo với địa chỉ IP: " + ipAddress);
+
+            // Bắt đầu lắng nghe kết nối đến
             listener.Start();
             Console.WriteLine("Đang lắng nghe kết nối đến...");
 
@@ -42,6 +53,7 @@ namespace Server
                 clientHandler.Start();
             }
         }
+
 
         private void HandleDataReceived(ClientHandler clientHandler, string jsonData)
         {
@@ -63,7 +75,10 @@ namespace Server
                     case EventType.Order:
                         HandleOrderRequest(clientHandler, eventData);
                         break;
-
+                    case EventType.PasswordChange:
+                        HandlePasswordChangeRequest(clientHandler, eventData);
+                        break;
+                    // ...
                     // Xử lý các loại sự kiện khác
 
                     default:
@@ -121,6 +136,59 @@ namespace Server
             }
         }
 
+        private void HandlePasswordChangeRequest(ClientHandler clientHandler, EventData eventData)
+        {
+            if (eventData.Data.TryGetValue("Username", out object usernameObj) &&
+                eventData.Data.TryGetValue("NewPassword", out object newPasswordObj))
+            {
+                string username = usernameObj?.ToString();
+                string newPassword = newPasswordObj?.ToString();
+
+                if (!string.IsNullOrEmpty(username) && !string.IsNullOrEmpty(newPassword))
+                {
+                    bool passwordChanged = ChangePassword(username, newPassword);
+
+                    EventData responseEventData = new EventData { Type = EventType.PasswordChangeResponse };
+                    responseEventData.Data["PasswordChanged"] = passwordChanged;
+
+                    string responseJsonData = JsonConvert.SerializeObject(responseEventData);
+
+                    clientHandler.SendResponse(responseJsonData);
+                    return;
+                }
+            }
+
+            // Xử lý lỗi đổi mật khẩu nếu cần
+        }
+
+        private bool ChangePassword(string username, string newPassword)
+        {
+            string connectionString = ConfigurationManager.ConnectionStrings["Server.Properties.Settings.CSDL_Server_QuanNetConnectionString"].ConnectionString;
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+
+                // Thực hiện cập nhật mật khẩu
+                string updateQuery = "UPDATE KhachHang SET Password = @NewPassword WHERE Username = @Username";
+                SqlCommand updateCommand = new SqlCommand(updateQuery, connection);
+                updateCommand.Parameters.AddWithValue("@Username", username);
+                updateCommand.Parameters.AddWithValue("@NewPassword", newPassword);
+                int rowsAffected = updateCommand.ExecuteNonQuery();
+
+                if (rowsAffected > 0)
+                {
+                    Console.WriteLine("Mật khẩu đã được thay đổi.");
+                    return true;
+                }
+                else
+                {
+                    Console.WriteLine("Không thể thay đổi mật khẩu.");
+                    return false;
+                }
+            }
+        }
+
         private bool ValidateLogin(string username, string password)
         {
             string connectionString = ConfigurationManager.ConnectionStrings["Server.Properties.Settings.CSDL_Server_QuanNetConnectionString"].ConnectionString;
@@ -142,6 +210,23 @@ namespace Server
 
                 return loginSuccessful;
             }
+        }
+
+        static string GetLocalIPAddress()
+        {
+            // Lấy tất cả các địa chỉ IP của máy tính
+            IPAddress[] addresses = Dns.GetHostAddresses(Dns.GetHostName());
+
+            // Lọc và trả về địa chỉ IP LAN (IPv4)
+            foreach (IPAddress address in addresses)
+            {
+                if (address.AddressFamily == AddressFamily.InterNetwork && !IPAddress.IsLoopback(address))
+                {
+                    return address.ToString();
+                }
+            }
+
+            throw new Exception("Không tìm thấy địa chỉ IP LAN trên máy tính.");
         }
     }
 }

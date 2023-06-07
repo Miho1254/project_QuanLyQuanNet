@@ -44,7 +44,7 @@ namespace Server
             await Task.Run(() =>
             {
                 SocketServer socket = new SocketServer();
-                socket.Start("192.168.1.7", 8080);
+                socket.Start(ConfigurationManager.AppSettings["ServerIP"], Convert.ToInt32(ConfigurationManager.AppSettings["ServerPort"]), false);
             });
         }
     }

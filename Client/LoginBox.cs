@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Configuration;
 using System.Net.Sockets;
 using System.Text;
 using System.Windows.Forms;
@@ -15,7 +16,7 @@ namespace Client
         {
             InitializeComponent();
             _mainForm = mainForm;
-            this.FormBorderStyle = FormBorderStyle.FixedSingle;
+            FormBorderStyle = FormBorderStyle.FixedSingle;
         }
 
         private bool CheckLogin(string username, string password)
@@ -24,11 +25,11 @@ namespace Client
             {
                 try
                 {
-                    client.Connect("192.168.1.7", 8080);
+                    client.Connect(ConfigurationManager.AppSettings["ServerIP"], Convert.ToInt32(ConfigurationManager.AppSettings["ServerPort"]));
                 }
                 catch (Exception)
                 {
-                    MessageBox.Show("Error!");
+                    MessageBox.Show("Lỗi kết nối đến server!");
                     return false;
                 }
 
@@ -40,22 +41,17 @@ namespace Client
 
                 string jsonData = JsonConvert.SerializeObject(eventData);
 
-                //Gửi data sang Server
                 byte[] data = Encoding.ASCII.GetBytes(jsonData);
                 NetworkStream stream = client.GetStream();
                 stream.Write(data, 0, data.Length);
 
-                //Nhận data lại từ Server
                 byte[] buffer = new byte[1024];
                 int bytesRead = stream.Read(buffer, 0, buffer.Length);
                 string responseJsonData = Encoding.ASCII.GetString(buffer, 0, bytesRead);
-                MessageBox.Show("Đã nhận data");
 
-                //Giải mã dữ liệu
                 EventData responseEventData = JsonConvert.DeserializeObject<EventData>(responseJsonData);
                 bool isAuthenticated = (bool)responseEventData.Data["IsAuthenticated"];
 
-                //Đóng kết nối và trả về true / false
                 client.Close();
 
                 return isAuthenticated;
@@ -64,12 +60,15 @@ namespace Client
 
         private void btn_Login_Click(object sender, EventArgs e)
         {
-            if (CheckLogin(tbx_Username.Text, tbx_Password.Text))
+            string username = tbx_Username.Text.Trim();
+            string password = tbx_Password.Text;
+
+            if (CheckLogin(username, password))
             {
-                this.Hide();
+                Hide();
                 _mainForm.Hide();
 
-                UserServiceMenu userServiceMenu = new UserServiceMenu(tbx_Username.Text);
+                UserServiceMenu userServiceMenu = new UserServiceMenu(username);
                 userServiceMenu.Show();
             }
             else

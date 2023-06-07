@@ -83,7 +83,6 @@
             this.tbx_GioChoiConLai.ReadOnly = true;
             this.tbx_GioChoiConLai.Size = new System.Drawing.Size(82, 20);
             this.tbx_GioChoiConLai.TabIndex = 2;
-            this.tbx_GioChoiConLai.TextChanged += new System.EventHandler(this.tbx_GioChoiConLai_TextChanged);
             // 
             // tbx_TienChoiConLai
             // 
