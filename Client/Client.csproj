@@ -60,6 +60,10 @@
   <PropertyGroup>
     <SignManifests>false</SignManifests>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>
+    </StartupObject>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
@@ -78,6 +82,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdminContact_Client.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminContact_Client.Designer.cs">
+      <DependentUpon>AdminContact_Client.cs</DependentUpon>
+    </Compile>
     <Compile Include="changePasswordForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -104,6 +114,9 @@
     <Compile Include="UserServiceMenu.Designer.cs">
       <DependentUpon>UserServiceMenu.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AdminContact_Client.resx">
+      <DependentUpon>AdminContact_Client.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="changePasswordForm.resx">
       <DependentUpon>changePasswordForm.cs</DependentUpon>
     </EmbeddedResource>
