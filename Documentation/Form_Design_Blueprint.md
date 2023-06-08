@@ -414,3 +414,44 @@ Form bao gồm các phần tử sau:
         }
     }
 ```
+
+## Form Đặt đồ ăn (Client)
+
+### Đặc điểm
+
+- Tên Form: `Food_Order`
+- Kích thước Form: `885 x 565`
+- Tiêu đề Form: `Đặt đồ ăn`
+- Icon: Để đại 
+- Không cho người dùng kéo, co giãn
+- Cho phép người dùng di chuyển vị trí
+
+### Các phần tử giao diện
+
+Form bao gồm các phần tử sau:
+1. `tbx_SL` = textbox chứa dữ liệu số lượng
+4. `datagrid_Food` = Datagridview chứa dữ liệu đồ ăn bao gồm (ID món, Tên món, giá, ghi chú)
+5. `btn_send` = Button để gửi món đã đặt
+
+### Các hành động
+- Khi người dùng nhấn vào nút Gửi thì sẽ chạy script để gửi món đã order lên socket và xử lý bên server  
+
+### Code mẫu
+```csharp
+    // Lấy dữ liệu từ các textbox
+    string quantity = tbx_SL.Text;
+    
+    // Lấy dữ liệu từ DataGridView (ID món được chọn)
+    string selectedId = "";
+    if (datagrid_Food.SelectedRows.Count > 0)
+    {
+        DataGridViewRow selectedRow = datagrid_Food.SelectedRows[0];
+        selectedId = selectedRow.Cells["ID"].Value.ToString();
+    }
+
+    // Gửi dữ liệu lên server và xử lý logic tương ứng
+    // ...
+
+    // Hiển thị thông báo thành công
+    MessageBox.Show("Món đã được đặt thành công!");
+```
