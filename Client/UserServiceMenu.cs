@@ -60,7 +60,11 @@ namespace Client
 
         private void btn_GiaoTiep_Click(object sender, EventArgs e)
         {
-            //Chưa code vì chưa có form
+            // Mở Form mới để Liên hệ
+            AdminContact_Client form = new AdminContact_Client(SessionUserName);
+
+            // Hiển thị form
+            form.ShowDialog();
         }
     }
 }

@@ -4,6 +4,7 @@ using System.Data.SqlClient;
 using System.Net.Sockets;
 using System.Net;
 using System;
+using System.Threading;
 
 namespace Server
 {
@@ -11,6 +12,7 @@ namespace Server
     {
         Login,          // Sự kiện đăng nhập
         Message,        // Sự kiện tin nhắn
+        MessageResponse,// Sự kiện phản hồi tin nhắn
         Order,          // Sự kiện đơn đặt hàng
         LoginResponse,  // Sự kiện phản hồi đăng nhập
         PasswordChange, // Sự kiện đổi password từ Client
@@ -21,6 +23,7 @@ namespace Server
     public class SocketServer
     {
         private TcpListener listener;
+        private SemaphoreSlim semaphore;
 
         public SocketServer()
         {
@@ -42,18 +45,37 @@ namespace Server
             listener.Start();
             Console.WriteLine("Đang lắng nghe kết nối đến...");
 
+            // Số lượng luồng tối đa
+            int maxThreads = 10;
+            // Khởi tạo Semaphore với số lượng luồng tối đa
+            semaphore = new SemaphoreSlim(maxThreads, maxThreads);
+
             while (true)
             {
                 TcpClient client = listener.AcceptTcpClient();
                 Console.WriteLine("Máy con đã kết nối!");
 
-                ClientHandler clientHandler = new ClientHandler(client);
-                clientHandler.DataReceived += HandleDataReceived;
+                // Sử dụng Semaphore để kiểm soát số lượng luồng
+                semaphore.Wait();
 
-                clientHandler.Start();
+                // Tạo một luồng mới để xử lý kết nối từ máy khách
+                Thread clientThread = new Thread(() => HandleClient(client));
+                clientThread.Start();
             }
+
         }
 
+        private void HandleClient(TcpClient client)
+        {
+            // Tạo một đối tượng ClientHandler cho máy khách
+            ClientHandler clientHandler = new ClientHandler(client);
+            clientHandler.DataReceived += HandleDataReceived;
+
+            clientHandler.Start();
+
+            // Giải phóng Semaphore sau khi hoàn thành xử lý
+            semaphore.Release();
+        }
 
         private void HandleDataReceived(ClientHandler clientHandler, string jsonData)
         {
@@ -119,10 +141,25 @@ namespace Server
 
         private void HandleMessageRequest(ClientHandler clientHandler, EventData eventData)
         {
-            if (eventData.Data.TryGetValue("Message", out object messageObj))
+            Console.WriteLine("Running");
+
+            if (eventData.Data.TryGetValue("Message", out object messageObj) && eventData.Data.TryGetValue("Username", out object usernameObj))
             {
+                Console.WriteLine("Running HandleMessageRequest");
                 string message = messageObj?.ToString();
-                // Xử lý tin nhắn
+                string username = usernameObj?.ToString();
+
+                // Xử lý tin nhắn từ client
+                Console.WriteLine("Nhận được tin nhắn từ client: " + message);
+                AdminContact_Server from = new AdminContact_Server(username, message);
+                from.ShowDialog();
+
+                // Gửi phản hồi cho client
+                EventData responseEventData = new EventData { Type = EventType.MessageResponse };
+                responseEventData.Data["Response"] = "Success";
+                string responseJsonData = JsonConvert.SerializeObject(responseEventData);
+                clientHandler.SendResponse(responseJsonData);
+
             }
         }
 
