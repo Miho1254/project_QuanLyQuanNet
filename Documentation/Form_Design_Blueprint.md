@@ -361,13 +361,13 @@ Form bao gồm các phần tử sau:
     }
 ```
 
-## Form Liên hệ Người dùng (Server)
+## Form Popup tin nhắn từ người dùng (Server)
 
 ### Đặc điểm
 
 - Tên Form: `AdminContact_Server`
-- Kích thước Form: `730 x 614`
-- Tiêu đề Form: `Liên hệ Người dùng`
+- Kích thước Form: `quên bà nó rồi`
+- Tiêu đề Form: `AdminContact_Server`
 - Icon: Để đại 
 - Không cho người dùng kéo, co giãn
 - Cho phép người dùng di chuyển vị trí
@@ -376,43 +376,12 @@ Form bao gồm các phần tử sau:
 
 Form bao gồm các phần tử sau:
 1. `tbx_Main_Conversation` = Multi Line kéo dài đến gần hết form 
-4. `tbx_User_Message` = Text box để người dùng ghi dữ liệu
-5. `btn_Send` = Button để gửi văn bản trong `tbx_User_Message`
 
 ### Các hành động
-- Khi người dùng nhấn vào nút Gửi thì sẽ chạy script để gửi tin nhắn đến máy chủ và hiện tin nhắn lên `tbx_Main_Conversation`.
+- Không có  
 
 ### Code mẫu
 ```csharp
-        public partial class AdminContact_Server : Form
-    {
-        private TcpListener server;
-        private TcpClient client;
-        private NetworkStream stream;
-        private byte[] buffer = new byte[1024];
-
-        public AdminContact_Server()
-        {
-            InitializeComponent();
-        }
-
-        private void btn_Send_Click(object sender, EventArgs e)
-        {
-            // Gửi tin nhắn đến người dùng
-            string message = tbx_User_Message.Text;
-            SendMessage(message);
-
-            // Hiển thị tin nhắn trong khung conversation
-
-            // Xóa nội dung trong textbox
-            tbx_User_Message.Clear();
-        }
-
-        private void SendMessage(string message)
-        {
-            // TODO: Gửi tin nhắn đến người dùng
-        }
-    }
 ```
 
 ## Form Đặt đồ ăn (Client)
@@ -454,4 +423,27 @@ Form bao gồm các phần tử sau:
 
     // Hiển thị thông báo thành công
     MessageBox.Show("Món đã được đặt thành công!");
+```
+
+## Form Popup đồ ăn (Server)
+
+### Đặc điểm
+
+- Tên Form: `Food_Order_Server`
+- Kích thước Form: `nhỏ 1 tí`
+- Tiêu đề Form: `AdminContact_Server`
+- Icon: Để đại 
+- Không cho người dùng kéo, co giãn
+- Cho phép người dùng di chuyển vị trí
+
+### Các phần tử giao diện
+
+Form bao gồm các phần tử sau:
+làm sao để hiển thị đc món người dùng đặt là được
+
+### Các hành động
+- Không có  
+
+### Code mẫu
+```csharp
 ```
