@@ -81,6 +81,12 @@
       <DependentUpon>CSDL_Server_QuanNetDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="EventData.cs" />
+    <Compile Include="Food_Order_Server.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Food_Order_Server.Designer.cs">
+      <DependentUpon>Food_Order_Server.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -92,6 +98,9 @@
     <Compile Include="Socket.cs" />
     <EmbeddedResource Include="AdminContact_Server.resx">
       <DependentUpon>AdminContact_Server.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Food_Order_Server.resx">
+      <DependentUpon>Food_Order_Server.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>

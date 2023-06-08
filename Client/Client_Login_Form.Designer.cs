@@ -39,20 +39,18 @@
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(1224, 554);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.Size = new System.Drawing.Size(918, 450);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // btn_Exit_Demo
             // 
-            this.btn_Exit_Demo.Location = new System.Drawing.Point(1144, 0);
-            this.btn_Exit_Demo.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_Exit_Demo.Location = new System.Drawing.Point(858, 0);
             this.btn_Exit_Demo.Name = "btn_Exit_Demo";
-            this.btn_Exit_Demo.Size = new System.Drawing.Size(80, 28);
+            this.btn_Exit_Demo.Size = new System.Drawing.Size(60, 23);
             this.btn_Exit_Demo.TabIndex = 1;
             this.btn_Exit_Demo.Text = "thoát";
             this.btn_Exit_Demo.UseVisualStyleBackColor = true;
@@ -60,19 +58,19 @@
             // 
             // Client_Login_Form
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1224, 554);
+            this.ClientSize = new System.Drawing.Size(918, 450);
             this.ControlBox = false;
             this.Controls.Add(this.btn_Exit_Demo);
             this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Client_Login_Form";
             this.Text = "dangNhap";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
