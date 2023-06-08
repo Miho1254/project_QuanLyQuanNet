@@ -47,7 +47,7 @@ namespace Client
         private void btn_DatDoAn_Click(object sender, EventArgs e)
         {
             //Mở form mới để đặt đồ ăn
-            Food_Order form = new Food_Order();
+            Food_Order form = new Food_Order(SessionUserName);
             //Hiển thị form đặt đồ ăn
             form.ShowDialog();
         }

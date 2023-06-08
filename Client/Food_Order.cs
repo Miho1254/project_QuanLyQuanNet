@@ -8,6 +8,7 @@ using System.Net.Sockets;
 using System.Text;
 using System.Windows.Forms;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using Server;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
@@ -15,9 +16,11 @@ namespace Client
 {
     public partial class Food_Order : Form
     {
+        private string sessionUsername;
 
-        public Food_Order()
+        public Food_Order(string username)
         {
+            sessionUsername = username;
             InitializeComponent();
             InitializeDataGridView();
         }
@@ -38,59 +41,103 @@ namespace Client
 
             // Enable auto-sizing of columns
             datagrid_Food.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+
+            //Fetch dữ liệu từ server
+            FoodDataRequest();
         }
 
         private void Food_Order_Load(object sender, EventArgs e)
         {
+
         }
 
-        private bool OrderFood(string username, string order)
+        private bool FoodDataRequest()
         {
-
             using (TcpClient client = new TcpClient())
             {
                 try
                 {
-                    client.Connect(ConfigurationManager.AppSettings["DatabaseServerIP"], Convert.ToInt32(ConfigurationManager.AppSettings["DatabaseServerPort"]));
+                    client.Connect(ConfigurationManager.AppSettings["ServerIP"], Convert.ToInt32(ConfigurationManager.AppSettings["ServerPort"]));
                 }
                 catch (Exception)
                 {
-                    MessageBox.Show("Lỗi kết nối đến server cơ sở dữ liệu!");
+                    MessageBox.Show("Lỗi kết nối đến server!");
                     return false;
                 }
 
                 Console.WriteLine("Kết nối thành công tới máy trạm!");
 
-                // Tạo sự kiện order
-                EventData eventData = new EventData { Type = EventType.Order };
-                eventData.Data["Username"] = username;
-                eventData.Data["Order"] = order;
+                EventData eventData = new EventData { Type = EventType.Food_Get_Request };
+                eventData.Data["Username"] = sessionUsername;
 
-                // Chuyển đổi thành chuỗi JSON
+                // Mã hoá thành dạng Json
                 string jsonData = JsonConvert.SerializeObject(eventData);
 
-                //Gửi order lên máy chủ
+                // Gửi yêu cầu đến server
                 byte[] data = Encoding.ASCII.GetBytes(jsonData);
                 NetworkStream stream = client.GetStream();
                 stream.Write(data, 0, data.Length);
 
-                // Đọc phản hồi từ máy chủ
+                // Đọc phản hồi từ server
                 byte[] buffer = new byte[1024];
                 int bytesRead = stream.Read(buffer, 0, buffer.Length);
-                string responseJsonData = Encoding.ASCII.GetString(buffer, 0, bytesRead);
+                string responseJsonData = Encoding.Default.GetString(buffer, 0, bytesRead);
+                Console.Write(responseJsonData);
 
-                // Chuyển đổi phản hồi thành sự kiện
-                EventData responseEventData = JsonConvert.DeserializeObject<EventData>(responseJsonData);
-                bool isAuthenticated = (bool)responseEventData.Data["IsAuthenticated"];
+                // Chuyển chuỗi JSON thành đối tượng EventData
+                EventData responseData;
+                try
+                {
+                    responseData = JsonConvert.DeserializeObject<EventData>(responseJsonData, new JsonSerializerSettings
+                    {
+                        CheckAdditionalContent = true
+                    });
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Lỗi chuyển đổi dữ liệu từ JSON: " + ex.Message);
+                    return false; // Hoặc xử lý lỗi theo logic của bạn
+                }
+
+                // Kiểm tra loại sự kiện phản hồi từ server
+                if (responseData.Type == EventType.Food_GetResponse)
+                {
+                    // Lấy danh sách đồ ăn từ dữ liệu phản hồi
+                    if (responseData.Data.TryGetValue("FoodData", out object foodDataObj) && foodDataObj is JArray foodArrayJson)
+                    {
+                        List<Food> foodArray = new List<Food>();
+                        foreach (JToken foodJson in foodArrayJson)
+                        {
+                            Food food = foodJson.ToObject<Food>();
+                            foodArray.Add(food);
+                        }
+
+                        // Xóa dữ liệu cũ trong DataGridView
+                        datagrid_Food.Rows.Clear();
+
+                        // Thêm dữ liệu mới từ danh sách đồ ăn vào DataGridView
+                        foreach (Food food in foodArray)
+                        {
+                            datagrid_Food.Rows.Add(food.Id, food.Name, food.Price, food.Note);
+                        }
+                    }
+                    else
+                    {
+                        Console.WriteLine("Lỗi khi lấy dữ liệu đồ ăn từ phản hồi!");
+                        return false; // Hoặc xử lý lỗi theo logic của bạn
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("Phản hồi từ server không đúng loại sự kiện!");
+                    return false; // Hoặc xử lý lỗi theo logic của bạn
+                }
 
                 client.Close();
 
-                return isAuthenticated;
-
-
+                return true; // Hoặc giá trị phù hợp tùy vào logic của bạn
             }
         }
-
 
         private void btn_send_Click(object sender, EventArgs e)
         {
@@ -110,30 +157,7 @@ namespace Client
             string foodPrice = selectedRow.Cells["Price"].Value.ToString();
             string foodNote = selectedRow.Cells["Note"].Value.ToString();
             // Khởi tạo danh sách foodItems
-         //   List<FoodItem> foodItems = new List<FoodItem>();
-
-            // Lấy dữ liệu từ cơ sở dữ liệu hoặc nguồn dữ liệu khác
-            // và thêm vào danh sách foodItems
-
-            // Hiển thị dữ liệu lên DataGridView
-          /*  foreach (var foodItem in foodItems)
-            {
-                DataGridViewRow row = new DataGridViewRow();
-                row.CreateCells(datagrid_Food);
-                row.Cells[0].Value = foodItem.ID;
-                row.Cells[1].Value = foodItem.Name;
-                row.Cells[2].Value = foodItem.Price;
-                row.Cells[3].Value = foodItem.Note;
-                datagrid_Food.Rows.Add(row);
-            }
-
-            */
-            // Hiển thị thông báo thành công
-            MessageBox.Show("Món đã được đặt thành công!");
-            Close();
         }
-
-
     }
 }
 

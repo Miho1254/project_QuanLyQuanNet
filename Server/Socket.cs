@@ -5,6 +5,10 @@ using System.Net.Sockets;
 using System.Net;
 using System;
 using System.Threading;
+using System.Collections.Generic;
+using System.Linq;
+using Newtonsoft.Json.Linq;
+using System.Text;
 
 namespace Server
 {
@@ -17,6 +21,8 @@ namespace Server
         LoginResponse,  // Sự kiện phản hồi đăng nhập
         PasswordChange, // Sự kiện đổi password từ Client
         PasswordChangeResponse, // Sự kiện phản hồi đổi mật khẩu
+        Food_Get_Request, // Sự kiện lấy dữ liệu đồ ăn
+        Food_GetResponse, // Sự kiện trả dữ liệu đồ ăn
         // Thêm các loại sự kiện khác nếu cần
     }
 
@@ -93,9 +99,11 @@ namespace Server
                     case EventType.Message:
                         HandleMessageRequest(clientHandler, eventData);
                         break;
-
                     case EventType.Order:
                         HandleOrderRequest(clientHandler, eventData);
+                        break;
+                    case EventType.Food_Get_Request:
+                        HandleFoodRequest(clientHandler, eventData);
                         break;
                     case EventType.PasswordChange:
                         HandlePasswordChangeRequest(clientHandler, eventData);
@@ -110,9 +118,30 @@ namespace Server
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Lỗi xử lý dữ liệu từ máy con: " + ex.Message);
+                Console.WriteLine(ex);
                 // Xử lý ngoại lệ và ghi log lỗi nếu cần
             }
+        }
+
+        private void HandleFoodRequest(ClientHandler clientHandler, EventData eventData)
+        {
+            // Gọi phương thức GetFoodData để lấy danh sách IFood từ cơ sở dữ liệu
+            List<IFood> foodData = GetFoodData();
+
+            // Chuyển đổi danh sách IFood thành mảng IFood[]
+            IFood[] foodArray = foodData.ToArray();
+
+            // Tạo đối tượng EventData để chứa dữ liệu phản hồi
+            EventData responseEventData = new EventData { Type = EventType.Food_GetResponse };
+            responseEventData.Data["FoodData"] = foodArray;
+
+            // Nén thành JSON và chuyển về client
+            string responseJsonData = JsonConvert.SerializeObject(responseEventData, Formatting.None, new JsonSerializerSettings
+            {
+                StringEscapeHandling = StringEscapeHandling.Default,
+            });
+            responseJsonData = Encoding.UTF8.GetString(Encoding.Default.GetBytes(responseJsonData));
+            clientHandler.SendResponse(responseJsonData);
         }
 
         private void HandleLoginRequest(ClientHandler clientHandler, EventData eventData)
@@ -249,6 +278,38 @@ namespace Server
             }
         }
 
+        public List<IFood> GetFoodData()
+        {
+            List<IFood> foodData = new List<IFood>();
+            string connectionString = ConfigurationManager.ConnectionStrings["Server.Properties.Settings.CSDL_Server_QuanNetConnectionString"].ConnectionString;
+
+            // Kết nối và truy vấn SQL Server để lấy dữ liệu đồ ăn
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+
+                using (SqlCommand command = new SqlCommand("SELECT * FROM ThucAn", connection))
+                {
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            // Đọc dữ liệu từ SqlDataReader và thêm vào danh sách foodData
+                            string id = reader.GetString(0);
+                            string name = reader.GetString(1);
+                            string note = reader.IsDBNull(3) ? null : reader.GetString(3);
+                            double? price = reader.IsDBNull(4) ? null : (double?)reader.GetDouble(4);
+
+                            Food food = new Food(id, name, (double)price, note);
+                            foodData.Add(food);
+                        }
+                    }
+                }
+            }
+
+            return foodData;
+        }
+
         static string GetLocalIPAddress()
         {
             // Lấy tất cả các địa chỉ IP của máy tính
@@ -264,6 +325,48 @@ namespace Server
             }
 
             throw new Exception("Không tìm thấy địa chỉ IP LAN trên máy tính.");
+        }
+    }
+
+    public interface IFood
+    {
+        string Id { get; }
+        string Name { get; }
+        double Price { get; }
+        string Note { get; }
+    }
+
+    public class Food : IFood
+    {
+        public string Id { get; set; }
+        public string Name { get; set; }
+        public double Price { get; set; }
+        public string Note { get; set; }
+
+        public Food(string id, string name, double price, string note)
+        {
+            Id = id;
+            Name = name;
+            Price = price;
+            Note = note;
+        }
+    }
+
+    public class Food_Data_Request
+    {
+        public IFood[] FoodDataRequest(string jsonData)
+        {
+            try
+            {
+                var jArray = JArray.Parse(jsonData);
+                var foodArray = jArray.Select(item => item.ToObject<Food>() as IFood).ToArray();
+                return foodArray;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Lỗi chuyển đổi dữ liệu từ JSON: " + ex.Message);
+                return null; // Or handle the error according to your logic
+            }
         }
     }
 }
