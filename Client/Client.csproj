@@ -100,6 +100,12 @@
     <Compile Include="Client_Login_Form.Designer.cs">
       <DependentUpon>Client_Login_Form.cs</DependentUpon>
     </Compile>
+    <Compile Include="Food_Order.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Food_Order.Designer.cs">
+      <DependentUpon>Food_Order.cs</DependentUpon>
+    </Compile>
     <Compile Include="LoginBox.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -122,6 +128,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Client_Login_Form.resx">
       <DependentUpon>Client_Login_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Food_Order.resx">
+      <DependentUpon>Food_Order.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginBox.resx">
       <DependentUpon>LoginBox.cs</DependentUpon>
@@ -193,6 +202,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\z4410122769542_e928356a59bf8e85729f7cf4c1994293.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\337201839_748223423418798_8953680672966568511_n.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
