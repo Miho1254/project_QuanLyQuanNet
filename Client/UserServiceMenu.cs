@@ -46,7 +46,10 @@ namespace Client
 
         private void btn_DatDoAn_Click(object sender, EventArgs e)
         {
-           //Tạm thời chưa code, đợi form Đặt Đồ Ăn
+            //Mở form mới để đặt đồ ăn
+            Food_Order form = new Food_Order();
+            //Hiển thị form đặt đồ ăn
+            form.ShowDialog();
         }
 
         private void btn_DoiMatKhau_Click(object sender, EventArgs e)
