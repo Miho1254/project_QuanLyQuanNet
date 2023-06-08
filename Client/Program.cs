@@ -17,7 +17,7 @@ namespace Client
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Food_Order_Server());
+            Application.Run(new Client_Login_Form());
 
         }
     }

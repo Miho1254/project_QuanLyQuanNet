@@ -297,7 +297,7 @@ namespace Server
                             // Đọc dữ liệu từ SqlDataReader và thêm vào danh sách foodData
                             string id = reader.GetString(0);
                             string name = reader.GetString(1);
-                            string note = reader.IsDBNull(3) ? null : reader.GetString(3);
+                            string note = reader.IsDBNull(2) ? null : reader.GetString(2);
                             double? price = reader.IsDBNull(4) ? null : (double?)reader.GetDouble(4);
 
                             Food food = new Food(id, name, (double)price, note);
