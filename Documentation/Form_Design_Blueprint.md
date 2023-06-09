@@ -447,3 +447,53 @@ làm sao để hiển thị đc món người dùng đặt là được
 ### Code mẫu
 ```csharp
 ```
+
+## Form Login (Server)
+
+### Đặc điểm 
+- Tên Form: `Admin_Login`
+- Kích thước Form: `To`
+- Tiêu đề Form: `Admin_Login`
+- Icon: Để đại 
+- Không cho người dùng kéo, co giãn
+- Cho phép người dùng di chuyển vị trí
+- Bớt wibu lại tí.
+
+### Các phần tử giao diện
+
+Phần tử giống với Form đăng nhập bên user
+
+### Các hành động
+- Khi người dùng đăng nhập thì xử lý SQL kiểm tra nếu tài khoản đúng thì cho vào và mở form quản lý
+- Nếu người dùng sai pass thì hiện popup báo lỗi lên
+- Nếu người dùng nhập tk là "admin" và pass là "admin" thì cho vào.
+
+### Code mẫu
+```csharp
+public Admin_Login()
+        {
+            InitializeComponent();
+        }
+
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+            string username = txtUsername.Text;
+            string password = txtPassword.Text;
+            
+            //Xử lý CSDL bên SQL
+            //Xác thực tài khoản
+            // Kiểm tra tài khoản và mật khẩu
+            if ()
+            {
+                // Đăng nhập thành công, mở Form quản lý
+                QuanLyForm quanLyForm = new QuanLyForm();
+                quanLyForm.Show();
+                this.Hide();
+            }
+            else
+            {
+                // Hiển thị thông báo lỗi
+                MessageBox.Show("Tài khoản hoặc mật khẩu không đúng!", "Lỗi đăng nhập", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+```
