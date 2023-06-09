@@ -42,6 +42,9 @@ namespace Client
             // Enable auto-sizing of columns
             datagrid_Food.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
 
+            // Khi người dùng ấn vào 1 ô thì tự động select toàn bộ hàng thay vì chỉ 1 ô
+            datagrid_Food.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+
             //Fetch dữ liệu từ server
             FoodDataRequest();
         }
@@ -148,7 +151,7 @@ namespace Client
                 return;
             }
 
-            // Lấy hàng được chọn
+            // Lấy hàng được chọn đầu tiên
             DataGridViewRow selectedRow = datagrid_Food.SelectedRows[0];
 
             // Trích xuất dữ liệu từ hàng được chọn
@@ -156,7 +159,56 @@ namespace Client
             string foodName = selectedRow.Cells["Name"].Value.ToString();
             string foodPrice = selectedRow.Cells["Price"].Value.ToString();
             string foodNote = selectedRow.Cells["Note"].Value.ToString();
-            // Khởi tạo danh sách foodItems
+
+            bool isSuccess = OrderFood(foodId);
+
+            if (isSuccess)
+            {
+                MessageBox.Show("Đặt món thành công!", "Thông báo", MessageBoxButtons.OK);
+            }
+            else
+            {
+                MessageBox.Show("Có lỗi xảy ra trong quá trình truyền dữ liệu tới máy chủ!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private bool OrderFood(string foodID)
+        {
+            using (TcpClient client = new TcpClient())
+            {
+                try
+                {
+                    client.Connect(ConfigurationManager.AppSettings["ServerIP"], Convert.ToInt32(ConfigurationManager.AppSettings["ServerPort"]));
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Lỗi kết nối đến server!");
+                    return false;
+                }
+
+                Console.WriteLine("Kết nối thành công tới máy trạm!");
+
+                EventData eventData = new EventData { Type = EventType.Order };
+                eventData.Data["ID"] = foodID;
+                eventData.Data["Username"] = sessionUsername;
+
+                string jsonData = JsonConvert.SerializeObject(eventData);
+
+                byte[] data = Encoding.ASCII.GetBytes(jsonData);
+                NetworkStream stream = client.GetStream();
+                stream.Write(data, 0, data.Length);
+
+                byte[] buffer = new byte[1024];
+                int bytesRead = stream.Read(buffer, 0, buffer.Length);
+                string responseJsonData = Encoding.ASCII.GetString(buffer, 0, bytesRead);
+
+                EventData responseEventData = JsonConvert.DeserializeObject<EventData>(responseJsonData);
+                bool isSuccess = (bool)responseEventData.Data["IsSuccess"];
+
+                client.Close();
+
+                return isSuccess;
+            }
         }
     }
 }
