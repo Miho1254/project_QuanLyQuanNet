@@ -23,7 +23,7 @@ namespace Server
         {
             this.Visible = true;
 
-            //Khởi tạo máy chủ SQL LocalDB
+            // Khởi tạo máy chủ SQL LocalDB
             string connectionString = ConfigurationManager.ConnectionStrings["Server.Properties.Settings.CSDL_Server_QuanNetConnectionString"].ConnectionString;
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
@@ -37,14 +37,16 @@ namespace Server
                 }
             }
 
-            //Khi bạn đặt mã xử lý socket trong sự kiện Form1_Load, nó sẽ chạy trên luồng chính (UI thread) của ứng dụng.
-            //Do đó, việc lắng nghe liên tục từ socket sẽ gây ra trạng thái loading và làm đóng băng giao diện người dùng.
-            //Sử dụng Task để lắng nghe từ socket trong một luồng riêng tránh việc đóng băng giao diện.
+            // Sử dụng Task để lắng nghe từ socket trong một luồng riêng tránh việc đóng băng giao diện.
             await Task.Run(() =>
             {
                 SocketServer socket = new SocketServer();
                 socket.Start(ConfigurationManager.AppSettings["ServerIP"], Convert.ToInt32(ConfigurationManager.AppSettings["ServerPort"]), false);
             });
+
+          
         }
+
+
     }
 }
