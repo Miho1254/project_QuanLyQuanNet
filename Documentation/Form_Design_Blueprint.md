@@ -497,3 +497,80 @@ public Admin_Login()
             }
         }
 ```
+
+## Form Dashboard (Server)
+
+### Đặc điểm 
+- Tên Form: `Dashboard`
+- Kích thước Form: `1208 x 913`
+- Tiêu đề Form: `Admin_Login`
+- Icon: Để đại 
+- Không cho người dùng kéo, co giãn
+- Cho phép người dùng di chuyển vị trí
+- Bớt wibu lại tí.
+
+### Các phần tử giao diện
+
+- 1 Button tele đến form tạo tài khoản người dùng
+- 1 Datagridview trỏ về table KhachHang
+- 1 Button dùng để tele đến form add số dư vào tài khoản người dùng
+- 1 Button tele đến form của Quản lý
+
+### Các hành động
+- Khi người dùng ấn vào button tạo tài khoản người dùng thì tele đến form tạo tài khoản người dùng
+- Khi người dùng ấn vào button tạo add số dư vào tài khoản người dùng thì hiển thị form add số dư
+- Khi người dùng ấn vào button truy cập form quản lý thì kiểm tra dữ liệu người dùng trong mục nhân sự, nếu có chucvu là QUANLY thì mở form, còn không thì báo lỗi không đủ quyền hạn.
+
+### Code mẫu
+```csharp
+```
+
+## Form tạo tài khoản người dùng (Server)
+
+### Đặc điểm 
+- Tên Form: `CreateUserAccount`
+- Kích thước Form: `nhỏ`
+- Tiêu đề Form: `CreateUserAccount`
+- Icon: Để đại 
+- Không cho người dùng kéo, co giãn
+- Cho phép người dùng di chuyển vị trí
+- Bớt wibu lại tí.
+
+### Các phần tử giao diện
+
+- 1 tbx_Username
+- 1 lbl_Username
+- 1 tbx_Password
+- 1 lbl_Password
+- 1 tbx_SoDu (số dư khởi tạo tài khoản)
+- 1 lbl_SoDu
+- 1 btn_Tao = tạo tài khoản
+### Các hành động
+- Khi người dùng ấn vào button tạo tài khoản thì insert dữ liệu vào sql (Kiểm tra nếu đã tồn tại username trùng thì báo lỗi) và set tbx_Username và tbx_Password và tbx_SoDu thành ""
+### Code mẫu
+```csharp
+```
+
+## Form thêm số dư (Server)
+
+### Đặc điểm 
+- Tên Form: `AddUserBalance`
+- Kích thước Form: `nhỏ`
+- Tiêu đề Form: `AddUserBalance`
+- Icon: Để đại 
+- Không cho người dùng kéo, co giãn
+- Cho phép người dùng di chuyển vị trí
+- Bớt wibu lại tí.
+
+### Các phần tử giao diện
+
+- 1 tbx_Username
+- 1 lbl_Username
+- 1 tbx_SoDu (số dư cần add)
+- 1 lbl_SoDu
+- 1 btn_Add = thêm số dư
+### Các hành động
+- Khi người dùng ấn vào button tạo tài khoản thì insert dữ liệu vào sql (Nếu không tồn tại username đó thì báo lỗi) và set tbx_Username tbx_SoDu thành ""
+### Code mẫu
+```csharp
+```
