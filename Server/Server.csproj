@@ -76,6 +76,12 @@
     <Compile Include="AdminContact_Server.Designer.cs">
       <DependentUpon>AdminContact_Server.cs</DependentUpon>
     </Compile>
+    <Compile Include="Admin_Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin_Login.Designer.cs">
+      <DependentUpon>Admin_Login.cs</DependentUpon>
+    </Compile>
     <Compile Include="ClientHandler.cs" />
     <Compile Include="CSDL_Server_QuanNetDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -101,6 +107,9 @@
     <EmbeddedResource Include="AdminContact_Server.resx">
       <DependentUpon>AdminContact_Server.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Admin_Login.resx">
+      <DependentUpon>Admin_Login.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Food_Order_Server.resx">
       <DependentUpon>Food_Order_Server.cs</DependentUpon>
     </EmbeddedResource>
@@ -115,6 +124,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="CSDL_Server_QuanNetDataSet.xsc">
       <DependentUpon>CSDL_Server_QuanNetDataSet.xsd</DependentUpon>
@@ -149,6 +159,8 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>CSDL_Server_QuanNet.mdf</DependentUpon>
     </Content>
+    <None Include="Resources\313010374_1062211354473854_7487182558124643172_n.jpg" />
+    <None Include="Resources\genshin-impact-canh-cua-o-man-hinh-dang-nhap-that-su-co-trong-game-222340.jpg" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.8">
