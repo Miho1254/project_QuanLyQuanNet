@@ -574,3 +574,190 @@ public Admin_Login()
 ### Code mẫu
 ```csharp
 ```
+
+## Form Dashboard của quản lý (Server)
+
+### Đặc điểm 
+- Tên Form: `Admin_Dashboard`
+- Kích thước Form: `To`
+- Tiêu đề Form: `AdminDashboard`
+- Icon: Để đại 
+- Không cho người dùng kéo, co giãn
+- Cho phép người dùng di chuyển vị trí
+- Bớt wibu lại tí.
+
+### Các phần tử giao diện
+
+- 1 `btn_quanlyDoan` = tele dến form quản lý đồ ăn
+- 1 `btn_NhanSu` = tele đến form quản lý nhân sự
+- 1 `btn_QuanLyMayTram` = tele dến form quản lý máy trạm
+- 1 `btn_QuanLyHoaDon` = tele dến form quản lý hoá đơn
+- Còn lại tự design cho đẹp mắt hơn
+
+### Các hành động
+- Khi người dùng ấn vào button thì tele đến các phần cần đến
+### Code mẫu
+```csharp
+```
+
+## Form Quản lý đồ ăn (Server)
+
+### Đặc điểm 
+- Tên Form: `FoodManage`
+- Kích thước Form: `To`
+- Tiêu đề Form: `FoodManage`
+- Icon: Để đại 
+- Không cho người dùng kéo, co giãn
+- Cho phép người dùng di chuyển vị trí
+- Bớt wibu lại tí.
+
+### Các phần tử giao diện
+
+- 1 `datagridview_DoAn` = trỏ về table `DoAn`
+- 1 cái `gbx_TaoDoAn` = group box chứa phần tạo đồ ăn
+    - 1 `tbx_TenDoAn` = text box tên đồ ăn
+    - 1 `tbx_GiaTien` = text box giá tiền đồ ăn
+    - 1 `tbx_MoTa` = text box mô tả
+    - 1 `btn_TaoDoAn` = btn tạo đồ ăn
+    - !!! add mấy cái label trùng khớp với textbox nhé
+- 1 `btn_XoaDoAn`
+- Còn lại tự design cho đẹp mắt hơn
+### Các hành động
+- Khi người dùng ấn vào btn_TaoDoAn thì lấy dữ liệu phần `gbx_TaoDoAn` xong rồi tạo truy vấn trong CSDL tạo đồ ăn mới xong rồi refresh lại `datagridview_DoAn`
+- khi người dùng bấm vào btn_XoaDoAn thì lấy hàng được chọn (nếu k có thì sủa lỗi) lấy id của món được chọn sau đó truy vấn tới CSDL và xoá nó đi sau đó refresh datagridview
+### Code mẫu
+```csharp
+```
+
+## Form Quản lý nhân sự (Server)
+
+### Đặc điểm 
+- Tên Form: `EmployeeManage`
+- Kích thước Form: `To`
+- Tiêu đề Form: `EmployeeManage`
+- Icon: Để đại 
+- Không cho người dùng kéo, co giãn
+- Cho phép người dùng di chuyển vị trí
+- Bớt wibu lại tí.
+
+### Các phần tử giao diện
+
+- 1 `datagridview_NhanSu` = trỏ về table `NhanVien`
+- 1 cái `gbx_TaoNhanVien` = group box chứa phần tạo nhân viên
+    - 1 `tbx_TenNhanVien` = text box tên nhân viên
+    - 1 `cbx_ChucVu` = combo box chức vụ của nhân viên
+    - 1 `tbx_SDT` = text box sdt nhân viên
+    - 1 `btn_TaoNhanVien` = btn tạo nhân viên
+    - !!! add mấy cái label trùng khớp với textbox và combobox nhé
+
+- 1 `btn_XoaNhanVien` = xoá nhân viên
+- Còn lại tự design cho đẹp mắt hơn
+### Các hành động
+- Khi khởi tạo form thì add vào cbx_ChucVu 2 chức vụ là `Quản lý` và `Thu ngân` với định danh (id) trong combo box lần lượt là `QUANLY` và `THUNGAN` (Xử lý thì xử lý theo ID nhé)
+- Khi người dùng ấn vào btn_TaoNhanVien thì lấy dữ liệu phần `gbx_TaoDoAn` xong rồi tạo truy vấn trong CSDL tạo đồ ăn mới xong rồi refresh lại `datagridview_NhanSu`
+- khi người dùng bấm vào btn_XoaNhanVien thì lấy hàng được chọn (nếu k có thì sủa lỗi) lấy id của nhân viên được chọn sau đó truy vấn tới CSDL và xoá nó đi sau đó refresh datagridview.
+
+### Code mẫu
+```csharp
+```
+
+## Form Quản lý Hoá đơn (Server)
+
+### Đặc điểm 
+- Tên Form: `InvoiceManage`
+- Kích thước Form: `To`
+- Tiêu đề Form: `InvoiceManage`
+- Icon: Để đại 
+- Không cho người dùng kéo, co giãn
+- Cho phép người dùng di chuyển vị trí
+- Bớt wibu lại tí.
+
+### Các phần tử giao diện
+
+- 1 `datagridview_` = trỏ về table `HoaDon`
+- 1 cái `gbx_TaoHoaDon` = group box chứa phần tạo hoá đơn
+    - 1 `tbx_MaDonHang` = text box chứa mã đơn hàng
+    - 1 `btn_XuatHoaDon` = btn xuât hoá đơn
+    - !!! add mấy cái label trùng khớp với textbox và combobox nhé
+
+- 1 `btn_XoaHoaDon` = xoá nhân viên
+- 1 `btn_XuatRaExcel` = xuất datagridview ra excel
+- Còn lại tự design cho đẹp mắt hơn
+### Các hành động
+- Khi người dùng ấn vào btn_XuatHoaDon thì lấy dữ liệu phần `tbx_MaDonHang` xong rồi truy xuất dữ liệu đơn hàng đó từ dữ liệu được cho trong table `DonHang` sau đó lấy dữ liệu và tạo truy vấn trong CSDL tạo hoá đơn mới dựa với `MaHoaDon` trùng với `MaDonHang` xong rồi refresh lại `datagridview_HoaDon`
+- khi người dùng bấm vào btn_XoaHoaDon thì lấy hàng được chọn (nếu k có thì sủa lỗi) lấy id của hoá đơn được chọn sau đó truy vấn tới CSDL và xoá nó đi sau đó refresh datagridview.
+- Khi người dùng `btn_XuatRaExcel` thì xuất dữ liệu ra file excel (Tự xử, t chịu).
+### Code mẫu
+```csharp
+using OfficeOpenXml;
+using System;
+using System.IO;
+using System.Windows.Forms;
+
+// Hàm này sẽ xuất dữ liệu từ DataGridView ra file Excel
+private void ExportToExcel(DataGridView dataGridView, string filePath)
+{
+    using (ExcelPackage excelPackage = new ExcelPackage())
+    {
+        ExcelWorksheet worksheet = excelPackage.Workbook.Worksheets.Add("Sheet1");
+
+        // Xuất tiêu đề cột
+        for (int i = 0; i < dataGridView.Columns.Count; i++)
+        {
+            worksheet.Cells[1, i + 1].Value = dataGridView.Columns[i].HeaderText;
+        }
+
+        // Xuất dữ liệu từ DataGridView
+        for (int i = 0; i < dataGridView.Rows.Count; i++)
+        {
+            for (int j = 0; j < dataGridView.Columns.Count; j++)
+            {
+                worksheet.Cells[i + 2, j + 1].Value = dataGridView.Rows[i].Cells[j].Value;
+            }
+        }
+
+        // Lưu file Excel
+        FileInfo excelFile = new FileInfo(filePath);
+        excelPackage.SaveAs(excelFile);
+    }
+}
+
+// Sử dụng hàm ExportToExcel để xuất dữ liệu từ DataGridView ra file Excel
+string currentDirectory = Environment.CurrentDirectory;
+string folderPath = Path.Combine(currentDirectory, "Spreadsheet", "excel");
+string fileName = "your_file_name.xlsx";
+string filePath = Path.Combine(folderPath, fileName);
+ExportToExcel(dataGridView1, filePath);
+```
+
+## Form Quản lý máy trạm (Server)
+
+### Đặc điểm 
+- Tên Form: `ComputerManage`
+- Kích thước Form: `To`
+- Tiêu đề Form: `ComputerManage`
+- Icon: Để đại 
+- Không cho người dùng kéo, co giãn
+- Cho phép người dùng di chuyển vị trí
+- Bớt wibu lại tí.
+
+### Các phần tử giao diện
+
+- 1 `datagridview_MayTinh` = trỏ về table `MayTinh`
+- 1 cái `gbx_TaoMayTinh` = group box chứa phần tạo nhân viên
+    - 1 `tbx_TenMayTinh` = tên máy tính
+    - 1 `tbx_IDMayTinh` = ID của máy tính (Note kế bên chỉ nhập số ko được nhập chữ)
+    - 1 `tbx_IPMayTinh` = IP của máy tính
+    - 1 `btn_TaoMayTinh` = btn tạo máy tính
+    - !!! add mấy cái label trùng khớp với textbox và combobox nhé
+
+- 1 `btn_XoaMayTinh` = xoá máy tính
+- Còn lại tự design cho đẹp mắt hơn
+### Các hành động
+- Khi người dùng ấn vào btn_TaoMayTinh thì lấy dữ liệu phần `gbx_TaoMayTinh` xong rồi tạo truy vấn trong CSDL tạo máy tính mới xong rồi refresh lại `datagridview_MayTinh`
+!! MaMayTinh = "MAY" + `ID của máy tính người dùng nhập`
+- khi người dùng bấm vào btn_XoaMayTinh thì lấy hàng được chọn (nếu k có thì sủa lỗi) lấy id của máy tính được chọn sau đó truy vấn tới CSDL và xoá nó đi sau đó refresh datagridview.
+
+### Code mẫu
+```csharp
+```
