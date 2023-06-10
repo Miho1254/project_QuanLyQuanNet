@@ -25,16 +25,10 @@ namespace Server
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            // Hiển thị form Form1
-            Form1 form1 = new Form1();
-            form1.Show();
-
-            // Hiển thị form Admin_Login
-            Admin_Login adminLogin = new Admin_Login();
-            adminLogin.Show();
+           
 
             // Chạy vòng lặp sự kiện của ứng dụng
-            Application.Run();
+            Application.Run (new InvoiceManage());
         }
 
         private static bool IsSqlServerRunning()

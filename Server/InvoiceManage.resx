@@ -117,53 +117,18 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="com021" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\com021.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="-fjmibk" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\-fjmibk.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="313010374_1062211354473854_7487182558124643172_n" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\313010374_1062211354473854_7487182558124643172_n.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="bill_24px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\bill_24px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="337201839_748223423418798_8953680672966568511_n" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\337201839_748223423418798_8953680672966568511_n.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="client_management_30px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\client_management_30px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="352590728_1223468551689604_4797835504672273575_n" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\352590728_1223468551689604_4797835504672273575_n.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="314113258_541558984088172_5320101684036621960_n" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\314113258_541558984088172_5320101684036621960_n.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="menu_100px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\menu_100px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="341776263_3598836657069651_6217564453930767167_n" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\341776263_3598836657069651_6217564453930767167_n.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="restaurant_menu_filled_50px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\restaurant_menu_filled_50px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="2b10789b016bc8955471e6f1875b91bc44bde609_s2_n3_y1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\2b10789b016bc8955471e6f1875b91bc44bde609_s2_n3_y1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="genshin-impact-canh-cua-o-man-hinh-dang-nhap-that-su-co-trong-game-222340" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\genshin-impact-canh-cua-o-man-hinh-dang-nhap-that-su-co-trong-game-222340.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="employee_card_filled_50px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\employee_card_filled_50px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="com02" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\com02.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="search_property_26px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\search_property_26px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="tbx_MaDonHang.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAVIAAAAiCAYAAAANgFGaAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGwSURBVHhe7d2xihNBHMDhLa+8R7jS0iex9hFsfBbBZ/AV
+        bG+zm92Y/opLlSBEZF2CRMgtMYR1xgwcUQ4jc+X3wb/IzqT9McwWWwDwzMqyfN227e10Ou0nk8lojDFm
+        MsYmhjZ+Co18k3L5t7B4HTfd3d1t+74fh2EYATiJTdxsNuNisdg1TXMfmnmT8vkoRrTruvQXAJ6y3W7H
+        0MzPIaZXKaFFUdf121DZH2kPAP+wXC6HENP3KaOn02g8sgJwmd1uF+9Nv6SMFkVVVQ+HwyEtA3CJ+BIq
+        ZbQo4g8A/o+QAmQSUoBMQgqQSUgBMgkpQCYhBcgkpACZhBQgk5ACZBJSgExCCpBJSAEyCSlAJiEFyCSk
+        AJmEFCCTkAJkElKATEIKkOkspFVVHY7HY1oC4BJnIW2a5j5+8B6Ay+z3+7Gu623K6O+QvlutVr7HDHCh
+        ruvGtm0/powWRVmWVyGmX4dhSFsAeEq8Cp3NZt9DO29SRk/Cg5ehrt/W6/XPw8HhFOBPMaB934/z+XwT
+        Dp+vUj7PhZheh5h+qKrqIV6iGmOMeZz4Yj408ja08kXKJgD5iuIXsA758gnj4tgAAAAASUVORK5CYII=
+</value>
   </data>
 </root>

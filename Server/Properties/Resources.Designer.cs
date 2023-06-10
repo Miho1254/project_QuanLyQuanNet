@@ -63,6 +63,16 @@ namespace Server.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _2b10789b016bc8955471e6f1875b91bc44bde609_s2_n3_y1 {
+            get {
+                object obj = ResourceManager.GetObject("2b10789b016bc8955471e6f1875b91bc44bde609_s2_n3_y1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _313010374_1062211354473854_7487182558124643172_n {
             get {
                 object obj = ResourceManager.GetObject("313010374_1062211354473854_7487182558124643172_n", resourceCulture);
@@ -73,9 +83,139 @@ namespace Server.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _314113258_541558984088172_5320101684036621960_n {
+            get {
+                object obj = ResourceManager.GetObject("314113258_541558984088172_5320101684036621960_n", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _337201839_748223423418798_8953680672966568511_n {
+            get {
+                object obj = ResourceManager.GetObject("337201839_748223423418798_8953680672966568511_n", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _341776263_3598836657069651_6217564453930767167_n {
+            get {
+                object obj = ResourceManager.GetObject("341776263_3598836657069651_6217564453930767167_n", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _352590728_1223468551689604_4797835504672273575_n {
+            get {
+                object obj = ResourceManager.GetObject("352590728_1223468551689604_4797835504672273575_n", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _fjmibk {
+            get {
+                object obj = ResourceManager.GetObject("-fjmibk", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap bill_24px {
+            get {
+                object obj = ResourceManager.GetObject("bill_24px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap client_management_30px {
+            get {
+                object obj = ResourceManager.GetObject("client_management_30px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap com02 {
+            get {
+                object obj = ResourceManager.GetObject("com02", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap com021 {
+            get {
+                object obj = ResourceManager.GetObject("com021", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap employee_card_filled_50px {
+            get {
+                object obj = ResourceManager.GetObject("employee_card_filled_50px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap genshin_impact_canh_cua_o_man_hinh_dang_nhap_that_su_co_trong_game_222340 {
             get {
                 object obj = ResourceManager.GetObject("genshin-impact-canh-cua-o-man-hinh-dang-nhap-that-su-co-trong-game-222340", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap menu_100px {
+            get {
+                object obj = ResourceManager.GetObject("menu_100px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap restaurant_menu_filled_50px {
+            get {
+                object obj = ResourceManager.GetObject("restaurant_menu_filled_50px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap search_property_26px {
+            get {
+                object obj = ResourceManager.GetObject("search_property_26px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -69,6 +69,11 @@ namespace Server
             LoadKhachHangData();
         }
 
-       
+        private void btn_quanly_Click(object sender, EventArgs e)
+        {
+            
+            Admin_Dashboard adminDashboard = new Admin_Dashboard();
+            adminDashboard.Show();
+        }
     }
 }
