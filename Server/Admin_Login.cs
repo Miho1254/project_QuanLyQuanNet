@@ -33,6 +33,9 @@ namespace Server
             {
                 // Đăng nhập thành công, hiển thị thông báo thành công
                 MessageBox.Show("Đăng nhập thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                // Chuyển sang form Dashboard
+                Dashboard dashboard = new Dashboard();
+                dashboard.Show();
             }
             else
             {
