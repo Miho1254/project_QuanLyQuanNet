@@ -645,6 +645,8 @@ public Admin_Login()
 - 1 `datagridview_NhanSu` = trỏ về table `NhanVien`
 - 1 cái `gbx_TaoNhanVien` = group box chứa phần tạo nhân viên
     - 1 `tbx_TenNhanVien` = text box tên nhân viên
+    - 1 `tbx_Username` = text box chứa username nhân viên
+    - 1 `tbx_Password` = text box chứa password nhân viên
     - 1 `cbx_ChucVu` = combo box chức vụ của nhân viên
     - 1 `tbx_SDT` = text box sdt nhân viên
     - 1 `btn_TaoNhanVien` = btn tạo nhân viên
