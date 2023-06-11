@@ -31,25 +31,21 @@ namespace Server
 
             if (isAuthenticated)
             {
-                // Đăng nhập thành công, hiển thị thông báo thành công
-                MessageBox.Show("Đăng nhập thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                // Đăng nhập thành công, lấy thông tin chức vụ
+                string role = GetAdminRole(username);
+
                 // Chuyển sang form Dashboard
-                this.Hide();
-                Dashboard dashboard = new Dashboard();
-                dashboard.FormClosed += (s, args) => this.Show();
-                dashboard.Show();
+                OpenDashboardForm(role);
             }
             else
             {
                 // Hiển thị thông báo lỗi
                 MessageBox.Show("Tài khoản hoặc mật khẩu không đúng!", "Lỗi đăng nhập", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            
+
         }
         private bool ValidateAdminLogin(string username, string password)
         {
-            string connectionString = ConfigurationManager.ConnectionStrings["Server.Properties.Settings.CSDL_Server_QuanNetConnectionString"].ConnectionString;
-
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 connection.Open();
@@ -68,5 +64,43 @@ namespace Server
                 return loginSuccessful;
             }
         }
+
+        private string GetAdminRole(string username)
+        {
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+                string query = "SELECT ChucVu FROM NhanVien WHERE Username = @Username";
+
+                SqlCommand command = new SqlCommand(query, connection);
+                command.Parameters.AddWithValue("@Username", username);
+
+                SqlDataReader reader = command.ExecuteReader();
+
+                string role = null;
+
+                if (reader.Read())
+                {
+                    role = reader["ChucVu"].ToString();
+                }
+
+                reader.Close();
+
+                return role;
+            }
+        }
+
+        private void OpenDashboardForm(string role)
+        {
+            // Đăng nhập thành công, hiển thị thông báo thành công
+            MessageBox.Show("Đăng nhập thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            // Chuyển sang form Dashboard và truyền chức vụ (role)
+            this.Hide();
+            Dashboard dashboard = new Dashboard(role);
+            dashboard.FormClosed += (s, args) => this.Show();
+            dashboard.Show();
+        }
     }
 }
+

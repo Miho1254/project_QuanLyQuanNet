@@ -15,24 +15,39 @@ namespace Server
     public partial class Dashboard : Form
     {
         string connectionString = ConfigurationManager.ConnectionStrings["Server.Properties.Settings.CSDL_Server_QuanNetConnectionString"].ConnectionString;
-
-        public Dashboard()
+        private string userRole; // Biến để lưu thông tin chức vụ của người dùng
+        public Dashboard(string role)
         {
             InitializeComponent();
+            userRole = role;
         }
 
         private void btn_taikhoan_Click(object sender, EventArgs e)
         {
-            // Mở form tạo tài khoản người dùng và truyền this (form Dashboard) vào constructor của form CreateUserAccount
-            CreateUserAccount createUserAccountForm = new CreateUserAccount(this);
-            createUserAccountForm.Show();
+            if (userRole == "THUNGAN")
+            {
+                // Mở form tạo tài khoản người dùng và truyền this (form Dashboard) vào constructor của form CreateUserAccount
+                CreateUserAccount createUserAccountForm = new CreateUserAccount(this);
+                createUserAccountForm.Show();
+            }
+            else
+            {
+                MessageBox.Show("Bạn không có quyền truy cập vào chức năng này!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
         private void btn_themgio_Click(object sender, EventArgs e)
         {
-            // Mở form thêm số dư vào tài khoản người dùng
-            AddUserBalance addUserBalanceForm = new AddUserBalance(this);
-            addUserBalanceForm.Show();
+            if (userRole == "THUNGAN")
+            {
+                // Mở form thêm số dư vào tài khoản người dùng
+                AddUserBalance addUserBalanceForm = new AddUserBalance(this);
+                addUserBalanceForm.Show();
+            }
+            else
+            {
+                MessageBox.Show("Bạn không có quyền truy cập vào chức năng này!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
         private void LoadKhachHangData()
@@ -71,9 +86,15 @@ namespace Server
 
         private void btn_quanly_Click(object sender, EventArgs e)
         {
-            
-            Admin_Dashboard adminDashboard = new Admin_Dashboard();
-            adminDashboard.Show();
+            if (userRole == "QUANLY")
+            {
+                Admin_Dashboard adminDashboard = new Admin_Dashboard();
+                adminDashboard.Show();
+            }
+            else
+            {
+                MessageBox.Show("Bạn không có quyền truy cập vào chức năng này!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
     }
 }
