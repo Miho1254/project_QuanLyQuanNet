@@ -67,12 +67,14 @@ namespace Server
             string tenNhanVien = tbx_TenNhanVien.Text;
             string chucVu = cbx_ChucVu.SelectedValue.ToString();
             string sdt = tbx_SDT.Text;
+            string username = tbx_Username.Text;
+            string password = tbx_Password.Text;
 
             // Tạo mã nhân viên ngẫu nhiên
             string maNhanVien = GenerateUniqueNumber();
 
             // Tạo truy vấn INSERT để tạo nhân viên mới trong CSDL
-            string insertQuery = $"INSERT INTO NhanVien (MaNhanVien, HoTen, SDT, ChucVu) VALUES ('{maNhanVien}', '{tenNhanVien}', '{sdt}', '{chucVu}')";
+            string insertQuery = $"INSERT INTO NhanVien (MaNhanVien, HoTen, SDT, ChucVu, Username, Password) VALUES ('{maNhanVien}', '{tenNhanVien}', '{sdt}', '{chucVu}', '{username}', '{password}')";
 
             // Thực hiện truy vấn INSERT vào CSDL
             try
