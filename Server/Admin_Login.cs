@@ -34,7 +34,9 @@ namespace Server
                 // Đăng nhập thành công, hiển thị thông báo thành công
                 MessageBox.Show("Đăng nhập thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 // Chuyển sang form Dashboard
+                this.Hide();
                 Dashboard dashboard = new Dashboard();
+                dashboard.FormClosed += (s, args) => this.Show();
                 dashboard.Show();
             }
             else
@@ -42,6 +44,7 @@ namespace Server
                 // Hiển thị thông báo lỗi
                 MessageBox.Show("Tài khoản hoặc mật khẩu không đúng!", "Lỗi đăng nhập", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            
         }
         private bool ValidateAdminLogin(string username, string password)
         {
