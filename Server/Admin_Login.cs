@@ -19,6 +19,8 @@ namespace Server
         public Admin_Login()
         {
             InitializeComponent();
+
+            this.AcceptButton = btn_Dangnhap;
         }
 
         private void btn_Dangnhap_Click(object sender, EventArgs e)
@@ -26,8 +28,8 @@ namespace Server
             string username = tbx_Username.Text;
             string password = tbx_Password.Text;
 
-            bool isAuthenticated = ValidateAdminLogin(username, password);
 
+            bool isAuthenticated = ValidateAdminLogin(username, password);
 
             if (isAuthenticated)
             {
@@ -55,11 +57,8 @@ namespace Server
                 command.Parameters.AddWithValue("@Username", username);
                 command.Parameters.AddWithValue("@Password", password);
 
-                SqlDataReader reader = command.ExecuteReader();
-
-                bool loginSuccessful = reader.HasRows;
-
-                reader.Close();
+                object result = command.ExecuteScalar();
+                bool loginSuccessful = (result != null);
 
                 return loginSuccessful;
             }
@@ -75,16 +74,7 @@ namespace Server
                 SqlCommand command = new SqlCommand(query, connection);
                 command.Parameters.AddWithValue("@Username", username);
 
-                SqlDataReader reader = command.ExecuteReader();
-
-                string role = null;
-
-                if (reader.Read())
-                {
-                    role = reader["ChucVu"].ToString();
-                }
-
-                reader.Close();
+                string role = command.ExecuteScalar()?.ToString();
 
                 return role;
             }
@@ -101,6 +91,9 @@ namespace Server
             dashboard.FormClosed += (s, args) => this.Show();
             dashboard.Show();
         }
+
+    
+
     }
 }
 

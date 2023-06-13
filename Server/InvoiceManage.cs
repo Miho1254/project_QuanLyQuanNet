@@ -1,15 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using OfficeOpenXml;
+
 
 namespace Server
 {
@@ -39,27 +35,27 @@ namespace Server
         }
         private void btn_XuatHoaDon_Click(object sender, EventArgs e)
         {
-            string maDonHang = tbx_MaDonHang.Text;
+            string maDonHang = tbx_MaDonHang.Text.Trim();
 
-            if (!string.IsNullOrEmpty(maDonHang))
+            if (string.IsNullOrEmpty(maDonHang))
             {
-                // Kiểm tra xem mã đơn hàng có tồn tại trong CSDL hay không
-                bool isValidDonHang = CheckDonHangExistence(maDonHang);
+                MessageBox.Show("Vui lòng nhập mã đơn hàng.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
 
-                if (isValidDonHang)
-                {
-                    CreateInvoiceFromDonHang(maDonHang);
-                }
-                else
-                {
-                    MessageBox.Show("Mã đơn hàng không hợp lệ!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }
+            if (CheckDonHangExistence(maDonHang))
+            {
+                CreateInvoiceFromDonHang(maDonHang);
+
+                // Refresh lại dữ liệu trong DataGridView
+                LoadInvoiceData();
             }
             else
             {
-                MessageBox.Show("Vui lòng nhập mã đơn hàng!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Đơn hàng không tồn tại.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
+
         private bool CheckDonHangExistence(string maDonHang)
         {
             using (SqlConnection connection = new SqlConnection(connectionString))
@@ -78,7 +74,6 @@ namespace Server
 
         private void CreateInvoiceFromDonHang(string maDonHang)
         {
-            // Lấy thông tin đơn hàng từ CSDL
             string selectQuery = "SELECT * FROM DonHang WHERE MaDonHang = @MaDonHang";
 
             using (SqlConnection connection = new SqlConnection(connectionString))
@@ -96,40 +91,64 @@ namespace Server
                     {
                         DataRow donHangRow = donHangTable.Rows[0];
                         string maHoaDon = maDonHang;
-                        string ngayTao = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
-                        string maKhachHang = donHangRow["MaKhachHang"].ToString();
-                        decimal tongTien = Convert.ToDecimal(donHangRow["TongTien"]);
+                        string maNhanVien = "your_maNhanVien_value"; // Thay thế "your_maNhanVien_value" bằng giá trị thích hợp
+                        string insertQuery = "INSERT INTO HoaDon (MaDonHang, MaNhanVien) " +
+                            "VALUES (@MaDonHang, @MaNhanVien)";
 
-                        // Tạo truy vấn INSERT để tạo hoá đơn mới trong CSDL
-                        string insertQuery = "INSERT INTO HoaDon (MaHoaDon, NgayTao, MaKhachHang, TongTien) " +
-                            "VALUES (@MaHoaDon, @NgayTao, @MaKhachHang, @TongTien)";
-
-                        // Thực hiện truy vấn INSERT vào CSDL
                         using (SqlCommand command = new SqlCommand(insertQuery, connection))
                         {
-                            command.Parameters.AddWithValue("@MaHoaDon", maHoaDon);
-                            command.Parameters.AddWithValue("@NgayTao", ngayTao);
-                            command.Parameters.AddWithValue("@MaKhachHang", maKhachHang);
-                            command.Parameters.AddWithValue("@TongTien", tongTien);
+                            command.Parameters.AddWithValue("@MaDonHang", maHoaDon);
+                            command.Parameters.AddWithValue("@MaNhanVien", maNhanVien);
 
                             command.ExecuteNonQuery();
-
-                            MessageBox.Show("Đã tạo hoá đơn mới thành công! Mã hoá đơn: " + maHoaDon, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                            LoadInvoiceData(); // Gọi hàm để tải lại dữ liệu hoá đơn
                         }
-                    }
-                    else
-                    {
-                        MessageBox.Show("Không tìm thấy đơn hàng có mã: " + maDonHang, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Đã xảy ra lỗi: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Lỗi: " + ex.Message, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
+
+        private void DeleteInvoice(int invoiceId)
+        {
+            string deleteQuery = "DELETE FROM HoaDon WHERE MaDonHang = @MaDonHang";
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                using (SqlCommand command = new SqlCommand(deleteQuery, connection))
+                {
+                    command.Parameters.AddWithValue("@MaDonHang", invoiceId);
+                    connection.Open();
+                    command.ExecuteNonQuery();
+                }
+            }
+
+            LoadInvoiceData();
+        }
+
+        private void LoadInvoiceData()
+        {
+            string selectQuery = "SELECT * FROM HoaDon";
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                SqlDataAdapter dataAdapter = new SqlDataAdapter(selectQuery, connection);
+                DataTable invoiceTable = new DataTable();
+
+                try
+                {
+                    connection.Open();
+                    dataAdapter.Fill(invoiceTable);
+                    datagridview_HoaDon.DataSource = invoiceTable;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Lỗi: " + ex.Message, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
 
         private void btn_XoaHoaDon_Click(object sender, EventArgs e)
         {
@@ -137,58 +156,83 @@ namespace Server
             if (datagridview_HoaDon.SelectedRows.Count > 0)
             {
                 // Lấy ID của hoá đơn được chọn từ cột "MaHoaDon" trên DataGridView
-                int selectedInvoiceId = Convert.ToInt32(datagridview_HoaDon.SelectedRows[0].Cells["MaHoaDon"].Value);
-                DeleteInvoice(selectedInvoiceId);
+                if (datagridview_HoaDon.SelectedRows[0].Cells["MaDonHang"].Value != null)
+                {
+                    string selectedInvoiceIdString = datagridview_HoaDon.SelectedRows[0].Cells["MaDonHang"].Value.ToString();
+
+                    if (int.TryParse(selectedInvoiceIdString, out int selectedInvoiceId))
+                    {
+                        DeleteInvoice(selectedInvoiceId);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Giá trị không hợp lệ.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Không có giá trị được chọn.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
             }
             else
             {
                 MessageBox.Show("Vui lòng chọn một hoá đơn để xoá.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
-        private void DeleteInvoice(int invoiceId)
-        {
-            // Tạo truy vấn DELETE để xoá hoá đơn khỏi CSDL
-            string deleteQuery = "DELETE FROM HoaDon WHERE MaHoaDon = @SelectedInvoiceId";
-
-            // Thực hiện truy vấn DELETE vào CSDL
-            try
-            {
-                using (SqlConnection connection = new SqlConnection(connectionString))
-                {
-                    connection.Open();
-                    SqlCommand command = new SqlCommand(deleteQuery, connection);
-                    command.Parameters.AddWithValue("@SelectedInvoiceId", invoiceId);
-                    command.ExecuteNonQuery();
-                    MessageBox.Show("Đã xoá hoá đơn thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-
-                LoadInvoiceData(); // Gọi hàm để tải lại dữ liệu hoá đơn
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Đã xảy ra lỗi: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
+ 
 
         private void btn_XuatRaExcel_Click(object sender, EventArgs e)
         {
-           
-        }
-  
-        private void LoadInvoiceData()
-        {
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            if (datagridview_HoaDon.Rows.Count > 0)
             {
-                connection.Open();
-                string query = "SELECT * FROM HoaDon";
+                SaveFileDialog saveFileDialog = new SaveFileDialog();
+                saveFileDialog.Filter = "Excel Files (*.xlsx)|*.xlsx";
+                saveFileDialog.DefaultExt = "xlsx";
+                saveFileDialog.AddExtension = true;
+                saveFileDialog.RestoreDirectory = true;
 
-                SqlDataAdapter dataAdapter = new SqlDataAdapter(query, connection);
-                DataTable invoiceTable = new DataTable();
+                if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    string filePath = saveFileDialog.FileName;
 
-                dataAdapter.Fill(invoiceTable);
-                datagridview_HoaDon.DataSource = invoiceTable;
+                    using (ExcelPackage excelPackage = new ExcelPackage())
+                    {
+                        ExcelWorksheet worksheet = excelPackage.Workbook.Worksheets.Add("HoaDon");
+                        int rowCount = datagridview_HoaDon.Rows.Count;
+                        int columnCount = datagridview_HoaDon.Columns.Count;
+
+                        // Đổ dữ liệu từ DataGridView vào Excel
+                        for (int row = 1; row <= rowCount; row++)
+                        {
+                            for (int column = 1; column <= columnCount; column++)
+                            {
+                                if (row == 1)
+                                {
+                                    worksheet.Cells[row, column].Value = datagridview_HoaDon.Columns[column - 1].HeaderText;
+                                }
+
+                                worksheet.Cells[row + 1, column].Value = datagridview_HoaDon.Rows[row - 1].Cells[column - 1].Value?.ToString();
+                            }
+                        }
+
+                        FileInfo excelFile = new FileInfo(filePath);
+                        excelPackage.SaveAs(excelFile);
+                    }
+
+                    MessageBox.Show("Xuất file Excel thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Không có dữ liệu để xuất.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
+    }
+
+      
 
     }
-}
+
+
+
+
