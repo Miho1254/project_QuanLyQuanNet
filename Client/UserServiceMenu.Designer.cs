@@ -49,11 +49,11 @@
             // lbl_NgonNgu
             // 
             this.lbl_NgonNgu.AutoSize = true;
-            this.lbl_NgonNgu.Font = new System.Drawing.Font("Century", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_NgonNgu.Font = new System.Drawing.Font("UTM Seagull", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_NgonNgu.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lbl_NgonNgu.Location = new System.Drawing.Point(2, 42);
+            this.lbl_NgonNgu.Location = new System.Drawing.Point(1, 37);
             this.lbl_NgonNgu.Name = "lbl_NgonNgu";
-            this.lbl_NgonNgu.Size = new System.Drawing.Size(68, 16);
+            this.lbl_NgonNgu.Size = new System.Drawing.Size(71, 18);
             this.lbl_NgonNgu.TabIndex = 0;
             this.lbl_NgonNgu.Text = "Ngôn Ngữ";
             // 
@@ -95,44 +95,44 @@
             // lbl_TongThanhToan
             // 
             this.lbl_TongThanhToan.AutoSize = true;
-            this.lbl_TongThanhToan.Font = new System.Drawing.Font("Century", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_TongThanhToan.Font = new System.Drawing.Font("UTM Seagull", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_TongThanhToan.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lbl_TongThanhToan.Location = new System.Drawing.Point(2, 85);
+            this.lbl_TongThanhToan.Location = new System.Drawing.Point(1, 83);
             this.lbl_TongThanhToan.Name = "lbl_TongThanhToan";
-            this.lbl_TongThanhToan.Size = new System.Drawing.Size(81, 14);
+            this.lbl_TongThanhToan.Size = new System.Drawing.Size(82, 12);
             this.lbl_TongThanhToan.TabIndex = 0;
             this.lbl_TongThanhToan.Text = "Tổng Thanh Toán";
             // 
             // lbl_TienConLai
             // 
             this.lbl_TienConLai.AutoSize = true;
-            this.lbl_TienConLai.Font = new System.Drawing.Font("Century", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_TienConLai.Font = new System.Drawing.Font("UTM Seagull", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_TienConLai.ForeColor = System.Drawing.SystemColors.ControlText;
             this.lbl_TienConLai.Location = new System.Drawing.Point(-2, 158);
             this.lbl_TienConLai.Name = "lbl_TienConLai";
-            this.lbl_TienConLai.Size = new System.Drawing.Size(88, 16);
+            this.lbl_TienConLai.Size = new System.Drawing.Size(84, 18);
             this.lbl_TienConLai.TabIndex = 0;
             this.lbl_TienConLai.Text = "Tiền Còn Lại";
             // 
             // lbl_ConLai
             // 
             this.lbl_ConLai.AutoSize = true;
-            this.lbl_ConLai.Font = new System.Drawing.Font("Century", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_ConLai.Font = new System.Drawing.Font("UTM Seagull", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_ConLai.ForeColor = System.Drawing.SystemColors.ControlText;
             this.lbl_ConLai.Location = new System.Drawing.Point(2, 123);
             this.lbl_ConLai.Name = "lbl_ConLai";
-            this.lbl_ConLai.Size = new System.Drawing.Size(81, 16);
+            this.lbl_ConLai.Size = new System.Drawing.Size(78, 18);
             this.lbl_ConLai.TabIndex = 0;
             this.lbl_ConLai.Text = "Giờ Còn Lại";
             // 
             // lbl_PhiDichVu
             // 
             this.lbl_PhiDichVu.AutoSize = true;
-            this.lbl_PhiDichVu.Font = new System.Drawing.Font("Century", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_PhiDichVu.Font = new System.Drawing.Font("UTM Seagull", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_PhiDichVu.ForeColor = System.Drawing.SystemColors.ControlText;
             this.lbl_PhiDichVu.Location = new System.Drawing.Point(-2, 201);
             this.lbl_PhiDichVu.Name = "lbl_PhiDichVu";
-            this.lbl_PhiDichVu.Size = new System.Drawing.Size(95, 15);
+            this.lbl_PhiDichVu.Size = new System.Drawing.Size(98, 16);
             this.lbl_PhiDichVu.TabIndex = 0;
             this.lbl_PhiDichVu.Text = "Phí dịch vụ(VNĐ)";
             // 
@@ -153,6 +153,7 @@
             this.btn_DangXuat.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.btn_DangXuat.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.btn_DangXuat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_DangXuat.Font = new System.Drawing.Font("UTM Seagull", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_DangXuat.ForeColor = System.Drawing.Color.Black;
             this.btn_DangXuat.Location = new System.Drawing.Point(5, 235);
             this.btn_DangXuat.Name = "btn_DangXuat";
@@ -170,6 +171,7 @@
             this.btn_DoiMatKhau.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.btn_DoiMatKhau.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.btn_DoiMatKhau.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_DoiMatKhau.Font = new System.Drawing.Font("UTM Seagull", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_DoiMatKhau.ForeColor = System.Drawing.Color.Black;
             this.btn_DoiMatKhau.Location = new System.Drawing.Point(5, 274);
             this.btn_DoiMatKhau.Name = "btn_DoiMatKhau";
@@ -187,6 +189,7 @@
             this.btn_DatDoAn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.btn_DatDoAn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.btn_DatDoAn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_DatDoAn.Font = new System.Drawing.Font("UTM Seagull", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_DatDoAn.ForeColor = System.Drawing.Color.Black;
             this.btn_DatDoAn.Location = new System.Drawing.Point(96, 235);
             this.btn_DatDoAn.Name = "btn_DatDoAn";
@@ -204,6 +207,7 @@
             this.btn_GiaoTiep.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.btn_GiaoTiep.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.btn_GiaoTiep.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_GiaoTiep.Font = new System.Drawing.Font("UTM Seagull", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_GiaoTiep.ForeColor = System.Drawing.Color.Black;
             this.btn_GiaoTiep.Location = new System.Drawing.Point(96, 274);
             this.btn_GiaoTiep.Name = "btn_GiaoTiep";

@@ -46,26 +46,23 @@
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.label1.Location = new System.Drawing.Point(307, 49);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Font = new System.Drawing.Font("UTM Silk Script", 48F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(334, 8);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(193, 52);
+            this.label1.Size = new System.Drawing.Size(271, 93);
             this.label1.TabIndex = 15;
             this.label1.Text = "Quản Lý";
             // 
             // panel1
             // 
             this.panel1.Controls.Add(this.btn_NhanSu);
-            this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.btn_quanlyDoan);
             this.panel1.Controls.Add(this.btn_QuanLyHoaDon);
             this.panel1.Controls.Add(this.btn_QuanLyMayTram);
-            this.panel1.Location = new System.Drawing.Point(173, 101);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Location = new System.Drawing.Point(180, 130);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(857, 449);
+            this.panel1.Size = new System.Drawing.Size(571, 298);
             this.panel1.TabIndex = 0;
             // 
             // btn_NhanSu
@@ -115,8 +112,7 @@
             this.btn_NhanSu.IdleIconLeftImage = global::Server.Properties.Resources.employee_card_filled_50px;
             this.btn_NhanSu.IdleIconRightImage = null;
             this.btn_NhanSu.IndicateFocus = false;
-            this.btn_NhanSu.Location = new System.Drawing.Point(105, 274);
-            this.btn_NhanSu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_NhanSu.Location = new System.Drawing.Point(60, 175);
             this.btn_NhanSu.Name = "btn_NhanSu";
             this.btn_NhanSu.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btn_NhanSu.OnDisabledState.BorderRadius = 1;
@@ -150,7 +146,7 @@
             this.btn_NhanSu.OnPressedState.ForeColor = System.Drawing.Color.Black;
             this.btn_NhanSu.OnPressedState.IconLeftImage = null;
             this.btn_NhanSu.OnPressedState.IconRightImage = null;
-            this.btn_NhanSu.Size = new System.Drawing.Size(252, 65);
+            this.btn_NhanSu.Size = new System.Drawing.Size(189, 53);
             this.btn_NhanSu.TabIndex = 17;
             this.btn_NhanSu.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btn_NhanSu.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
@@ -206,8 +202,7 @@
             this.btn_quanlyDoan.IdleIconLeftImage = global::Server.Properties.Resources.restaurant_menu_filled_50px;
             this.btn_quanlyDoan.IdleIconRightImage = null;
             this.btn_quanlyDoan.IndicateFocus = false;
-            this.btn_quanlyDoan.Location = new System.Drawing.Point(105, 149);
-            this.btn_quanlyDoan.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_quanlyDoan.Location = new System.Drawing.Point(60, 73);
             this.btn_quanlyDoan.Name = "btn_quanlyDoan";
             this.btn_quanlyDoan.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btn_quanlyDoan.OnDisabledState.BorderRadius = 1;
@@ -241,7 +236,7 @@
             this.btn_quanlyDoan.OnPressedState.ForeColor = System.Drawing.Color.Black;
             this.btn_quanlyDoan.OnPressedState.IconLeftImage = null;
             this.btn_quanlyDoan.OnPressedState.IconRightImage = null;
-            this.btn_quanlyDoan.Size = new System.Drawing.Size(252, 65);
+            this.btn_quanlyDoan.Size = new System.Drawing.Size(189, 53);
             this.btn_quanlyDoan.TabIndex = 17;
             this.btn_quanlyDoan.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btn_quanlyDoan.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
@@ -297,8 +292,7 @@
             this.btn_QuanLyHoaDon.IdleIconLeftImage = global::Server.Properties.Resources.bill_24px;
             this.btn_QuanLyHoaDon.IdleIconRightImage = null;
             this.btn_QuanLyHoaDon.IndicateFocus = false;
-            this.btn_QuanLyHoaDon.Location = new System.Drawing.Point(477, 263);
-            this.btn_QuanLyHoaDon.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_QuanLyHoaDon.Location = new System.Drawing.Point(339, 175);
             this.btn_QuanLyHoaDon.Name = "btn_QuanLyHoaDon";
             this.btn_QuanLyHoaDon.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btn_QuanLyHoaDon.OnDisabledState.BorderRadius = 1;
@@ -332,7 +326,7 @@
             this.btn_QuanLyHoaDon.OnPressedState.ForeColor = System.Drawing.Color.Black;
             this.btn_QuanLyHoaDon.OnPressedState.IconLeftImage = null;
             this.btn_QuanLyHoaDon.OnPressedState.IconRightImage = null;
-            this.btn_QuanLyHoaDon.Size = new System.Drawing.Size(252, 57);
+            this.btn_QuanLyHoaDon.Size = new System.Drawing.Size(189, 46);
             this.btn_QuanLyHoaDon.TabIndex = 17;
             this.btn_QuanLyHoaDon.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btn_QuanLyHoaDon.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
@@ -388,8 +382,7 @@
             this.btn_QuanLyMayTram.IdleIconLeftImage = global::Server.Properties.Resources.client_management_30px;
             this.btn_QuanLyMayTram.IdleIconRightImage = null;
             this.btn_QuanLyMayTram.IndicateFocus = false;
-            this.btn_QuanLyMayTram.Location = new System.Drawing.Point(477, 149);
-            this.btn_QuanLyMayTram.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_QuanLyMayTram.Location = new System.Drawing.Point(339, 73);
             this.btn_QuanLyMayTram.Name = "btn_QuanLyMayTram";
             this.btn_QuanLyMayTram.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btn_QuanLyMayTram.OnDisabledState.BorderRadius = 1;
@@ -423,7 +416,7 @@
             this.btn_QuanLyMayTram.OnPressedState.ForeColor = System.Drawing.Color.Black;
             this.btn_QuanLyMayTram.OnPressedState.IconLeftImage = null;
             this.btn_QuanLyMayTram.OnPressedState.IconRightImage = null;
-            this.btn_QuanLyMayTram.Size = new System.Drawing.Size(252, 62);
+            this.btn_QuanLyMayTram.Size = new System.Drawing.Size(189, 50);
             this.btn_QuanLyMayTram.TabIndex = 17;
             this.btn_QuanLyMayTram.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btn_QuanLyMayTram.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
@@ -434,19 +427,19 @@
             // 
             // Admin_Dashboard
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(1243, 622);
+            this.ClientSize = new System.Drawing.Size(932, 505);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Admin_Dashboard";
             this.Text = "AdminDashboard";
             this.Load += new System.EventHandler(this.Admin_Dashboard_Load);
             this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 

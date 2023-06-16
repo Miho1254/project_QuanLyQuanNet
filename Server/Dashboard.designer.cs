@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Dashboard));
             this.btn_DoiMatKhau = new System.Windows.Forms.Button();
             this.btn_taikhoan = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -71,14 +72,14 @@
             // 
             // btn_taikhoan
             // 
-            this.btn_taikhoan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btn_taikhoan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.btn_taikhoan.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btn_taikhoan.FlatAppearance.BorderColor = System.Drawing.Color.Fuchsia;
+            this.btn_taikhoan.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btn_taikhoan.FlatAppearance.BorderSize = 0;
-            this.btn_taikhoan.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Fuchsia;
-            this.btn_taikhoan.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Fuchsia;
+            this.btn_taikhoan.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btn_taikhoan.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btn_taikhoan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_taikhoan.Font = new System.Drawing.Font("Century", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_taikhoan.Font = new System.Drawing.Font("UTM Alpine KT", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_taikhoan.ForeColor = System.Drawing.Color.Black;
             this.btn_taikhoan.Location = new System.Drawing.Point(0, 0);
             this.btn_taikhoan.Name = "btn_taikhoan";
@@ -110,9 +111,10 @@
             // 
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.BackColor = System.Drawing.Color.Transparent;
             this.panel1.Controls.Add(this.btn_taikhoan);
             this.panel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel1.Location = new System.Drawing.Point(2, 269);
+            this.panel1.Location = new System.Drawing.Point(2, 304);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(195, 42);
             this.panel1.TabIndex = 7;
@@ -137,29 +139,30 @@
             // 
             this.panel4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel4.BackColor = System.Drawing.Color.Transparent;
             this.panel4.Controls.Add(this.btn_themgio);
             this.panel4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel4.Location = new System.Drawing.Point(2, 352);
+            this.panel4.Location = new System.Drawing.Point(2, 402);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(200, 42);
             this.panel4.TabIndex = 7;
             // 
             // btn_themgio
             // 
-            this.btn_themgio.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btn_themgio.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.btn_themgio.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btn_themgio.FlatAppearance.BorderColor = System.Drawing.Color.Fuchsia;
+            this.btn_themgio.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btn_themgio.FlatAppearance.BorderSize = 0;
-            this.btn_themgio.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Fuchsia;
-            this.btn_themgio.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Fuchsia;
+            this.btn_themgio.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btn_themgio.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btn_themgio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_themgio.Font = new System.Drawing.Font("Century", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_themgio.Font = new System.Drawing.Font("UTM Alpine KT", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_themgio.ForeColor = System.Drawing.Color.Black;
             this.btn_themgio.Location = new System.Drawing.Point(0, 0);
             this.btn_themgio.Name = "btn_themgio";
             this.btn_themgio.Size = new System.Drawing.Size(200, 42);
             this.btn_themgio.TabIndex = 6;
-            this.btn_themgio.Text = "Thêm Số Giờ Chơi";
+            this.btn_themgio.Text = "Thêm Giờ ";
             this.btn_themgio.UseVisualStyleBackColor = false;
             this.btn_themgio.Click += new System.EventHandler(this.btn_themgio_Click);
             // 
@@ -167,27 +170,28 @@
             // 
             this.panel5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel5.BackColor = System.Drawing.Color.Transparent;
             this.panel5.Controls.Add(this.btn_quanly);
             this.panel5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel5.Location = new System.Drawing.Point(2, 183);
+            this.panel5.Location = new System.Drawing.Point(2, 196);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(195, 42);
+            this.panel5.Size = new System.Drawing.Size(195, 48);
             this.panel5.TabIndex = 7;
             // 
             // btn_quanly
             // 
-            this.btn_quanly.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btn_quanly.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.btn_quanly.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btn_quanly.FlatAppearance.BorderColor = System.Drawing.Color.Fuchsia;
+            this.btn_quanly.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btn_quanly.FlatAppearance.BorderSize = 0;
-            this.btn_quanly.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Fuchsia;
-            this.btn_quanly.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Fuchsia;
+            this.btn_quanly.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btn_quanly.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btn_quanly.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_quanly.Font = new System.Drawing.Font("Century", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_quanly.Font = new System.Drawing.Font("UTM Alpine KT", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_quanly.ForeColor = System.Drawing.Color.Black;
             this.btn_quanly.Location = new System.Drawing.Point(0, 0);
             this.btn_quanly.Name = "btn_quanly";
-            this.btn_quanly.Size = new System.Drawing.Size(195, 42);
+            this.btn_quanly.Size = new System.Drawing.Size(195, 48);
             this.btn_quanly.TabIndex = 6;
             this.btn_quanly.Text = "Quản lý";
             this.btn_quanly.UseVisualStyleBackColor = false;
@@ -208,28 +212,31 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(231, 9);
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("UTM Silk Script", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(208, 8);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(131, 44);
+            this.label1.Size = new System.Drawing.Size(622, 69);
             this.label1.TabIndex = 13;
-            this.label1.Text = "label1";
+            this.label1.Text = "Thứ 7 Và Chủ Nhật Giảm 10%";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Century", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(438, 78);
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("UTM Silk Script", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(551, 77);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(131, 44);
+            this.label2.Size = new System.Drawing.Size(465, 58);
             this.label2.TabIndex = 13;
-            this.label2.Text = "label1";
+            this.label2.Text = "Thời Gian Làm Việc 24/24";
             // 
             // pictureBox1
             // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(-3, 0);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(205, 147);
+            this.pictureBox1.Size = new System.Drawing.Size(200, 147);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBox1.TabIndex = 10;
             this.pictureBox1.TabStop = false;
@@ -239,6 +246,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.BackgroundImage = global::Server.Properties.Resources._316269264_698285628621511_4320454741386307944_n2;
             this.ClientSize = new System.Drawing.Size(1028, 609);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);

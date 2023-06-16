@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Configuration;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Server
 {
@@ -92,8 +93,15 @@ namespace Server
             dashboard.Show();
         }
 
-    
+        private void tbx_Username_TextChanged(object sender, EventArgs e)
+        {
+           
+        }
 
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+            
+        }
     }
 }
 

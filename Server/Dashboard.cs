@@ -24,7 +24,7 @@ namespace Server
 
         private void btn_taikhoan_Click(object sender, EventArgs e)
         {
-            if (userRole == "THUNGAN")
+            if (userRole == "THUNGAN" || userRole == "QUANLY")
             {
                 // Mở form tạo tài khoản người dùng và truyền this (form Dashboard) vào constructor của form CreateUserAccount
                 CreateUserAccount createUserAccountForm = new CreateUserAccount(this);
@@ -38,7 +38,7 @@ namespace Server
 
         private void btn_themgio_Click(object sender, EventArgs e)
         {
-            if (userRole == "THUNGAN")
+            if (userRole == "THUNGAN" || userRole == "QUANLY")
             {
                 // Mở form thêm số dư vào tài khoản người dùng
                 AddUserBalance addUserBalanceForm = new AddUserBalance(this);
