@@ -131,5 +131,31 @@ namespace Server
             }
         }
 
+        private void btn_Timmaytinh_Click(object sender, EventArgs e)
+        {
+            string keyword = tbx_TimMayTinh.Text;
+
+            // Tạo truy vấn SELECT để tìm kiếm máy tính dựa trên tên máy hoặc ID máy
+            string selectQuery = "SELECT MaMayTinh, IP FROM MayTinh " +
+                                 "WHERE MaMayTinh LIKE @Keyword OR IP LIKE @Keyword";
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                try
+                {
+                    connection.Open();
+                    SqlDataAdapter dataAdapter = new SqlDataAdapter(selectQuery, connection);
+                    dataAdapter.SelectCommand.Parameters.AddWithValue("@Keyword", "%" + keyword + "%");
+                    DataTable dataTable = new DataTable();
+                    dataAdapter.Fill(dataTable);
+
+                    datagridview_MayTinh.DataSource = dataTable;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Đã xảy ra lỗi: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
     }
 }

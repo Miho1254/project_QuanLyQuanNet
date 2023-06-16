@@ -26,39 +26,7 @@ namespace Server
 
         }
 
-        private void btn_Add_Click(object sender, EventArgs e)
-        {
-            string username = tbx_Username.Text;
-            string soDuText = tbx_SoDu.Text;
-
-            // Kiểm tra xem tên người dùng đã tồn tại hay chưa
-            if (!IsUsernameExists(username))
-            {
-                MessageBox.Show("Tên người dùng không tồn tại!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-
-            // Kiểm tra giá trị số dư hợp lệ
-            if (!int.TryParse(soDuText, out int soDu))
-            {
-                MessageBox.Show("Số dư không hợp lệ!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-
-            float gioChoi = soDu / 10000.0f; // Chuyển đổi số dư thành giờ chơi
-
-            // Thêm số dư vào tài khoản người dùng
-            if (AddBalanceToUserAccount(username, gioChoi))
-            {
-                MessageBox.Show("Thêm số dư thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                tbx_SoDu.Text = ""; // Đặt lại giá trị của số dư thành rỗng
-                dashboardForm.UpdateDataGridViewKhachHang(); // Cập nhật DataGridView thông qua phương thức trong form Dashboard
-            }
-            else
-            {
-                MessageBox.Show("Thêm số dư thất bại!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
+        
 
         private bool IsUsernameExists(string username)
         {
@@ -108,9 +76,39 @@ namespace Server
             }
         }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
+      
+        private void btn_Add_Click(object sender, EventArgs e)
         {
-          
+            string username = tbx_Username.Text;
+            string soDuText = tbx_SoDu.Text;
+
+            // Kiểm tra xem tên người dùng đã tồn tại hay chưa
+            if (!IsUsernameExists(username))
+            {
+                MessageBox.Show("Tên người dùng không tồn tại!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            // Kiểm tra giá trị số dư hợp lệ
+            if (!int.TryParse(soDuText, out int soDu))
+            {
+                MessageBox.Show("Số dư không hợp lệ!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            float gioChoi = soDu / 10000.0f; // Chuyển đổi số dư thành giờ chơi
+
+            // Thêm số dư vào tài khoản người dùng
+            if (AddBalanceToUserAccount(username, gioChoi))
+            {
+                MessageBox.Show("Thêm số dư thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                tbx_SoDu.Text = ""; // Đặt lại giá trị của số dư thành rỗng
+                dashboardForm.UpdateDataGridViewKhachHang(); // Cập nhật DataGridView thông qua phương thức trong form Dashboard
+            }
+            else
+            {
+                MessageBox.Show("Thêm số dư thất bại!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

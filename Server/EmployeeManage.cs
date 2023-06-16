@@ -172,5 +172,32 @@ namespace Server
             }
 
         }
+
+        private void btn_TimNhanVien_Click(object sender, EventArgs e)
+        {
+            string keyword = tbx_TimNhanVien.Text;
+
+            // Tạo truy vấn SELECT để tìm kiếm nhân viên dựa trên tên nhân viên, chức vụ, hoặc SDT
+            string selectQuery = "SELECT * FROM NhanVien " +
+                                 "WHERE MaNhanVien LIKE @Keyword OR HoTen LIKE @Keyword OR ChucVu LIKE @Keyword OR SDT LIKE @Keyword";
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                try
+                {
+                    connection.Open();
+                    SqlDataAdapter dataAdapter = new SqlDataAdapter(selectQuery, connection);
+                    dataAdapter.SelectCommand.Parameters.AddWithValue("@Keyword", "%" + keyword + "%");
+                    DataTable dataTable = new DataTable();
+                    dataAdapter.Fill(dataTable);
+
+                    dataGridView_NhanVien.DataSource = dataTable;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Đã xảy ra lỗi: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
     }
 }

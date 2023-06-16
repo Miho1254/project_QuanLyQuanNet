@@ -35,82 +35,31 @@ namespace Server
         }
         private void btn_XuatHoaDon_Click(object sender, EventArgs e)
         {
-            string maDonHang = tbx_MaDonHang.Text.Trim();
+            string keyword = tbx_MaDonHang.Text;
 
-            if (string.IsNullOrEmpty(maDonHang))
-            {
-                MessageBox.Show("Vui lòng nhập mã đơn hàng.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-
-            if (CheckDonHangExistence(maDonHang))
-            {
-                CreateInvoiceFromDonHang(maDonHang);
-
-                // Refresh lại dữ liệu trong DataGridView
-                LoadInvoiceData();
-            }
-            else
-            {
-                MessageBox.Show("Đơn hàng không tồn tại.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-        }
-
-        private bool CheckDonHangExistence(string maDonHang)
-        {
-            using (SqlConnection connection = new SqlConnection(connectionString))
-            {
-                connection.Open();
-                string query = "SELECT COUNT(*) FROM DonHang WHERE MaDonHang = @MaDonHang";
-
-                SqlCommand command = new SqlCommand(query, connection);
-                command.Parameters.AddWithValue("@MaDonHang", maDonHang);
-
-                int count = Convert.ToInt32(command.ExecuteScalar());
-
-                return count > 0;
-            }
-        }
-
-        private void CreateInvoiceFromDonHang(string maDonHang)
-        {
-            string selectQuery = "SELECT * FROM DonHang WHERE MaDonHang = @MaDonHang";
+            // Tạo truy vấn SELECT để tìm kiếm hóa đơn dựa trên mã đơn hàng
+            string selectQuery = "SELECT * FROM HoaDon WHERE MaDonHang LIKE @Keyword OR MaNhanVien LIKE @Keyword";
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                SqlDataAdapter dataAdapter = new SqlDataAdapter(selectQuery, connection);
-                dataAdapter.SelectCommand.Parameters.AddWithValue("@MaDonHang", maDonHang);
-                DataTable donHangTable = new DataTable();
-
                 try
                 {
                     connection.Open();
-                    dataAdapter.Fill(donHangTable);
+                    SqlDataAdapter dataAdapter = new SqlDataAdapter(selectQuery, connection);
+                    dataAdapter.SelectCommand.Parameters.AddWithValue("@Keyword", "%" + keyword + "%");
+                    DataTable dataTable = new DataTable();
+                    dataAdapter.Fill(dataTable);
 
-                    if (donHangTable.Rows.Count > 0)
-                    {
-                        DataRow donHangRow = donHangTable.Rows[0];
-                        string maHoaDon = maDonHang;
-                        string maNhanVien = "your_maNhanVien_value"; // Thay thế "your_maNhanVien_value" bằng giá trị thích hợp
-                        string insertQuery = "INSERT INTO HoaDon (MaDonHang, MaNhanVien) " +
-                            "VALUES (@MaDonHang, @MaNhanVien)";
-
-                        using (SqlCommand command = new SqlCommand(insertQuery, connection))
-                        {
-                            command.Parameters.AddWithValue("@MaDonHang", maHoaDon);
-                            command.Parameters.AddWithValue("@MaNhanVien", maNhanVien);
-
-                            command.ExecuteNonQuery();
-                        }
-                    }
+                    datagridview_HoaDon.DataSource = dataTable;
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Lỗi: " + ex.Message, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Đã xảy ra lỗi: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
 
+  
         private void DeleteInvoice(int invoiceId)
         {
             string deleteQuery = "DELETE FROM HoaDon WHERE MaDonHang = @MaDonHang";
