@@ -184,57 +184,57 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AdminContact_Client.cs">
+    <Compile Include="Forms\AdminContact_Client.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AdminContact_Client.Designer.cs">
+    <Compile Include="Forms\AdminContact_Client.Designer.cs">
       <DependentUpon>AdminContact_Client.cs</DependentUpon>
     </Compile>
-    <Compile Include="changePasswordForm.cs">
+    <Compile Include="Forms\changePasswordForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="changePasswordForm.Designer.cs">
+    <Compile Include="Forms\changePasswordForm.Designer.cs">
       <DependentUpon>changePasswordForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Client_Login_Form.cs">
+    <Compile Include="Forms\Client_Login_Form.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Client_Login_Form.Designer.cs">
+    <Compile Include="Forms\Client_Login_Form.Designer.cs">
       <DependentUpon>Client_Login_Form.cs</DependentUpon>
     </Compile>
-    <Compile Include="Food_Order.cs">
+    <Compile Include="Forms\Food_Order.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Food_Order.Designer.cs">
+    <Compile Include="Forms\Food_Order.Designer.cs">
       <DependentUpon>Food_Order.cs</DependentUpon>
     </Compile>
-    <Compile Include="LoginBox.cs">
+    <Compile Include="Forms\LoginBox.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="LoginBox.Designer.cs">
+    <Compile Include="Forms\LoginBox.Designer.cs">
       <DependentUpon>LoginBox.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UserServiceMenu.cs">
+    <Compile Include="Forms\UserServiceMenu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UserServiceMenu.Designer.cs">
+    <Compile Include="Forms\UserServiceMenu.Designer.cs">
       <DependentUpon>UserServiceMenu.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="AdminContact_Client.resx">
+    <EmbeddedResource Include="Forms\AdminContact_Client.resx">
       <DependentUpon>AdminContact_Client.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="changePasswordForm.resx">
+    <EmbeddedResource Include="Forms\changePasswordForm.resx">
       <DependentUpon>changePasswordForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Client_Login_Form.resx">
+    <EmbeddedResource Include="Forms\Client_Login_Form.resx">
       <DependentUpon>Client_Login_Form.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Food_Order.resx">
+    <EmbeddedResource Include="Forms\Food_Order.resx">
       <DependentUpon>Food_Order.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="LoginBox.resx">
+    <EmbeddedResource Include="Forms\LoginBox.resx">
       <DependentUpon>LoginBox.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
@@ -248,7 +248,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="UserServiceMenu.resx">
+    <EmbeddedResource Include="Forms\UserServiceMenu.resx">
       <DependentUpon>UserServiceMenu.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
