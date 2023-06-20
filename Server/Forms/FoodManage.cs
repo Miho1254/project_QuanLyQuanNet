@@ -14,7 +14,9 @@ namespace Server
 {
     public partial class FoodManage : Form
     {
+        // Chuỗi kết nối đến cơ sở dữ liệu
         string connectionString = ConfigurationManager.ConnectionStrings["Server.Properties.Settings.CSDL_Server_QuanNetConnectionString"].ConnectionString;
+
         public FoodManage()
         {
             InitializeComponent();
@@ -27,8 +29,10 @@ namespace Server
             datagridview_DoAn.CellContentClick += DataGridView_CellContentClick;
         }
 
+        // Phương thức để tải dữ liệu đồ ăn từ CSDL và hiển thị lên DataGridView
         private void LoadFoodData()
         {
+            // Truy vấn SELECT để lấy dữ liệu đồ ăn từ CSDL
             string selectQuery = "SELECT * FROM ThucAn";
 
             using (SqlConnection connection = new SqlConnection(connectionString))
@@ -49,6 +53,7 @@ namespace Server
             }
         }
 
+        // Phương thức để tạo số duy nhất cho mã đồ ăn
         private string GenerateUniqueNumber()
         {
             // Lấy số duy nhất lớn nhất hiện có trong cơ sở dữ liệu
@@ -66,8 +71,10 @@ namespace Server
             return uniqueNumber;
         }
 
+        // Phương thức để lấy số duy nhất lớn nhất từ CSDL
         private string GetMaxUniqueNumberFromDatabase()
         {
+            // Truy vấn SELECT để lấy số duy nhất lớn nhất từ CSDL
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 connection.Open();
@@ -88,9 +95,10 @@ namespace Server
             }
         }
 
-
+        // Xử lý sự kiện khi người dùng nhấn nút "Tạo đồ ăn"
         private void btn_TaoDoAn_Click(object sender, EventArgs e)
         {
+            // Lấy thông tin từ các TextBox
             string tenThucAn = tbx_DoAn.Text;
             decimal giaTien = decimal.Parse(tbx_GiaTien.Text);
             string moTa = tbx_MoTa.Text;
@@ -117,6 +125,8 @@ namespace Server
                 MessageBox.Show("Đã xảy ra lỗi: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        // Xử lý sự kiện khi người dùng nhấp vào cột "Xóa" của DataGridView
         private void DataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.ColumnIndex == datagridview_DoAn.Columns["Xoa"].Index && e.RowIndex >= 0)
@@ -125,6 +135,8 @@ namespace Server
                 DeleteFood(selectedFoodId);
             }
         }
+
+        // Xử lý sự kiện khi người dùng nhấn nút "Xóa đồ ăn"
         private void btn_XoaDoAn_Click(object sender, EventArgs e)
         {
             // Kiểm tra xem đã chọn hàng nào trên DataGridView chưa
@@ -139,6 +151,7 @@ namespace Server
             }
         }
 
+        // Phương thức để xoá một đồ ăn từ CSDL
         private void DeleteFood(string foodId)
         {
             // Tạo truy vấn DELETE để xoá món khỏi CSDL

@@ -14,6 +14,7 @@ namespace Server
 {
     public partial class ComputerManage : Form
     {
+        // Chuỗi kết nối tới cơ sở dữ liệu
         string connectionString = ConfigurationManager.ConnectionStrings["Server.Properties.Settings.CSDL_Server_QuanNetConnectionString"].ConnectionString;
 
         public ComputerManage()
@@ -23,11 +24,14 @@ namespace Server
 
         private void ComputerManage_Load(object sender, EventArgs e)
         {
+            // Sự kiện xảy ra khi form được tải lên
+            // Gọi phương thức để tải dữ liệu máy tính
             LoadComputerData();
         }
 
         private void btn_TaoMayTinh_Click(object sender, EventArgs e)
         {
+            // Sự kiện xảy ra khi nhấn nút "Tạo máy tính"
             string maMayTinh = "MAY" + tbx_IDMayTinh.Text;
             string ipMayTinh = tbx_IPMayTinh.Text;
 
@@ -56,7 +60,8 @@ namespace Server
 
                         MessageBox.Show("Đã tạo máy tính mới thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                        LoadComputerData(); // Gọi hàm để tải lại dữ liệu máy tính
+                        // Gọi phương thức để tải lại dữ liệu máy tính
+                        LoadComputerData();
                     }
                     catch (Exception ex)
                     {
@@ -72,11 +77,14 @@ namespace Server
 
         private void btn_XoaMayTinh_Click(object sender, EventArgs e)
         {
+            // Sự kiện xảy ra khi nhấn nút "Xóa máy tính"
             // Kiểm tra xem đã chọn hàng nào trên DataGridView chưa
             if (datagridview_MayTinh.SelectedRows.Count > 0)
             {
                 // Lấy mã máy tính được chọn từ cột "MaMayTinh" trên DataGridView
                 string selectedComputerId = datagridview_MayTinh.SelectedRows[0].Cells["MaMayTinh"].Value.ToString();
+
+                // Gọi phương thức để xoá máy tính
                 DeleteComputer(selectedComputerId);
             }
             else
@@ -84,8 +92,10 @@ namespace Server
                 MessageBox.Show("Vui lòng chọn một máy tính để xoá.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
+
         private void DeleteComputer(string computerId)
         {
+            // Phương thức để xoá máy tính từ CSDL
             // Tạo truy vấn DELETE để xoá máy tính từ CSDL
             string deleteQuery = "DELETE FROM MayTinh WHERE MaMayTinh = @MaMayTinh";
 
@@ -100,7 +110,8 @@ namespace Server
 
                     MessageBox.Show("Đã xoá máy tính thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                    LoadComputerData(); // Gọi hàm để tải lại dữ liệu máy tính
+                    // Gọi phương thức để tải lại dữ liệu máy tính
+                    LoadComputerData();
                 }
                 catch (Exception ex)
                 {
@@ -108,8 +119,10 @@ namespace Server
                 }
             }
         }
+
         private void LoadComputerData()
         {
+            // Phương thức để tải dữ liệu máy tính từ CSDL và hiển thị lên DataGridView
             // Tạo truy vấn SELECT để lấy dữ liệu máy tính từ CSDL
             string selectQuery = "SELECT MaMayTinh, IP FROM MayTinh";
 
@@ -133,6 +146,7 @@ namespace Server
 
         private void btn_Timmaytinh_Click(object sender, EventArgs e)
         {
+            // Sự kiện xảy ra khi nhấn nút "Tìm máy tính"
             string keyword = tbx_TimMayTinh.Text;
 
             // Tạo truy vấn SELECT để tìm kiếm máy tính dựa trên tên máy hoặc ID máy

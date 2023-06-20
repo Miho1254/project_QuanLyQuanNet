@@ -16,8 +16,7 @@ namespace Server
     public partial class CreateUserAccount : Form
     {
         string connectionString = ConfigurationManager.ConnectionStrings["Server.Properties.Settings.CSDL_Server_QuanNetConnectionString"].ConnectionString;
-
-        private Dashboard dashboardForm; // Instance của form Dashboard
+        private Dashboard dashboardForm;
 
         public CreateUserAccount(Dashboard dashboardForm)
         {
@@ -25,8 +24,10 @@ namespace Server
             this.dashboardForm = dashboardForm;
         }
 
+        // Xử lý sự kiện khi người dùng nhấn vào nút "Tạo"
         private void btn_Tao_Click(object sender, EventArgs e)
         {
+            // Lấy thông tin người dùng từ các trường nhập liệu trên form
             string username = tbx_Username.Text;
             string password = tbx_Password.Text;
             string gioChoi = tbx_SoDu.Text;
@@ -58,6 +59,7 @@ namespace Server
             MessageBox.Show("Tạo tài khoản thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
+        // Tạo số duy nhất ngẫu nhiên
         private string GenerateUniqueNumber()
         {
             // Lấy số duy nhất lớn nhất hiện có trong cơ sở dữ liệu
@@ -75,10 +77,10 @@ namespace Server
             return uniqueNumber;
         }
 
+        // Lấy số duy nhất lớn nhất hiện có từ cơ sở dữ liệu
         private string GetMaxUniqueNumberFromDatabase()
         {
-            string connectionString = ConfigurationManager.ConnectionStrings["Server.Properties.Settings.CSDL_Server_QuanNetConnectionString"].ConnectionString;
-
+            // Kết nối tới cơ sở dữ liệu
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 connection.Open();
@@ -99,10 +101,9 @@ namespace Server
             }
         }
 
+        // Kiểm tra xem tên người dùng đã tồn tại hay chưa
         private bool IsUsernameExists(string username)
         {
-            string connectionString = ConfigurationManager.ConnectionStrings["Server.Properties.Settings.CSDL_Server_QuanNetConnectionString"].ConnectionString;
-
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 connection.Open();
@@ -117,10 +118,9 @@ namespace Server
             }
         }
 
+        // Thêm tài khoản người dùng vào cơ sở dữ liệuD
         private void InsertUserAccount(string maKhachHang, string username, string password, string gioChoi)
         {
-            string connectionString = ConfigurationManager.ConnectionStrings["Server.Properties.Settings.CSDL_Server_QuanNetConnectionString"].ConnectionString;
-
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 connection.Open();
@@ -166,8 +166,6 @@ namespace Server
                     transaction.Commit();
 
                     Console.WriteLine("Tạo tài khoản và cập nhật mật khẩu thành công.");
-                    
-
                 }
                 catch (Exception ex)
                 {
@@ -175,49 +173,7 @@ namespace Server
                     transaction.Rollback();
                     Console.WriteLine("Không thể tạo tài khoản và cập nhật mật khẩu: " + ex.Message);
                 }
-                finally
-                {
-                    // Đóng kết nối sau khi thực hiện xong
-                    connection.Close();
-                }
             }
         }
-        private void CreateUserAccount_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            // Lấy các thông tin tài khoản từ các trường nhập liệu
-            string username = tbx_Username.Text;
-            string password = tbx_Password.Text;
-            string gioChoi = tbx_SoDu.Text;
-
-            // Tạo số duy nhất ngẫu nhiên
-            string uniqueNumber = GenerateUniqueNumber();
-
-            // Tạo MaKhachHang bằng cách kết hợp tiền tố "KH" và số duy nhất
-            string maKhachHang = "KH" + uniqueNumber;
-
-            // Kiểm tra xem tên người dùng đã tồn tại hay chưa
-            if (IsUsernameExists(username))
-            {
-                MessageBox.Show("Tên người dùng đã tồn tại!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-
-            // Thêm dữ liệu vào cơ sở dữ liệu
-            InsertUserAccount(maKhachHang, username, password, gioChoi);
-
-            // Cập nhật DataGridView thông qua phương thức trong form Dashboard
-            dashboardForm.UpdateDataGridViewKhachHang();
-
-            // Hiển thị thông báo thành công
-            MessageBox.Show("Tạo tài khoản thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-        }
-
-
-
-
     }
-
 }
-
-
-    

@@ -15,7 +15,9 @@ namespace Server
 {
     public partial class EmployeeManage : Form
     {
+        // Chuỗi kết nối tới cơ sở dữ liệu
         string connectionString = ConfigurationManager.ConnectionStrings["Server.Properties.Settings.CSDL_Server_QuanNetConnectionString"].ConnectionString;
+
         public EmployeeManage()
         {
             InitializeComponent();
@@ -23,12 +25,13 @@ namespace Server
 
         private void EmployeeManage_Load(object sender, EventArgs e)
         {
-            LoadEmployeeData();
-            LoadPositions();
+            LoadEmployeeData(); // Tải dữ liệu nhân viên lên DataGridView
+            LoadPositions(); // Tải danh sách chức vụ lên ComboBox
         }
 
         private void LoadEmployeeData()
         {
+            // Truy vấn SELECT để lấy dữ liệu từ bảng NhanVien
             string selectQuery = "SELECT * FROM NhanVien";
 
             using (SqlConnection connection = new SqlConnection(connectionString))
@@ -51,12 +54,14 @@ namespace Server
 
         private void LoadPositions()
         {
+            // Tạo danh sách chứa các chức vụ và giá trị tương ứng
             Dictionary<string, string> positions = new Dictionary<string, string>
             {
                 { "QUANLY", "Quản lý" },
                 { "THUNGAN", "Thu ngân" }
             };
 
+            // Thiết lập hiển thị và giá trị cho ComboBox
             cbx_ChucVu.DisplayMember = "Value";
             cbx_ChucVu.ValueMember = "Key";
             cbx_ChucVu.DataSource = new BindingSource(positions, null);
@@ -64,6 +69,7 @@ namespace Server
 
         private void btn_TaoNhanVien_Click(object sender, EventArgs e)
         {
+            // Lấy thông tin từ các TextBox và ComboBox
             string tenNhanVien = tbx_TenNhanVien.Text;
             string chucVu = cbx_ChucVu.SelectedValue.ToString();
             string sdt = tbx_SDT.Text;
@@ -108,6 +114,7 @@ namespace Server
                 MessageBox.Show("Vui lòng chọn một nhân viên để xoá.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
+
         private void DeleteEmployee(string employeeId)
         {
             // Tạo truy vấn DELETE để xoá nhân viên khỏi CSDL

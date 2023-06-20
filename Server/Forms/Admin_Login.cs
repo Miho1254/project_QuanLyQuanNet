@@ -15,13 +15,14 @@ namespace Server
 {
     public partial class Admin_Login : Form
     {
+        // Chuỗi kết nối tới cơ sở dữ liệu
         string connectionString = ConfigurationManager.ConnectionStrings["Server.Properties.Settings.CSDL_Server_QuanNetConnectionString"].ConnectionString;
 
         public Admin_Login()
         {
             InitializeComponent();
 
-            this.AcceptButton = btn_Dangnhap;
+            this.AcceptButton = btn_Dangnhap; // Thiết lập nút "Enter" để đăng nhập
         }
 
         private void btn_Dangnhap_Click(object sender, EventArgs e)
@@ -29,7 +30,7 @@ namespace Server
             string username = tbx_Username.Text;
             string password = tbx_Password.Text;
 
-
+            // Kiểm tra xác thực đăng nhập của người dùng
             bool isAuthenticated = ValidateAdminLogin(username, password);
 
             if (isAuthenticated)
@@ -42,11 +43,12 @@ namespace Server
             }
             else
             {
-                // Hiển thị thông báo lỗi
+                // Hiển thị thông báo lỗi đăng nhập không thành công
                 MessageBox.Show("Tài khoản hoặc mật khẩu không đúng!", "Lỗi đăng nhập", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
         }
+
+        // Hàm kiểm tra xác thực đăng nhập của người dùng
         private bool ValidateAdminLogin(string username, string password)
         {
             using (SqlConnection connection = new SqlConnection(connectionString))
@@ -65,6 +67,7 @@ namespace Server
             }
         }
 
+        // Hàm lấy thông tin chức vụ của người dùng
         private string GetAdminRole(string username)
         {
             using (SqlConnection connection = new SqlConnection(connectionString))
@@ -81,9 +84,10 @@ namespace Server
             }
         }
 
+        // Hàm mở form Dashboard sau khi đăng nhập thành công
         private void OpenDashboardForm(string role)
         {
-            // Đăng nhập thành công, hiển thị thông báo thành công
+            // Hiển thị thông báo thành công
             MessageBox.Show("Đăng nhập thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             // Chuyển sang form Dashboard và truyền chức vụ (role)
@@ -92,16 +96,5 @@ namespace Server
             dashboard.FormClosed += (s, args) => this.Show();
             dashboard.Show();
         }
-
-        private void tbx_Username_TextChanged(object sender, EventArgs e)
-        {
-           
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-            
-        }
     }
 }
-

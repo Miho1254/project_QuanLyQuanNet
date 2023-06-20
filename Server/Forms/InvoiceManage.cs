@@ -6,11 +6,11 @@ using System.Windows.Forms;
 using System.IO;
 using OfficeOpenXml;
 
-
 namespace Server
 {
     public partial class InvoiceManage : Form
     {
+        // Chuỗi kết nối đến cơ sở dữ liệu
         string connectionString = ConfigurationManager.ConnectionStrings["Server.Properties.Settings.CSDL_Server_QuanNetConnectionString"].ConnectionString;
 
         public InvoiceManage()
@@ -18,6 +18,7 @@ namespace Server
             InitializeComponent();
         }
 
+        // Xử lý sự kiện khi Form InvoiceManage được tải
         private void InvoiceManage_Load(object sender, EventArgs e)
         {
             LoadInvoiceData();
@@ -25,14 +26,18 @@ namespace Server
             datagridview_HoaDon.CellContentClick += DataGridView_CellContentClick;
         }
 
+        // Xử lý sự kiện CellContentClick của DataGridView
         private void DataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.ColumnIndex == datagridview_HoaDon.Columns["Xoa"].Index && e.RowIndex >= 0)
             {
+                // Lấy MaHoaDon của hàng được chọn trong DataGridView
                 int selectedInvoiceId = Convert.ToInt32(datagridview_HoaDon.Rows[e.RowIndex].Cells["MaHoaDon"].Value);
                 DeleteInvoice(selectedInvoiceId);
             }
         }
+
+        // Xử lý sự kiện khi nút "Xuất hóa đơn" được nhấn
         private void btn_XuatHoaDon_Click(object sender, EventArgs e)
         {
             string keyword = tbx_MaDonHang.Text;
@@ -59,7 +64,7 @@ namespace Server
             }
         }
 
-  
+        // Xóa hóa đơn dựa trên MaDonHang
         private void DeleteInvoice(int invoiceId)
         {
             string deleteQuery = "DELETE FROM HoaDon WHERE MaDonHang = @MaDonHang";
@@ -77,6 +82,7 @@ namespace Server
             LoadInvoiceData();
         }
 
+        // Tải dữ liệu hóa đơn lên DataGridView
         private void LoadInvoiceData()
         {
             string selectQuery = "SELECT * FROM HoaDon";
@@ -98,13 +104,13 @@ namespace Server
             }
         }
 
-
+        // Xử lý sự kiện khi nút "Xóa hóa đơn" được nhấn
         private void btn_XoaHoaDon_Click(object sender, EventArgs e)
         {
             // Kiểm tra xem đã chọn hàng nào trên DataGridView chưa
             if (datagridview_HoaDon.SelectedRows.Count > 0)
             {
-                // Lấy ID của hoá đơn được chọn từ cột "MaHoaDon" trên DataGridView
+                // Lấy MaDonHang của hóa đơn được chọn từ cột "MaDonHang" trên DataGridView
                 if (datagridview_HoaDon.SelectedRows[0].Cells["MaDonHang"].Value != null)
                 {
                     string selectedInvoiceIdString = datagridview_HoaDon.SelectedRows[0].Cells["MaDonHang"].Value.ToString();
@@ -125,11 +131,11 @@ namespace Server
             }
             else
             {
-                MessageBox.Show("Vui lòng chọn một hoá đơn để xoá.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Vui lòng chọn một hóa đơn để xoá.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
- 
 
+        // Xử lý sự kiện khi nút "Xuất ra Excel" được nhấn
         private void btn_XuatRaExcel_Click(object sender, EventArgs e)
         {
             if (datagridview_HoaDon.Rows.Count > 0)
@@ -177,11 +183,4 @@ namespace Server
             }
         }
     }
-
-      
-
-    }
-
-
-
-
+}

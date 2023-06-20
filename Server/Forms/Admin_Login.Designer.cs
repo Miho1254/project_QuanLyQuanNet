@@ -84,7 +84,6 @@
             this.tbx_Username.Name = "tbx_Username";
             this.tbx_Username.Size = new System.Drawing.Size(354, 30);
             this.tbx_Username.TabIndex = 4;
-            this.tbx_Username.TextChanged += new System.EventHandler(this.tbx_Username_TextChanged);
             // 
             // tbx_Password
             // 

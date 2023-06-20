@@ -14,22 +14,23 @@ namespace Server
 {
     public partial class AddUserBalance : Form
     {
-        private Dashboard dashboardForm; // Instance của form Dashboard
+        private Dashboard dashboardForm; // Thể hiện của form Dashboard
 
         public AddUserBalance(Dashboard dashboardForm)
         {
             InitializeComponent();
             this.dashboardForm = dashboardForm;
         }
+
         private void AddUserBalance_Load(object sender, EventArgs e)
         {
-
+            // Code được thực thi khi form được tải
         }
-
-        
 
         private bool IsUsernameExists(string username)
         {
+            // Kiểm tra xem tên người dùng có tồn tại trong cơ sở dữ liệu hay không
+
             string connectionString = ConfigurationManager.ConnectionStrings["Server.Properties.Settings.CSDL_Server_QuanNetConnectionString"].ConnectionString;
 
             using (SqlConnection connection = new SqlConnection(connectionString))
@@ -50,6 +51,8 @@ namespace Server
 
         private bool AddBalanceToUserAccount(string username, float gioChoi)
         {
+            // Thêm số dư vào tài khoản người dùng
+
             string query = "UPDATE KhachHang SET GioChoi += @GioChoi WHERE Username = @Username";
 
             string connectionString = ConfigurationManager.ConnectionStrings["Server.Properties.Settings.CSDL_Server_QuanNetConnectionString"].ConnectionString;
@@ -76,7 +79,6 @@ namespace Server
             }
         }
 
-      
         private void btn_Add_Click(object sender, EventArgs e)
         {
             string username = tbx_Username.Text;
