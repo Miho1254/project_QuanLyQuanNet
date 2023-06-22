@@ -38,16 +38,16 @@
             // 
             // tbx_Username
             // 
-            this.tbx_Username.Location = new System.Drawing.Point(147, 47);
+            this.tbx_Username.Location = new System.Drawing.Point(161, 47);
             this.tbx_Username.Name = "tbx_Username";
-            this.tbx_Username.Size = new System.Drawing.Size(133, 20);
+            this.tbx_Username.Size = new System.Drawing.Size(155, 20);
             this.tbx_Username.TabIndex = 2;
             // 
             // tbx_Password
             // 
-            this.tbx_Password.Location = new System.Drawing.Point(146, 91);
+            this.tbx_Password.Location = new System.Drawing.Point(160, 91);
             this.tbx_Password.Name = "tbx_Password";
-            this.tbx_Password.Size = new System.Drawing.Size(133, 20);
+            this.tbx_Password.Size = new System.Drawing.Size(155, 20);
             this.tbx_Password.TabIndex = 2;
             // 
             // lbl_Username
@@ -55,7 +55,7 @@
             this.lbl_Username.AutoSize = true;
             this.lbl_Username.BackColor = System.Drawing.Color.Transparent;
             this.lbl_Username.Font = new System.Drawing.Font("UTM Alpine KT", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Username.Location = new System.Drawing.Point(28, 42);
+            this.lbl_Username.Location = new System.Drawing.Point(42, 42);
             this.lbl_Username.Name = "lbl_Username";
             this.lbl_Username.Size = new System.Drawing.Size(104, 34);
             this.lbl_Username.TabIndex = 3;
@@ -66,7 +66,7 @@
             this.lbl_Password.AutoSize = true;
             this.lbl_Password.BackColor = System.Drawing.Color.Transparent;
             this.lbl_Password.Font = new System.Drawing.Font("UTM Alpine KT", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Password.Location = new System.Drawing.Point(28, 89);
+            this.lbl_Password.Location = new System.Drawing.Point(42, 89);
             this.lbl_Password.Name = "lbl_Password";
             this.lbl_Password.Size = new System.Drawing.Size(105, 34);
             this.lbl_Password.TabIndex = 3;
@@ -77,7 +77,7 @@
             this.lbl_dangNhap.AutoSize = true;
             this.lbl_dangNhap.BackColor = System.Drawing.Color.Transparent;
             this.lbl_dangNhap.Font = new System.Drawing.Font("UTM Alpine KT", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_dangNhap.Location = new System.Drawing.Point(140, 9);
+            this.lbl_dangNhap.Location = new System.Drawing.Point(154, 9);
             this.lbl_dangNhap.Name = "lbl_dangNhap";
             this.lbl_dangNhap.Size = new System.Drawing.Size(114, 34);
             this.lbl_dangNhap.TabIndex = 3;
@@ -90,7 +90,7 @@
             this.btn_Login.FlatAppearance.BorderSize = 0;
             this.btn_Login.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Login.Font = new System.Drawing.Font("UTM Alpine KT", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Login.Location = new System.Drawing.Point(153, 127);
+            this.btn_Login.Location = new System.Drawing.Point(167, 127);
             this.btn_Login.Name = "btn_Login";
             this.btn_Login.Size = new System.Drawing.Size(115, 25);
             this.btn_Login.TabIndex = 4;

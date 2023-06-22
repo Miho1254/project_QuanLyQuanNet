@@ -43,6 +43,7 @@
             this.btn_DatDoAn = new System.Windows.Forms.Button();
             this.btn_GiaoTiep = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -175,7 +176,7 @@
             this.btn_DoiMatKhau.ForeColor = System.Drawing.Color.Black;
             this.btn_DoiMatKhau.Location = new System.Drawing.Point(5, 274);
             this.btn_DoiMatKhau.Name = "btn_DoiMatKhau";
-            this.btn_DoiMatKhau.Size = new System.Drawing.Size(81, 23);
+            this.btn_DoiMatKhau.Size = new System.Drawing.Size(77, 23);
             this.btn_DoiMatKhau.TabIndex = 4;
             this.btn_DoiMatKhau.Text = "Đổi mật khẩu";
             this.btn_DoiMatKhau.UseVisualStyleBackColor = false;
@@ -227,6 +228,17 @@
             this.pictureBox1.TabIndex = 5;
             this.pictureBox1.TabStop = false;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("UTM Seagull", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Black;
+            this.label1.Location = new System.Drawing.Point(35, 7);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(88, 23);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "máy số 12";
+            // 
             // UserServiceMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -234,6 +246,7 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(233)))), ((int)(((byte)(233)))));
             this.ClientSize = new System.Drawing.Size(179, 461);
             this.ControlBox = false;
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btn_GiaoTiep);
             this.Controls.Add(this.btn_DatDoAn);
@@ -278,5 +291,6 @@
         private System.Windows.Forms.Button btn_DatDoAn;
         private System.Windows.Forms.Button btn_GiaoTiep;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label label1;
     }
 }

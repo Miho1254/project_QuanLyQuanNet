@@ -44,7 +44,7 @@
             this.btn_Tao.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btn_Tao.FlatAppearance.BorderSize = 0;
             this.btn_Tao.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Tao.Font = new System.Drawing.Font("UTM Alpine KT", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Tao.Font = new System.Drawing.Font("UTM Seagull", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Tao.Location = new System.Drawing.Point(183, 190);
             this.btn_Tao.Name = "btn_Tao";
             this.btn_Tao.Size = new System.Drawing.Size(174, 36);
@@ -57,10 +57,10 @@
             // 
             this.lbl_SoDu.AutoSize = true;
             this.lbl_SoDu.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_SoDu.Font = new System.Drawing.Font("UTM Alpine KT", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_SoDu.Location = new System.Drawing.Point(41, 133);
+            this.lbl_SoDu.Font = new System.Drawing.Font("UTM Seagull", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_SoDu.Location = new System.Drawing.Point(42, 133);
             this.lbl_SoDu.Name = "lbl_SoDu";
-            this.lbl_SoDu.Size = new System.Drawing.Size(89, 38);
+            this.lbl_SoDu.Size = new System.Drawing.Size(100, 34);
             this.lbl_SoDu.TabIndex = 9;
             this.lbl_SoDu.Text = "surplus";
             // 
@@ -68,10 +68,10 @@
             // 
             this.lbl_Username.AutoSize = true;
             this.lbl_Username.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_Username.Font = new System.Drawing.Font("UTM Alpine KT", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Username.Location = new System.Drawing.Point(41, 56);
+            this.lbl_Username.Font = new System.Drawing.Font("UTM Seagull", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Username.Location = new System.Drawing.Point(41, 52);
             this.lbl_Username.Name = "lbl_Username";
-            this.lbl_Username.Size = new System.Drawing.Size(112, 38);
+            this.lbl_Username.Size = new System.Drawing.Size(130, 34);
             this.lbl_Username.TabIndex = 10;
             this.lbl_Username.Text = "Username";
             // 
@@ -79,10 +79,10 @@
             // 
             this.lbl_Password.AutoSize = true;
             this.lbl_Password.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_Password.Font = new System.Drawing.Font("UTM Alpine KT", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Password.Location = new System.Drawing.Point(41, 94);
+            this.lbl_Password.Font = new System.Drawing.Font("UTM Seagull", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Password.Location = new System.Drawing.Point(42, 94);
             this.lbl_Password.Name = "lbl_Password";
-            this.lbl_Password.Size = new System.Drawing.Size(113, 38);
+            this.lbl_Password.Size = new System.Drawing.Size(125, 34);
             this.lbl_Password.TabIndex = 11;
             this.lbl_Password.Text = "Password";
             // 
@@ -91,7 +91,7 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("UTM Alpine KT", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(165, 3);
+            this.label1.Location = new System.Drawing.Point(167, 7);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(192, 44);
             this.label1.TabIndex = 12;
@@ -139,7 +139,8 @@
             this.Controls.Add(this.tbx_SoDu);
             this.Controls.Add(this.tbx_Password);
             this.Controls.Add(this.tbx_Username);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.MaximizeBox = false;
             this.Name = "CreateUserAccount";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CreateUserAccount";

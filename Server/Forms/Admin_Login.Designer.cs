@@ -98,7 +98,7 @@
             // 
             // btn_Dangnhap
             // 
-            this.btn_Dangnhap.BackColor = System.Drawing.Color.Transparent;
+            this.btn_Dangnhap.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.btn_Dangnhap.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btn_Dangnhap.FlatAppearance.BorderSize = 0;
             this.btn_Dangnhap.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
@@ -106,7 +106,7 @@
             this.btn_Dangnhap.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Dangnhap.Font = new System.Drawing.Font("UTM Alpine KT", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Dangnhap.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.btn_Dangnhap.Location = new System.Drawing.Point(151, 182);
+            this.btn_Dangnhap.Location = new System.Drawing.Point(172, 182);
             this.btn_Dangnhap.Name = "btn_Dangnhap";
             this.btn_Dangnhap.Size = new System.Drawing.Size(162, 43);
             this.btn_Dangnhap.TabIndex = 6;

@@ -90,9 +90,8 @@
             this.panel1.Controls.Add(this.tbx_TimNhanVien);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1296, 52);
+            this.panel1.Size = new System.Drawing.Size(972, 42);
             this.panel1.TabIndex = 0;
             // 
             // btn_XoaNhanVien
@@ -101,11 +100,10 @@
             this.btn_XoaNhanVien.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btn_XoaNhanVien.FlatAppearance.BorderSize = 0;
             this.btn_XoaNhanVien.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_XoaNhanVien.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_XoaNhanVien.Location = new System.Drawing.Point(965, 15);
-            this.btn_XoaNhanVien.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_XoaNhanVien.Font = new System.Drawing.Font("UTM Seagull", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_XoaNhanVien.Location = new System.Drawing.Point(724, 12);
             this.btn_XoaNhanVien.Name = "btn_XoaNhanVien";
-            this.btn_XoaNhanVien.Size = new System.Drawing.Size(76, 28);
+            this.btn_XoaNhanVien.Size = new System.Drawing.Size(57, 23);
             this.btn_XoaNhanVien.TabIndex = 14;
             this.btn_XoaNhanVien.Text = "Xóa";
             this.btn_XoaNhanVien.UseVisualStyleBackColor = false;
@@ -117,11 +115,10 @@
             this.btn_TimNhanVien.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btn_TimNhanVien.FlatAppearance.BorderSize = 0;
             this.btn_TimNhanVien.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_TimNhanVien.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_TimNhanVien.Location = new System.Drawing.Point(841, 15);
-            this.btn_TimNhanVien.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_TimNhanVien.Font = new System.Drawing.Font("UTM Seagull", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_TimNhanVien.Location = new System.Drawing.Point(631, 12);
             this.btn_TimNhanVien.Name = "btn_TimNhanVien";
-            this.btn_TimNhanVien.Size = new System.Drawing.Size(76, 28);
+            this.btn_TimNhanVien.Size = new System.Drawing.Size(57, 23);
             this.btn_TimNhanVien.TabIndex = 14;
             this.btn_TimNhanVien.Text = "Tìm";
             this.btn_TimNhanVien.UseVisualStyleBackColor = false;
@@ -130,11 +127,10 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(144, 6);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Font = new System.Drawing.Font("UTM Alpine KT", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(104, 6);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(192, 31);
+            this.label2.Size = new System.Drawing.Size(146, 34);
             this.label2.TabIndex = 0;
             this.label2.Text = "Tìm Nhân Viên";
             // 
@@ -165,8 +161,7 @@
             this.tbx_TimNhanVien.IconRight = null;
             this.tbx_TimNhanVien.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.tbx_TimNhanVien.Lines = new string[0];
-            this.tbx_TimNhanVien.Location = new System.Drawing.Point(347, 10);
-            this.tbx_TimNhanVien.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbx_TimNhanVien.Location = new System.Drawing.Point(260, 8);
             this.tbx_TimNhanVien.MaxLength = 32767;
             this.tbx_TimNhanVien.MinimumSize = new System.Drawing.Size(1, 1);
             this.tbx_TimNhanVien.Modified = false;
@@ -192,7 +187,7 @@
             stateProperties4.ForeColor = System.Drawing.Color.Empty;
             stateProperties4.PlaceholderForeColor = System.Drawing.Color.Empty;
             this.tbx_TimNhanVien.OnIdleState = stateProperties4;
-            this.tbx_TimNhanVien.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbx_TimNhanVien.Padding = new System.Windows.Forms.Padding(3);
             this.tbx_TimNhanVien.PasswordChar = '\0';
             this.tbx_TimNhanVien.PlaceholderForeColor = System.Drawing.Color.Silver;
             this.tbx_TimNhanVien.PlaceholderText = "Tìm Nhân Viên.....";
@@ -202,7 +197,7 @@
             this.tbx_TimNhanVien.SelectionLength = 0;
             this.tbx_TimNhanVien.SelectionStart = 0;
             this.tbx_TimNhanVien.ShortcutsEnabled = true;
-            this.tbx_TimNhanVien.Size = new System.Drawing.Size(451, 37);
+            this.tbx_TimNhanVien.Size = new System.Drawing.Size(338, 30);
             this.tbx_TimNhanVien.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;
             this.tbx_TimNhanVien.TabIndex = 2;
             this.tbx_TimNhanVien.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -235,11 +230,9 @@
             this.groupBox1.Controls.Add(this.tbx_TenNhanVien);
             this.groupBox1.Controls.Add(this.bunifuPictureBox1);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(0, 59);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Location = new System.Drawing.Point(0, 48);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.groupBox1.Size = new System.Drawing.Size(325, 649);
+            this.groupBox1.Size = new System.Drawing.Size(244, 527);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "tạo nhân viên";
@@ -247,37 +240,33 @@
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.Black;
-            this.panel5.Location = new System.Drawing.Point(73, 487);
-            this.panel5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel5.Location = new System.Drawing.Point(55, 396);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(204, 1);
+            this.panel5.Size = new System.Drawing.Size(153, 1);
             this.panel5.TabIndex = 3;
             // 
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.Black;
-            this.panel4.Location = new System.Drawing.Point(93, 145);
-            this.panel4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel4.Location = new System.Drawing.Point(70, 118);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(183, 1);
+            this.panel4.Size = new System.Drawing.Size(137, 1);
             this.panel4.TabIndex = 3;
             // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.Black;
-            this.panel3.Location = new System.Drawing.Point(80, 407);
-            this.panel3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel3.Location = new System.Drawing.Point(60, 331);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(201, 1);
+            this.panel3.Size = new System.Drawing.Size(151, 1);
             this.panel3.TabIndex = 3;
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.Black;
-            this.panel2.Location = new System.Drawing.Point(93, 327);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel2.Location = new System.Drawing.Point(70, 266);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(185, 1);
+            this.panel2.Size = new System.Drawing.Size(139, 1);
             this.panel2.TabIndex = 3;
             // 
             // tbx_Password
@@ -307,8 +296,7 @@
             this.tbx_Password.IconRight = null;
             this.tbx_Password.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.tbx_Password.Lines = new string[0];
-            this.tbx_Password.Location = new System.Drawing.Point(67, 442);
-            this.tbx_Password.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbx_Password.Location = new System.Drawing.Point(50, 359);
             this.tbx_Password.MaxLength = 32767;
             this.tbx_Password.MinimumSize = new System.Drawing.Size(1, 1);
             this.tbx_Password.Modified = false;
@@ -334,7 +322,7 @@
             stateProperties8.ForeColor = System.Drawing.Color.Empty;
             stateProperties8.PlaceholderForeColor = System.Drawing.Color.Empty;
             this.tbx_Password.OnIdleState = stateProperties8;
-            this.tbx_Password.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbx_Password.Padding = new System.Windows.Forms.Padding(3);
             this.tbx_Password.PasswordChar = '\0';
             this.tbx_Password.PlaceholderForeColor = System.Drawing.Color.Black;
             this.tbx_Password.PlaceholderText = "Nhập mật khẩu.....";
@@ -344,7 +332,7 @@
             this.tbx_Password.SelectionLength = 0;
             this.tbx_Password.SelectionStart = 0;
             this.tbx_Password.ShortcutsEnabled = true;
-            this.tbx_Password.Size = new System.Drawing.Size(237, 47);
+            this.tbx_Password.Size = new System.Drawing.Size(178, 38);
             this.tbx_Password.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;
             this.tbx_Password.TabIndex = 16;
             this.tbx_Password.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -382,8 +370,7 @@
             this.tbx_Username.IconRight = null;
             this.tbx_Username.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.tbx_Username.Lines = new string[0];
-            this.tbx_Username.Location = new System.Drawing.Point(67, 362);
-            this.tbx_Username.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbx_Username.Location = new System.Drawing.Point(50, 294);
             this.tbx_Username.MaxLength = 32767;
             this.tbx_Username.MinimumSize = new System.Drawing.Size(1, 1);
             this.tbx_Username.Modified = false;
@@ -409,7 +396,7 @@
             stateProperties12.ForeColor = System.Drawing.Color.Empty;
             stateProperties12.PlaceholderForeColor = System.Drawing.Color.Empty;
             this.tbx_Username.OnIdleState = stateProperties12;
-            this.tbx_Username.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbx_Username.Padding = new System.Windows.Forms.Padding(3);
             this.tbx_Username.PasswordChar = '\0';
             this.tbx_Username.PlaceholderForeColor = System.Drawing.Color.Black;
             this.tbx_Username.PlaceholderText = "Nhập tài khoản.....";
@@ -419,7 +406,7 @@
             this.tbx_Username.SelectionLength = 0;
             this.tbx_Username.SelectionStart = 0;
             this.tbx_Username.ShortcutsEnabled = true;
-            this.tbx_Username.Size = new System.Drawing.Size(237, 47);
+            this.tbx_Username.Size = new System.Drawing.Size(178, 38);
             this.tbx_Username.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;
             this.tbx_Username.TabIndex = 15;
             this.tbx_Username.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -433,10 +420,10 @@
             // cbx_ChucVu
             // 
             this.cbx_ChucVu.FormattingEnabled = true;
-            this.cbx_ChucVu.Location = new System.Drawing.Point(76, 212);
-            this.cbx_ChucVu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cbx_ChucVu.Location = new System.Drawing.Point(57, 170);
+            this.cbx_ChucVu.Margin = new System.Windows.Forms.Padding(2);
             this.cbx_ChucVu.Name = "cbx_ChucVu";
-            this.cbx_ChucVu.Size = new System.Drawing.Size(236, 24);
+            this.cbx_ChucVu.Size = new System.Drawing.Size(178, 21);
             this.cbx_ChucVu.TabIndex = 4;
             // 
             // btn_TaoNhanVien
@@ -445,11 +432,10 @@
             this.btn_TaoNhanVien.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btn_TaoNhanVien.FlatAppearance.BorderSize = 0;
             this.btn_TaoNhanVien.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_TaoNhanVien.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_TaoNhanVien.Location = new System.Drawing.Point(44, 533);
-            this.btn_TaoNhanVien.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_TaoNhanVien.Font = new System.Drawing.Font("UTM Seagull", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_TaoNhanVien.Location = new System.Drawing.Point(33, 433);
             this.btn_TaoNhanVien.Name = "btn_TaoNhanVien";
-            this.btn_TaoNhanVien.Size = new System.Drawing.Size(232, 50);
+            this.btn_TaoNhanVien.Size = new System.Drawing.Size(174, 41);
             this.btn_TaoNhanVien.TabIndex = 14;
             this.btn_TaoNhanVien.Text = "Tạo Nhân Viên";
             this.btn_TaoNhanVien.UseVisualStyleBackColor = false;
@@ -482,8 +468,7 @@
             this.tbx_SDT.IconRight = null;
             this.tbx_SDT.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.tbx_SDT.Lines = new string[0];
-            this.tbx_SDT.Location = new System.Drawing.Point(80, 284);
-            this.tbx_SDT.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbx_SDT.Location = new System.Drawing.Point(60, 231);
             this.tbx_SDT.MaxLength = 32767;
             this.tbx_SDT.MinimumSize = new System.Drawing.Size(1, 1);
             this.tbx_SDT.Modified = false;
@@ -509,7 +494,7 @@
             stateProperties16.ForeColor = System.Drawing.Color.Empty;
             stateProperties16.PlaceholderForeColor = System.Drawing.Color.Empty;
             this.tbx_SDT.OnIdleState = stateProperties16;
-            this.tbx_SDT.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbx_SDT.Padding = new System.Windows.Forms.Padding(3);
             this.tbx_SDT.PasswordChar = '\0';
             this.tbx_SDT.PlaceholderForeColor = System.Drawing.Color.Black;
             this.tbx_SDT.PlaceholderText = "Số Điện Nhân Viên.....";
@@ -519,7 +504,7 @@
             this.tbx_SDT.SelectionLength = 0;
             this.tbx_SDT.SelectionStart = 0;
             this.tbx_SDT.ShortcutsEnabled = true;
-            this.tbx_SDT.Size = new System.Drawing.Size(237, 47);
+            this.tbx_SDT.Size = new System.Drawing.Size(178, 38);
             this.tbx_SDT.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;
             this.tbx_SDT.TabIndex = 2;
             this.tbx_SDT.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -535,13 +520,12 @@
             this.bunifuPictureBox5.AllowFocused = false;
             this.bunifuPictureBox5.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.bunifuPictureBox5.AutoSizeHeight = true;
-            this.bunifuPictureBox5.BorderRadius = 24;
+            this.bunifuPictureBox5.BorderRadius = 18;
             this.bunifuPictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("bunifuPictureBox5.Image")));
             this.bunifuPictureBox5.IsCircle = true;
-            this.bunifuPictureBox5.Location = new System.Drawing.Point(11, 448);
-            this.bunifuPictureBox5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bunifuPictureBox5.Location = new System.Drawing.Point(8, 364);
             this.bunifuPictureBox5.Name = "bunifuPictureBox5";
-            this.bunifuPictureBox5.Size = new System.Drawing.Size(48, 48);
+            this.bunifuPictureBox5.Size = new System.Drawing.Size(36, 36);
             this.bunifuPictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.bunifuPictureBox5.TabIndex = 1;
             this.bunifuPictureBox5.TabStop = false;
@@ -552,13 +536,12 @@
             this.bunifuPictureBox4.AllowFocused = false;
             this.bunifuPictureBox4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.bunifuPictureBox4.AutoSizeHeight = true;
-            this.bunifuPictureBox4.BorderRadius = 24;
+            this.bunifuPictureBox4.BorderRadius = 18;
             this.bunifuPictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("bunifuPictureBox4.Image")));
             this.bunifuPictureBox4.IsCircle = true;
-            this.bunifuPictureBox4.Location = new System.Drawing.Point(11, 372);
-            this.bunifuPictureBox4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bunifuPictureBox4.Location = new System.Drawing.Point(8, 302);
             this.bunifuPictureBox4.Name = "bunifuPictureBox4";
-            this.bunifuPictureBox4.Size = new System.Drawing.Size(48, 48);
+            this.bunifuPictureBox4.Size = new System.Drawing.Size(36, 36);
             this.bunifuPictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.bunifuPictureBox4.TabIndex = 1;
             this.bunifuPictureBox4.TabStop = false;
@@ -569,13 +552,12 @@
             this.bunifuPictureBox3.AllowFocused = false;
             this.bunifuPictureBox3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.bunifuPictureBox3.AutoSizeHeight = true;
-            this.bunifuPictureBox3.BorderRadius = 24;
+            this.bunifuPictureBox3.BorderRadius = 18;
             this.bunifuPictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("bunifuPictureBox3.Image")));
             this.bunifuPictureBox3.IsCircle = true;
-            this.bunifuPictureBox3.Location = new System.Drawing.Point(11, 284);
-            this.bunifuPictureBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bunifuPictureBox3.Location = new System.Drawing.Point(8, 231);
             this.bunifuPictureBox3.Name = "bunifuPictureBox3";
-            this.bunifuPictureBox3.Size = new System.Drawing.Size(48, 48);
+            this.bunifuPictureBox3.Size = new System.Drawing.Size(36, 36);
             this.bunifuPictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.bunifuPictureBox3.TabIndex = 1;
             this.bunifuPictureBox3.TabStop = false;
@@ -586,13 +568,12 @@
             this.bunifuPictureBox2.AllowFocused = false;
             this.bunifuPictureBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.bunifuPictureBox2.AutoSizeHeight = true;
-            this.bunifuPictureBox2.BorderRadius = 24;
+            this.bunifuPictureBox2.BorderRadius = 18;
             this.bunifuPictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("bunifuPictureBox2.Image")));
             this.bunifuPictureBox2.IsCircle = true;
-            this.bunifuPictureBox2.Location = new System.Drawing.Point(11, 193);
-            this.bunifuPictureBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bunifuPictureBox2.Location = new System.Drawing.Point(8, 160);
             this.bunifuPictureBox2.Name = "bunifuPictureBox2";
-            this.bunifuPictureBox2.Size = new System.Drawing.Size(48, 48);
+            this.bunifuPictureBox2.Size = new System.Drawing.Size(36, 36);
             this.bunifuPictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.bunifuPictureBox2.TabIndex = 1;
             this.bunifuPictureBox2.TabStop = false;
@@ -625,8 +606,7 @@
             this.tbx_TenNhanVien.IconRight = null;
             this.tbx_TenNhanVien.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.tbx_TenNhanVien.Lines = new string[0];
-            this.tbx_TenNhanVien.Location = new System.Drawing.Point(84, 102);
-            this.tbx_TenNhanVien.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbx_TenNhanVien.Location = new System.Drawing.Point(63, 83);
             this.tbx_TenNhanVien.MaxLength = 32767;
             this.tbx_TenNhanVien.MinimumSize = new System.Drawing.Size(1, 1);
             this.tbx_TenNhanVien.Modified = false;
@@ -652,7 +632,7 @@
             stateProperties20.ForeColor = System.Drawing.Color.Empty;
             stateProperties20.PlaceholderForeColor = System.Drawing.Color.Empty;
             this.tbx_TenNhanVien.OnIdleState = stateProperties20;
-            this.tbx_TenNhanVien.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbx_TenNhanVien.Padding = new System.Windows.Forms.Padding(3);
             this.tbx_TenNhanVien.PasswordChar = '\0';
             this.tbx_TenNhanVien.PlaceholderForeColor = System.Drawing.Color.Black;
             this.tbx_TenNhanVien.PlaceholderText = "Tên Nhân Viên.....";
@@ -662,7 +642,7 @@
             this.tbx_TenNhanVien.SelectionLength = 0;
             this.tbx_TenNhanVien.SelectionStart = 0;
             this.tbx_TenNhanVien.ShortcutsEnabled = true;
-            this.tbx_TenNhanVien.Size = new System.Drawing.Size(237, 49);
+            this.tbx_TenNhanVien.Size = new System.Drawing.Size(178, 40);
             this.tbx_TenNhanVien.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;
             this.tbx_TenNhanVien.TabIndex = 2;
             this.tbx_TenNhanVien.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -678,13 +658,12 @@
             this.bunifuPictureBox1.AllowFocused = false;
             this.bunifuPictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.bunifuPictureBox1.AutoSizeHeight = true;
-            this.bunifuPictureBox1.BorderRadius = 24;
+            this.bunifuPictureBox1.BorderRadius = 18;
             this.bunifuPictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("bunifuPictureBox1.Image")));
             this.bunifuPictureBox1.IsCircle = true;
-            this.bunifuPictureBox1.Location = new System.Drawing.Point(11, 102);
-            this.bunifuPictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bunifuPictureBox1.Location = new System.Drawing.Point(8, 83);
             this.bunifuPictureBox1.Name = "bunifuPictureBox1";
-            this.bunifuPictureBox1.Size = new System.Drawing.Size(48, 48);
+            this.bunifuPictureBox1.Size = new System.Drawing.Size(36, 36);
             this.bunifuPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.bunifuPictureBox1.TabIndex = 1;
             this.bunifuPictureBox1.TabStop = false;
@@ -693,11 +672,10 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(24, 26);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Font = new System.Drawing.Font("UTM Alpine KT", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(12, 20);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(268, 42);
+            this.label1.Size = new System.Drawing.Size(223, 51);
             this.label1.TabIndex = 0;
             this.label1.Text = "Tạo Nhân Viên";
             // 
@@ -708,24 +686,23 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView_NhanVien.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView_NhanVien.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView_NhanVien.Location = new System.Drawing.Point(333, 59);
-            this.dataGridView_NhanVien.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridView_NhanVien.Location = new System.Drawing.Point(250, 48);
             this.dataGridView_NhanVien.Name = "dataGridView_NhanVien";
             this.dataGridView_NhanVien.RowHeadersWidth = 51;
-            this.dataGridView_NhanVien.Size = new System.Drawing.Size(963, 649);
+            this.dataGridView_NhanVien.Size = new System.Drawing.Size(722, 527);
             this.dataGridView_NhanVien.TabIndex = 2;
             // 
             // EmployeeManage
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.ClientSize = new System.Drawing.Size(1296, 711);
+            this.ClientSize = new System.Drawing.Size(972, 578);
             this.Controls.Add(this.dataGridView_NhanVien);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.panel1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.MinimizeBox = false;
             this.Name = "EmployeeManage";
             this.Text = "EmployeeManage";
             this.Load += new System.EventHandler(this.EmployeeManage_Load);

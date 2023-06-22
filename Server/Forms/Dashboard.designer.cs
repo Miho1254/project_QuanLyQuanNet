@@ -258,6 +258,7 @@
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MinimizeBox = false;
             this.Name = "Dashboard";
             this.Text = "Admin_Login";
             this.Load += new System.EventHandler(this.Dashboard_Load);

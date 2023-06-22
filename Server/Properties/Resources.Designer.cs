@@ -273,6 +273,36 @@ namespace Server.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap genshin_impact_yae_miko_genshin_impact_hinahino_anime_girls_hd_wallpaper_preview {
+            get {
+                object obj = ResourceManager.GetObject("genshin-impact-yae-miko-genshin-impact-hinahino-anime-girls-hd-wallpaper-preview", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap heytea_kamisato_ayaka_chibi_mobile_wallpaper_genshin_947x2048 {
+            get {
+                object obj = ResourceManager.GetObject("heytea-kamisato-ayaka-chibi-mobile-wallpaper-genshin-947x2048", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap heytea_kamisato_ayaka_chibi_mobile_wallpaper_genshin_947x20481 {
+            get {
+                object obj = ResourceManager.GetObject("heytea-kamisato-ayaka-chibi-mobile-wallpaper-genshin-947x20481", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap menu_100px {
             get {
                 object obj = ResourceManager.GetObject("menu_100px", resourceCulture);
@@ -316,6 +346,16 @@ namespace Server.Properties {
         internal static System.Drawing.Bitmap search_property_26px {
             get {
                 object obj = ResourceManager.GetObject("search_property_26px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap yae_miko_in_purple_fc8mz8zno39bdrr0 {
+            get {
+                object obj = ResourceManager.GetObject("yae-miko-in-purple-fc8mz8zno39bdrr0", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

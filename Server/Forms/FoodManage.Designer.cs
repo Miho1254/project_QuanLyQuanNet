@@ -30,6 +30,9 @@
         {
             this.datagridview_DoAn = new System.Windows.Forms.DataGridView();
             this.gbx_TaoDoAn = new System.Windows.Forms.GroupBox();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btn_XoaDoAn = new System.Windows.Forms.Button();
             this.btn_TaoDoAn = new System.Windows.Forms.Button();
@@ -40,9 +43,6 @@
             this.tbx_DoAn = new System.Windows.Forms.TextBox();
             this.tbx_GiaTien = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.datagridview_DoAn)).BeginInit();
             this.gbx_TaoDoAn.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -85,6 +85,30 @@
             this.gbx_TaoDoAn.TabStop = false;
             this.gbx_TaoDoAn.Text = "Tạo Đồ Ăn";
             // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.Black;
+            this.panel4.Location = new System.Drawing.Point(548, 57);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(202, 1);
+            this.panel4.TabIndex = 3;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.Black;
+            this.panel3.Location = new System.Drawing.Point(171, 108);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(228, 1);
+            this.panel3.TabIndex = 3;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.Black;
+            this.panel2.Location = new System.Drawing.Point(171, 60);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(228, 1);
+            this.panel2.TabIndex = 3;
+            // 
             // panel1
             // 
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -102,7 +126,7 @@
             this.btn_XoaDoAn.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btn_XoaDoAn.FlatAppearance.BorderSize = 0;
             this.btn_XoaDoAn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_XoaDoAn.Font = new System.Drawing.Font("UTM Alpine KT", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_XoaDoAn.Font = new System.Drawing.Font("UTM Seagull", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_XoaDoAn.Location = new System.Drawing.Point(0, 0);
             this.btn_XoaDoAn.Name = "btn_XoaDoAn";
             this.btn_XoaDoAn.Size = new System.Drawing.Size(82, 36);
@@ -117,7 +141,7 @@
             this.btn_TaoDoAn.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btn_TaoDoAn.FlatAppearance.BorderSize = 0;
             this.btn_TaoDoAn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_TaoDoAn.Font = new System.Drawing.Font("UTM Alpine KT", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_TaoDoAn.Font = new System.Drawing.Font("UTM Seagull", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_TaoDoAn.Location = new System.Drawing.Point(501, 73);
             this.btn_TaoDoAn.Name = "btn_TaoDoAn";
             this.btn_TaoDoAn.Size = new System.Drawing.Size(186, 36);
@@ -140,7 +164,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("UTM Alpine KT", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(22, 68);
+            this.label2.Location = new System.Drawing.Point(22, 78);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(97, 44);
             this.label2.TabIndex = 1;
@@ -202,30 +226,6 @@
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
             // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.Black;
-            this.panel2.Location = new System.Drawing.Point(171, 60);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(228, 1);
-            this.panel2.TabIndex = 3;
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.Black;
-            this.panel3.Location = new System.Drawing.Point(171, 108);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(228, 1);
-            this.panel3.TabIndex = 3;
-            // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.Color.Black;
-            this.panel4.Location = new System.Drawing.Point(548, 57);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(202, 1);
-            this.panel4.TabIndex = 3;
-            // 
             // FoodManage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -235,7 +235,8 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.gbx_TaoDoAn);
             this.Controls.Add(this.datagridview_DoAn);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.MinimizeBox = false;
             this.Name = "FoodManage";
             this.Text = "FoodManage";
             this.Load += new System.EventHandler(this.FoodManage_Load);
@@ -259,11 +260,11 @@
         private System.Windows.Forms.TextBox tbx_DoAn;
         private System.Windows.Forms.TextBox tbx_GiaTien;
         private System.Windows.Forms.Button btn_TaoDoAn;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btn_XoaDoAn;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

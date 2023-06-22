@@ -38,16 +38,16 @@
             this.btn_XuatHoaDon = new System.Windows.Forms.Button();
             this.tbx_TenDoAn = new System.Windows.Forms.Label();
             this.datagridview_HoaDon = new System.Windows.Forms.DataGridView();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btn_XuatRaExcel = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btn_XoaHoaDon = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.gbx_TaoHoaDon.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.datagridview_HoaDon)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // gbx_TaoHoaDon
@@ -92,7 +92,7 @@
             this.tbx_MaDonHang.IconRight = null;
             this.tbx_MaDonHang.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.tbx_MaDonHang.Lines = new string[0];
-            this.tbx_MaDonHang.Location = new System.Drawing.Point(211, 23);
+            this.tbx_MaDonHang.Location = new System.Drawing.Point(211, 21);
             this.tbx_MaDonHang.MaxLength = 32767;
             this.tbx_MaDonHang.MinimumSize = new System.Drawing.Size(1, 1);
             this.tbx_MaDonHang.Modified = false;
@@ -118,7 +118,7 @@
             stateProperties4.ForeColor = System.Drawing.Color.Empty;
             stateProperties4.PlaceholderForeColor = System.Drawing.Color.Empty;
             this.tbx_MaDonHang.OnIdleState = stateProperties4;
-            this.tbx_MaDonHang.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tbx_MaDonHang.Padding = new System.Windows.Forms.Padding(3);
             this.tbx_MaDonHang.PasswordChar = '\0';
             this.tbx_MaDonHang.PlaceholderForeColor = System.Drawing.Color.Silver;
             this.tbx_MaDonHang.PlaceholderText = "Tìm Mã Hóa đơn .....";
@@ -145,8 +145,8 @@
             this.btn_XuatHoaDon.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btn_XuatHoaDon.FlatAppearance.BorderSize = 0;
             this.btn_XuatHoaDon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_XuatHoaDon.Font = new System.Drawing.Font("UTM Alpine KT", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_XuatHoaDon.Location = new System.Drawing.Point(570, 26);
+            this.btn_XuatHoaDon.Font = new System.Drawing.Font("UTM Seagull", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_XuatHoaDon.Location = new System.Drawing.Point(570, 23);
             this.btn_XuatHoaDon.Name = "btn_XuatHoaDon";
             this.btn_XuatHoaDon.Size = new System.Drawing.Size(136, 31);
             this.btn_XuatHoaDon.TabIndex = 14;
@@ -158,7 +158,7 @@
             // 
             this.tbx_TenDoAn.AutoSize = true;
             this.tbx_TenDoAn.Font = new System.Drawing.Font("UTM Alpine KT", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbx_TenDoAn.Location = new System.Drawing.Point(32, 16);
+            this.tbx_TenDoAn.Location = new System.Drawing.Point(33, 18);
             this.tbx_TenDoAn.Name = "tbx_TenDoAn";
             this.tbx_TenDoAn.Size = new System.Drawing.Size(173, 44);
             this.tbx_TenDoAn.TabIndex = 1;
@@ -176,19 +176,6 @@
             this.datagridview_HoaDon.RowHeadersWidth = 51;
             this.datagridview_HoaDon.Size = new System.Drawing.Size(641, 551);
             this.datagridview_HoaDon.TabIndex = 4;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox1.Image = global::Server.Properties.Resources._337201839_748223423418798_8953680672966568511_n;
-            this.pictureBox1.Location = new System.Drawing.Point(2, 70);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(185, 551);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBox1.TabIndex = 6;
-            this.pictureBox1.TabStop = false;
             // 
             // panel1
             // 
@@ -242,6 +229,19 @@
             this.btn_XoaHoaDon.UseVisualStyleBackColor = false;
             this.btn_XoaHoaDon.Click += new System.EventHandler(this.btn_XoaHoaDon_Click);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox1.Image = global::Server.Properties.Resources._337201839_748223423418798_8953680672966568511_n;
+            this.pictureBox1.Location = new System.Drawing.Point(2, 70);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(185, 551);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox1.TabIndex = 6;
+            this.pictureBox1.TabStop = false;
+            // 
             // InvoiceManage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -253,15 +253,17 @@
             this.Controls.Add(this.gbx_TaoHoaDon);
             this.Controls.Add(this.datagridview_HoaDon);
             this.Controls.Add(this.pictureBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.MinimizeBox = false;
             this.Name = "InvoiceManage";
             this.Text = "InvoiceManage";
             this.Load += new System.EventHandler(this.InvoiceManage_Load);
             this.gbx_TaoHoaDon.ResumeLayout(false);
             this.gbx_TaoHoaDon.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.datagridview_HoaDon)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
