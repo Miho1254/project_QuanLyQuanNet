@@ -54,6 +54,7 @@ namespace Server
 
             // Số lượng luồng tối đa
             int maxThreads = 10;
+
             // Khởi tạo Semaphore với số lượng luồng tối đa
             semaphore = new SemaphoreSlim(maxThreads, maxThreads);
 

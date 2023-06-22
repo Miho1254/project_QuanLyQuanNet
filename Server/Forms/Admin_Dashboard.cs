@@ -58,6 +58,16 @@ namespace Server
             // Xử lý sự kiện khi nút "Quản lý Đặt hàng" được nhấn
 
             this.Hide(); // Ẩn form hiện tại
+            InvoiceManage InvoiceManage = new InvoiceManage(); // Tạo mới một instance của form HoaDon
+            InvoiceManage.FormClosed += (s, args) => this.Show(); // Khi form DatHang được đóng, hiển thị lại form Admin_Dashboard
+            InvoiceManage.Show(); // Hiển thị form DatHang
+        }
+
+        private void btn_QuanLyDonHang_Click(object sender, EventArgs e)
+        {
+            // Xử lý sự kiện khi nút "Quản lý Đặt hàng" được nhấn
+
+            this.Hide(); // Ẩn form hiện tại
             DatHang DatHangManage = new DatHang(); // Tạo mới một instance của form DatHang
             DatHangManage.FormClosed += (s, args) => this.Show(); // Khi form DatHang được đóng, hiển thị lại form Admin_Dashboard
             DatHangManage.Show(); // Hiển thị form DatHang
