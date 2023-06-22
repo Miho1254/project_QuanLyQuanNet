@@ -290,57 +290,35 @@ namespace Server
             }
         }
 
-        
+
 
 
 
         private bool OrderFood(string foodId, string username)
         {
-            // Kết nối cơ sở dữ liệu
             string connectionString = ConfigurationManager.ConnectionStrings["Server.Properties.Settings.CSDL_Server_QuanNetConnectionString"].ConnectionString;
-            using (SqlConnection connection = new SqlConnection(connectionString))
+
+            try
             {
-                connection.Open();
-
-                // Truy vấn cơ sở dữ liệu để lấy thông tin món ăn (tên và giá)
-                string query = "SELECT TenThucAn, GiaTien FROM ThucAn WHERE MaThucAn = @foodId";
-                using (SqlCommand command = new SqlCommand(query, connection))
+                using (SqlConnection connection = new SqlConnection(connectionString))
                 {
-                    command.Parameters.AddWithValue("@foodId", foodId);
+                    connection.Open();
+                    string orderID = GenerateOrderId();
 
-                    using (SqlDataReader reader = command.ExecuteReader())
-                    {
-                        if (reader.Read())
-                        {
-                            string foodName = reader.GetString(0);
-                            decimal foodPrice = reader.GetDecimal(1);
+                    // Nhập dữ liệu vào bảng DonHang
+                    InsertDonHang(connection, orderID, GetCustomerIdByUsername(username), GetFoodPriceById(foodId));
 
-                            // Tạo mã đơn hàng
-                            string orderId = GenerateOrderId();
+                    // Nhập dữ liệu vào bảng ChiTietDonHang
+                    InsertChiTietDonHang(connection, orderID, foodId, GetCustomerIdByUsername(username), 1, GetFoodPriceById(foodId));
 
-                            // Lấy thông tin khách hàng từ cơ sở dữ liệu
-                            string customerID = GetCustomerIdByUsername(username);
-
-                            if (customerID != null)
-                            {
-                                // Tính tổng tiền đơn hàng
-                                decimal totalPrice = foodPrice;
-
-                                // Thêm đơn hàng vào cơ sở dữ liệu
-                                bool orderSuccess = InsertOrderToDatabase(orderId, customerID, totalPrice);
-
-                                if (orderSuccess)
-                                {
-                                    // Thực hiện các thao tác khác cần thiết, ví dụ: gửi thông báo, cập nhật giao diện, ...
-                                    return true; // Đặt món ăn thành công
-                                }
-                            }
-                        }
-                    }
+                    Console.WriteLine("Dữ liệu đã được nhập thành công.");
+                    return true;
                 }
             }
-
-            return false; // Đặt món ăn không thành công
+            catch
+            {
+                return false; // Đặt món ăn không thành công
+            }
         }
 
         private string GenerateOrderId()
@@ -401,24 +379,63 @@ namespace Server
             return null; // Không tìm thấy khách hàng
         }
 
-        private bool InsertOrderToDatabase(string orderId, string customerId, decimal totalPrice)
+        private float GetFoodPriceById(string foodID)
         {
-            // Kết nối cơ sở dữ liệu và thêm đơn hàng vào bảng DonHang
             string connectionString = ConfigurationManager.ConnectionStrings["Server.Properties.Settings.CSDL_Server_QuanNetConnectionString"].ConnectionString;
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 connection.Open();
 
-                string query = "INSERT INTO DonHang (MaDonHang, MaKhachHang, TongTien) VALUES (@orderId, @customerId, @totalPrice)";
+                string query = "SELECT GiaTien FROM ThucAn WHERE MaThucAn = @id";
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
-                    command.Parameters.AddWithValue("@orderId", orderId);
-                    command.Parameters.AddWithValue("@customerId", customerId);
-                    command.Parameters.AddWithValue("@totalPrice", totalPrice);
+                    command.Parameters.AddWithValue("@id", foodID);
 
-                    int rowsAffected = command.ExecuteNonQuery();
-                    return rowsAffected > 0; // Trả về true nếu thêm đơn hàng thành công
+                    object result = command.ExecuteScalar();
+                    if (result != null && result != DBNull.Value)
+                    {
+                        float price;
+                        if (float.TryParse(result.ToString(), out price))
+                        {
+                            return price;
+                        }
+                    }
                 }
+            }
+
+            // Trả về giá trị mặc định nếu không tìm thấy giá trị hoặc có lỗi chuyển đổi kiểu
+            return 0;
+        }
+
+        static void InsertDonHang(SqlConnection connection, string maDonHang, string maKhachHang, float tongTien)
+        {
+            string query = "INSERT INTO DonHang (MaDonHang, MaKhachHang, TongTien) " +
+                           "VALUES (@MaDonHang, @MaKhachHang, @TongTien)";
+
+            using (SqlCommand command = new SqlCommand(query, connection))
+            {
+                command.Parameters.AddWithValue("@MaDonHang", maDonHang);
+                command.Parameters.AddWithValue("@MaKhachHang", maKhachHang);
+                command.Parameters.AddWithValue("@TongTien", tongTien);
+
+                command.ExecuteNonQuery();
+            }
+        }
+
+        static void InsertChiTietDonHang(SqlConnection connection, string maDonHang, string maThucAn, string maKhachHang, float soLuong, float giaTien)
+        {
+            string query = "INSERT INTO ChiTietDonHang (MaDonHang, MaThucAn, MaKhachHang, SoLuong, GiaTien) " +
+                           "VALUES (@MaDonHang, @MaThucAn, @MaKhachHang, @SoLuong, @GiaTien)";
+
+            using (SqlCommand command = new SqlCommand(query, connection))
+            {
+                command.Parameters.AddWithValue("@MaDonHang", maDonHang);
+                command.Parameters.AddWithValue("@MaThucAn", maThucAn);
+                command.Parameters.AddWithValue("@MaKhachHang", maKhachHang);
+                command.Parameters.AddWithValue("@SoLuong", soLuong);
+                command.Parameters.AddWithValue("@GiaTien", giaTien);
+
+                command.ExecuteNonQuery();
             }
         }
 

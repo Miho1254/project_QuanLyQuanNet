@@ -24,6 +24,18 @@ namespace Server
             LoadInvoiceData();
             // Đăng ký sự kiện CellContentClick của DataGridView
             datagridview_HoaDon.CellContentClick += DataGridView_CellContentClick;
+
+            // Set the auto-size mode of columns to fill
+            foreach (DataGridViewColumn column in datagridview_HoaDon.Columns)
+            {
+                column.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            }
+
+            // Enable auto-sizing of columns
+            datagridview_HoaDon.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+
+            // Khi người dùng ấn vào 1 ô thì tự động select toàn bộ hàng thay vì chỉ 1 ô
+            datagridview_HoaDon.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
         }
 
         // Xử lý sự kiện CellContentClick của DataGridView

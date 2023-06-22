@@ -55,12 +55,12 @@ namespace Server
 
         private void btn_QuanLyHoaDon_Click(object sender, EventArgs e)
         {
-            // Xử lý sự kiện khi nút "Quản lý Hóa đơn" được nhấn
+            // Xử lý sự kiện khi nút "Quản lý Đặt hàng" được nhấn
 
             this.Hide(); // Ẩn form hiện tại
-            InvoiceManage invoiceManage = new InvoiceManage(); // Tạo mới một instance của form InvoiceManage
-            invoiceManage.FormClosed += (s, args) => this.Show(); // Khi form InvoiceManage được đóng, hiển thị lại form Admin_Dashboard
-            invoiceManage.Show(); // Hiển thị form InvoiceManage
+            DatHang DatHangManage = new DatHang(); // Tạo mới một instance của form DatHang
+            DatHangManage.FormClosed += (s, args) => this.Show(); // Khi form DatHang được đóng, hiển thị lại form Admin_Dashboard
+            DatHangManage.Show(); // Hiển thị form DatHang
         }
     }
 }
