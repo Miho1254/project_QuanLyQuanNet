@@ -283,6 +283,26 @@ namespace Server.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap order_history_50px {
+            get {
+                object obj = ResourceManager.GetObject("order_history_50px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap order_history_filled_50px {
+            get {
+                object obj = ResourceManager.GetObject("order_history_filled_50px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap restaurant_menu_filled_50px {
             get {
                 object obj = ResourceManager.GetObject("restaurant_menu_filled_50px", resourceCulture);

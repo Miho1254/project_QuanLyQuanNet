@@ -378,6 +378,8 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>CSDL_Server_QuanNet.mdf</DependentUpon>
     </Content>
+    <None Include="Resources\order_history_filled_50px.png" />
+    <None Include="Resources\order_history_50px.png" />
     <None Include="Resources\322581382_899905131026462_1076981564075758256_n.jpg" />
     <None Include="Resources\316269264_698285628621511_4320454741386307944_n2.jpg" />
     <None Include="Resources\316269264_698285628621511_4320454741386307944_n1.jpg" />

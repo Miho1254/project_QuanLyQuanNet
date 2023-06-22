@@ -113,6 +113,16 @@ namespace Client.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap images {
+            get {
+                object obj = ResourceManager.GetObject("images", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap z4402240905839_cd67f7857fc0d25e340e6b99c0f65a47 {
             get {
                 object obj = ResourceManager.GetObject("z4402240905839_cd67f7857fc0d25e340e6b99c0f65a47", resourceCulture);
