@@ -150,21 +150,29 @@ namespace Server
         // Xử lý sự kiện khi nút "Xuất ra Excel" được nhấn
         private void btn_XuatRaExcel_Click(object sender, EventArgs e)
         {
+            // Kiểm tra xem có dữ liệu trong DataGridView hay không
             if (datagridview_HoaDon.Rows.Count > 0)
             {
+                // Tạo SaveFileDialog để cho phép người dùng chọn vị trí lưu file Excel
                 SaveFileDialog saveFileDialog = new SaveFileDialog();
                 saveFileDialog.Filter = "Excel Files (*.xlsx)|*.xlsx";
                 saveFileDialog.DefaultExt = "xlsx";
                 saveFileDialog.AddExtension = true;
                 saveFileDialog.RestoreDirectory = true;
 
+                // Kiểm tra xem người dùng đã chọn vị trí lưu file hay chưa
                 if (saveFileDialog.ShowDialog() == DialogResult.OK)
                 {
+                    // Lấy đường dẫn đầy đủ của tệp tin Excel từ SaveFileDialog
                     string filePath = saveFileDialog.FileName;
 
+                    // Sử dụng EPPlus để tạo một tệp tin Excel mới
                     using (ExcelPackage excelPackage = new ExcelPackage())
                     {
+                        // Tạo một worksheet trong ExcelPackage
                         ExcelWorksheet worksheet = excelPackage.Workbook.Worksheets.Add("HoaDon");
+
+                        // Lấy số lượng dòng và cột trong DataGridView
                         int rowCount = datagridview_HoaDon.Rows.Count;
                         int columnCount = datagridview_HoaDon.Columns.Count;
 
@@ -173,24 +181,31 @@ namespace Server
                         {
                             for (int column = 1; column <= columnCount; column++)
                             {
+                                // Ghi HeaderText của các cột vào hàng đầu tiên của worksheet
                                 if (row == 1)
                                 {
                                     worksheet.Cells[row, column].Value = datagridview_HoaDon.Columns[column - 1].HeaderText;
                                 }
 
+                                // Ghi giá trị của các ô dữ liệu vào worksheet
                                 worksheet.Cells[row + 1, column].Value = datagridview_HoaDon.Rows[row - 1].Cells[column - 1].Value?.ToString();
                             }
                         }
 
+                        // Tạo FileInfo từ đường dẫn tệp tin Excel
                         FileInfo excelFile = new FileInfo(filePath);
+
+                        // Lưu ExcelPackage thành tệp tin Excel
                         excelPackage.SaveAs(excelFile);
                     }
 
+                    // Hiển thị thông báo xuất file Excel thành công
                     MessageBox.Show("Xuất file Excel thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
             else
             {
+                // Hiển thị thông báo không có dữ liệu để xuất
                 MessageBox.Show("Không có dữ liệu để xuất.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
